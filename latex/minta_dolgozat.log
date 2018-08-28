@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.8.25)  28 AUG 2018 21:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.8.25)  28 AUG 2018 21:53
 entering extended mode
 **./minta_dolgozat.tex
 (minta_dolgozat.tex
@@ -1309,15 +1309,36 @@ l.110 \include{bevezet}
 1. fejezet
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 3.
-)pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
- been already used, duplicate ignored
+
+Underfull \hbox (badness 10000) detected at line 9
+\T1/ptm/m/n/8 1.
+ []
+
+
+Overfull \hbox (11.35796pt too wide) in paragraph at lines 9--9
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 19
+\T1/ptm/m/n/8 2.
+ []
+
+
+Overfull \hbox (11.35796pt too wide) in paragraph at lines 19--19
+[] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.110 \include{bevezet}
-                        [3
+l.22 V
+      égül levonom a következtetéseket a munkám során szerzett tapaszt...
+[3
 
 
-] [4]
+]) [4]
 \openout2 = `graf_def_alapok.aux'.
 
  (graf_def_alapok.tex
@@ -1366,7 +1387,27 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 
 
 
-]) [10]
+]
+Underfull \hbox (badness 10000) detected at line 35
+\T1/ptm/m/n/8 1.
+ []
+
+
+Overfull \hbox (11.35796pt too wide) in paragraph at lines 35--35
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 39
+\T1/ptm/m/n/8 2.
+ []
+
+
+Overfull \hbox (11.35796pt too wide) in paragraph at lines 39--39
+[] 
+ []
+
+) [10]
 \openout2 = `alkalmazas.aux'.
 
  (alkalmazas.tex
@@ -1408,22 +1449,22 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 138.
  ) 
 Here is how much of TeX's memory you used:
- 25754 strings out of 493308
- 470265 string characters out of 3138768
- 584623 words of memory out of 3000000
- 28728 multiletter control sequences out of 15000+200000
- 63124 words of font info for 75 fonts, out of 3000000 for 9000
+ 25762 strings out of 493308
+ 470885 string characters out of 3138768
+ 585623 words of memory out of 3000000
+ 28730 multiletter control sequences out of 15000+200000
+ 68568 words of font info for 79 fonts, out of 3000000 for 9000
  1199 hyphenation exceptions out of 8191
- 55i,5n,69p,1411b,388s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,9n,69p,1411b,388s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/urw/helvetic/uhvb8ac.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/ti
 mes/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on minta_dolgozat.pdf (16 pages, 209009 bytes).
+Output written on minta_dolgozat.pdf (16 pages, 210755 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
- 28 named destinations out of 1000 (max. 500000)
+ 194 PDF objects out of 1000 (max. 8388607)
+ 32 named destinations out of 1000 (max. 500000)
  124 words of extra memory for PDF output out of 10000 (max. 10000000)
 

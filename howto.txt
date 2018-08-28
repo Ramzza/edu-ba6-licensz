@@ -1,0 +1,6 @@
+labjegyzet
+
+%
+\footnote{ %
+	
+}  %
