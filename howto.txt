@@ -29,3 +29,10 @@ italic
 matek doltott
 
 \(y = x\)
+
+********************************
+egyenlet
+
+\begin{equation}
+R_k = \{x \in X | d(x,P_k) \leq d(x,P_j), \forall j \neq k\}
+\end{equation}
