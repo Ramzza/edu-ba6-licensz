@@ -1,0 +1,18 @@
+http://www.math.uwaterloo.ca/tsp/concorde/benchmarks/bench99.html
+
+https://wwwproxy.iwr.uni-heidelberg.de/groups/comopt/software/TSPLIB95/
+
+http://home.eng.iastate.edu/~rkumar/PUBS/atsp.pdf
+https://en.wikipedia.org/wiki/NP_(complexity)
+https://en.wikipedia.org/wiki/P_versus_NP_problem
+
+https://www.slideshare.net/kaalnath/comparison-of-tsp-algorithms
+https://www.math.uwaterloo.ca/~bico/papers/clk_ijoc.pdf
+
+https://developer.android.com
+https://gradle.org/
+https://firebase.google.com/
+[1]Jean-Claude-Fournier-Graph-Theory-and-Applications-2009 22
+215-236
+[2] Graph-Theory-with-Algorithms-and-its-Applications
+[3]Daniel-Marcus-Graph-Theory_-A-Problem-Oriented-Approach2008
