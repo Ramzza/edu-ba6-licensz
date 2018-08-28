@@ -1,0 +1,12 @@
+\select@language {magyar} \contentsline {chapter}{\numberline {1}Bevezet\IeC {\'e}s}{3}{chapter.1}
+\select@language {magyar} \contentsline {chapter}{\numberline {2}Gr\IeC {\'a}fok - alapfogalmak}{5}{chapter.2}
+\select@language {magyar} \contentsline {chapter}{\numberline {3}Gr\IeC {\'a}f probl\IeC {\'e}m\IeC {\'a}k}{6}{chapter.3}
+\select@language {magyar} \contentsline {chapter}{\numberline {4}Utaz\IeC {\'o} \IeC {\"u}gyn\IeC {\"o}k probl\IeC {\'e}m\IeC {\'a}ja (TSP)}{7}{chapter.4}
+\select@language {magyar} \contentsline {chapter}{\numberline {5}TSP algoritmusok}{8}{chapter.5}
+\select@language {magyar} \contentsline {chapter}{\numberline {6}Technol\IeC {\'o}gi\IeC {\'a}k}{9}{chapter.6}
+\select@language {magyar} \contentsline {section}{\numberline {6.1}Android}{9}{section.6.1}
+\select@language {magyar} \contentsline {section}{\numberline {6.2}Gradle}{10}{section.6.2}
+\select@language {magyar} \contentsline {section}{\numberline {6.3}Firebase}{10}{section.6.3}
+\select@language {magyar} \contentsline {section}{\numberline {6.4}Maps API}{10}{section.6.4}
+\select@language {magyar} \contentsline {chapter}{\numberline {7}GRoutes - alkalmaz\IeC {\'a}s bemutat\IeC {\'a}sa}{11}{chapter.7}
+\select@language {magyar} \contentsline {chapter}{\numberline {8}K\IeC {\"o}vetkeztet\IeC {\'e}sek}{12}{chapter.8}
