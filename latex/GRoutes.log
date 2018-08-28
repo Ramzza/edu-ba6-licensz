@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.8.25)  29 AUG 2018 00:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.8.25)  29 AUG 2018 02:04
 entering extended mode
 **./GRoutes.tex
 (GRoutes.tex
@@ -1388,11 +1388,21 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 19--19
 2. fejezet
 LaTeX Font Info:    Font shape `T1/ptm/bx/sl' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/sl' tried instead on input line 6.
-) [6
+
+Underfull \hbox (badness 10000) detected at line 32
+\T1/ptm/m/n/8 1.
+ []
+
+
+Overfull \hbox (11.35796pt too wide) in paragraph at lines 32--32
+[] 
+ []
+
+[6
 
 
 
-]
+]) [7]
 \openout2 = `graf_problemak.aux'.
 
  (graf_problemak.tex
@@ -1401,7 +1411,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 12.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 25.
-) [7
+) [8
 
 
 
@@ -1410,7 +1420,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 
  (tsp_modszerek.tex
 4. fejezet
-) [8
+) [9
 
 
 
@@ -1419,7 +1429,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 
  (algoritmusok.tex
 5. fejezet
-) [9
+) [10
 
 
 
@@ -1428,7 +1438,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 
  (technologiak.tex
 6. fejezet
-[10
+[11
 
 
 
@@ -1452,12 +1462,12 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 39--39
 [] 
  []
 
-) [11]
+) [12]
 \openout2 = `alkalmazas.aux'.
 
  (alkalmazas.tex
 7. fejezet
-) [12
+) [13
 
 
 
@@ -1466,7 +1476,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 39--39
 
  (kovetkeztetesek.tex
 8. fejezet
-) [13
+) [14
 
 
 
@@ -1474,7 +1484,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 39--39
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [14
+) [15
 
 
 ]
@@ -1494,25 +1504,26 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 138.
  ) 
 Here is how much of TeX's memory you used:
- 25821 strings out of 493308
- 471580 string characters out of 3138768
- 587621 words of memory out of 3000000
+ 25824 strings out of 493308
+ 471612 string characters out of 3138768
+ 587622 words of memory out of 3000000
  28760 multiletter control sequences out of 15000+200000
  73015 words of font info for 82 fonts, out of 3000000 for 9000
  1199 hyphenation exceptions out of 8191
  55i,9n,69p,1404b,589s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/
-helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8
-ac.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
-/times/utmr8a.pfb>
-Output written on GRoutes.pdf (17 pages, 261578 bytes).
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8ac.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/t
+imes/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
+Output written on GRoutes.pdf (18 pages, 285880 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
+ 367 PDF objects out of 1000 (max. 8388607)
+ 63 named destinations out of 1000 (max. 500000)
  340 words of extra memory for PDF output out of 10000 (max. 10000000)
 
