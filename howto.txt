@@ -4,3 +4,28 @@ labjegyzet
 \footnote{ %
 	
 }  %
+
+**********************
+
+definiciok
+
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[rand] -- egy véletlen számot térít vissza a $[0,1]$ intervallumból az intervallumon egyenletes eloszlást feltételezve. Argumentum nélkül a függvény egy nulla és egy közötti véletlen számot, egy argumentummal egy $k\times k$ méterû véletlen mátrixot, egy vektorra pedig egy tenzort térít vissza, melynek méreteit a vektor elemei tartalmazzák. A {\bf randn} hasonlóan véletlen változókat visszatérítõ függvény, azonban azok nulla átlagú és egy szórású normális eloszlást követnek.
+	\item[ones] -- a fenti esethez hasonlóan egy vektort, mátrixot vagy tenzort 
+\end{description}
+
+*************************
+e eleme N
+
+\(i \in N\)
+
+************************
+italic
+
+\textit{game of chicken}
+
+*************************
+matek doltott
+
+\(y = x\)

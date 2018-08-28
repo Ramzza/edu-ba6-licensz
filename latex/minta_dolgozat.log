@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.8.25)  28 AUG 2018 22:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.8.25)  28 AUG 2018 23:53
 entering extended mode
 **./minta_dolgozat.tex
 (minta_dolgozat.tex
@@ -1340,7 +1340,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.36 ... {7.2}Oszt\IeC {\'a}lyok}{12}{section.7.2}
+l.36 ... {7.2}Adatb\IeC {\'a}zis}{12}{section.7.2}
                                                    [2
 
 ])
@@ -1486,15 +1486,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 138.
 (alkalmazas.aux) (kovetkeztetesek.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 138.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 138.
+Package rerunfilecheck Info: File `minta_dolgozat.out' has not changed.
+(rerunfilecheck)             Checksum: 8C851C94F33791A2382B6E93944233C1;6071.
 
-
-Package rerunfilecheck Warning: File `minta_dolgozat.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `minta_dolgozat.out':
-(rerunfilecheck)             Before: 6B840D4C714D367B183FE265420DF7B5;6071
-(rerunfilecheck)             After:  8C851C94F33791A2382B6E93944233C1;6071.
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1509,14 +1503,17 @@ Here is how much of TeX's memory you used:
  1199 hyphenation exceptions out of 8191
  55i,9n,69p,1411b,589s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/urw/helvetic/uhvb8ac.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/ti
-mes/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on minta_dolgozat.pdf (17 pages, 234886 bytes).
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/
+helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8
+ac.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
+/times/utmr8a.pfb>
+Output written on minta_dolgozat.pdf (17 pages, 261578 bytes).
 PDF statistics:
- 339 PDF objects out of 1000 (max. 8388607)
+ 351 PDF objects out of 1000 (max. 8388607)
  60 named destinations out of 1000 (max. 500000)
  340 words of extra memory for PDF output out of 10000 (max. 10000000)
 
