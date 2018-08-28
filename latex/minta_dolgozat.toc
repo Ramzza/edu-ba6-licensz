@@ -1,12 +1,39 @@
-\select@language {magyar} \contentsline {chapter}{\numberline {1}Bevezet\IeC {\'e}s}{3}{chapter.1}
-\select@language {magyar} \contentsline {chapter}{\numberline {2}Gr\IeC {\'a}fok - alapfogalmak}{5}{chapter.2}
-\select@language {magyar} \contentsline {chapter}{\numberline {3}Gr\IeC {\'a}f probl\IeC {\'e}m\IeC {\'a}k}{6}{chapter.3}
-\select@language {magyar} \contentsline {chapter}{\numberline {4}Utaz\IeC {\'o} \IeC {\"u}gyn\IeC {\"o}k probl\IeC {\'e}m\IeC {\'a}ja (TSP)}{7}{chapter.4}
-\select@language {magyar} \contentsline {chapter}{\numberline {5}TSP algoritmusok}{8}{chapter.5}
-\select@language {magyar} \contentsline {chapter}{\numberline {6}Technol\IeC {\'o}gi\IeC {\'a}k}{9}{chapter.6}
-\select@language {magyar} \contentsline {section}{\numberline {6.1}Android}{9}{section.6.1}
-\select@language {magyar} \contentsline {section}{\numberline {6.2}Gradle}{10}{section.6.2}
-\select@language {magyar} \contentsline {section}{\numberline {6.3}Firebase}{10}{section.6.3}
-\select@language {magyar} \contentsline {section}{\numberline {6.4}Maps API}{10}{section.6.4}
-\select@language {magyar} \contentsline {chapter}{\numberline {7}GRoutes - alkalmaz\IeC {\'a}s bemutat\IeC {\'a}sa}{11}{chapter.7}
-\select@language {magyar} \contentsline {chapter}{\numberline {8}K\IeC {\"o}vetkeztet\IeC {\'e}sek}{12}{chapter.8}
+\select@language {magyar} \contentsline {chapter}{\numberline {1}Bevezet\IeC {\'e}s}{4}{chapter.1}
+\select@language {magyar} \contentsline {chapter}{\numberline {2}Gr\IeC {\'a}fok - alapfogalmak}{6}{chapter.2}
+\select@language {magyar} \contentsline {chapter}{\numberline {3}Gr\IeC {\'a}f probl\IeC {\'e}m\IeC {\'a}k}{7}{chapter.3}
+\select@language {magyar} \contentsline {section}{\numberline {3.1}Gr\IeC {\'a}fok lesz\IeC {\'a}ml\IeC {\'a}l\IeC {\'a}sa}{7}{section.3.1}
+\select@language {magyar} \contentsline {section}{\numberline {3.2}Algr\IeC {\'a}f izomorfizmus probl\IeC {\'e}ma}{7}{section.3.2}
+\select@language {magyar} \contentsline {section}{\numberline {3.3}Gr\IeC {\'a}fok sz\IeC {\'\i }nez\IeC {\'e}se}{7}{section.3.3}
+\select@language {magyar} \contentsline {section}{\numberline {3.4}\IeC {\'U}tprobl\IeC {\'e}m\IeC {\'a}k}{7}{section.3.4}
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.1}Hamilton \IeC {\'u}t probl\IeC {\'e}ma}{7}{subsection.3.4.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.2}Minim\IeC {\'a}lis fesz\IeC {\'\i }t\IeC {\H o}fa}{7}{subsection.3.4.2}
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.3}K\IeC {\'\i }naipost\IeC {\'a}s-probl\IeC {\'e}ma}{7}{subsection.3.4.3}
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.4}K\IeC {\"o}nigsbergi hidak probl\IeC {\'e}m\IeC {\'a}ja}{7}{subsection.3.4.4}
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.5}Legr\IeC {\"o}videbb \IeC {\'u}t probl\IeC {\'e}ma}{7}{subsection.3.4.5}
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.6}Steiner-fa probl\IeC {\'e}ma}{7}{subsection.3.4.6}
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.7}H\IeC {\'a}rom h\IeC {\'a}z-h\IeC {\'a}rom k\IeC {\'u}t-probl\IeC {\'e}ma}{7}{subsection.3.4.7}
+\select@language {magyar} \contentsline {chapter}{\numberline {4}Az utaz\IeC {\'o} \IeC {\"u}gyn\IeC {\"o}k probl\IeC {\'e}m\IeC {\'a}ja (TSP)}{8}{chapter.4}
+\select@language {magyar} \contentsline {section}{\numberline {4.1}A Hamilton k\IeC {\"o}rrel val\IeC {\'o} kapcsolat}{8}{section.4.1}
+\select@language {magyar} \contentsline {section}{\numberline {4.2}A probl\IeC {\'e}ma komplexit\IeC {\'a}sa}{8}{section.4.2}
+\select@language {magyar} \contentsline {section}{\numberline {4.3}Egzakt megold\IeC {\'a}sok}{8}{section.4.3}
+\select@language {magyar} \contentsline {section}{\numberline {4.4}Approxim\IeC {\'a}ci\IeC {\'o}k}{8}{section.4.4}
+\select@language {magyar} \contentsline {section}{\numberline {4.5}Aszimmetrikus TSP}{8}{section.4.5}
+\select@language {magyar} \contentsline {chapter}{\numberline {5}TSP algoritmusok}{9}{chapter.5}
+\select@language {magyar} \contentsline {section}{\numberline {5.1}Egzakt algoritmusok}{9}{section.5.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.1.1}Brute force}{9}{subsection.5.1.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.1.2}Held-Karp algoritmus}{9}{subsection.5.1.2}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.1.3}Concorde algoritmus}{9}{subsection.5.1.3}
+\select@language {magyar} \contentsline {section}{\numberline {5.2}Heurisztikus algoritmusok}{9}{section.5.2}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.1}Greedy - legk\IeC {\"o}zelebbi szomsz\IeC {\'e}d}{9}{subsection.5.2.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.2}Lin-Kernighan heurisztika}{9}{subsection.5.2.2}
+\select@language {magyar} \contentsline {chapter}{\numberline {6}Technol\IeC {\'o}gi\IeC {\'a}k}{10}{chapter.6}
+\select@language {magyar} \contentsline {section}{\numberline {6.1}Android}{10}{section.6.1}
+\select@language {magyar} \contentsline {section}{\numberline {6.2}Gradle}{11}{section.6.2}
+\select@language {magyar} \contentsline {section}{\numberline {6.3}Firebase}{11}{section.6.3}
+\select@language {magyar} \contentsline {section}{\numberline {6.4}Maps API}{11}{section.6.4}
+\select@language {magyar} \contentsline {chapter}{\numberline {7}GRoutes - alkalmaz\IeC {\'a}s bemutat\IeC {\'a}sa}{12}{chapter.7}
+\select@language {magyar} \contentsline {section}{\numberline {7.1}Funkcionalit\IeC {\'a}sok}{12}{section.7.1}
+\select@language {magyar} \contentsline {section}{\numberline {7.2}Adatb\IeC {\'a}zis}{12}{section.7.2}
+\select@language {magyar} \contentsline {section}{\numberline {7.3}Oszt\IeC {\'a}lyok}{12}{section.7.3}
+\select@language {magyar} \contentsline {section}{\numberline {7.4}Felmer\IeC {\"u}l\IeC {\H o} probl\IeC {\'e}m\IeC {\'a}k}{12}{section.7.4}
+\select@language {magyar} \contentsline {chapter}{\numberline {8}K\IeC {\"o}vetkeztet\IeC {\'e}sek}{13}{chapter.8}
