@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.8.25)  29 AUG 2018 21:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.8.25)  29 AUG 2018 23:32
 entering extended mode
 **./GRoutes.tex
 (GRoutes.tex
@@ -1213,6 +1213,9 @@ LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
 
 LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
 
+
+LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
+
 ) (kovetkeztetesek.aux
 
 LaTeX Warning: Label `ch:ALAP' multiply defined.
@@ -1487,7 +1490,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 39--39
 
  (alkalmazas.tex
 7. fejezet
-<images/login.png, id=347, 277.78781pt x 300.3722pt>
+<images/login.png, id=352, 277.78781pt x 300.3722pt>
 File: images/login.png Graphic file (type png)
 <use images/login.png>
 Package pdftex.def Info: images/login.png  used on input line 20.
@@ -1526,7 +1529,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 76--76
 [] 
  []
 
-<images/firebase_gradle.png, id=364, 521.69907pt x 61.73062pt>
+<images/firebase_gradle.png, id=369, 521.69907pt x 61.73062pt>
 File: images/firebase_gradle.png Graphic file (type png)
 <use images/firebase_gradle.png>
 Package pdftex.def Info: images/firebase_gradle.png  used on input line 88.
@@ -1562,7 +1565,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 110--110
  []
 
 [15 <./images/firebase_gradle.png>]
-<images/firestore_colls.png, id=378, 576.65437pt x 255.20343pt>
+<images/firestore_colls.png, id=383, 576.65437pt x 255.20343pt>
 File: images/firestore_colls.png Graphic file (type png)
 <use images/firestore_colls.png>
 Package pdftex.def Info: images/firestore_colls.png  used on input line 128.
@@ -1581,7 +1584,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 135--135
 Package wrapfig Warning: Collision between wrapping environments on input line 
 138.
 
-<images/firestore_rule.png, id=380, 502.87875pt x 112.92188pt>
+<images/firestore_rule.png, id=385, 502.87875pt x 112.92188pt>
 File: images/firestore_rule.png Graphic file (type png)
 <use images/firestore_rule.png>
 Package pdftex.def Info: images/firestore_rule.png  used on input line 142.
@@ -1606,11 +1609,16 @@ Underfull \hbox (badness 2726) in paragraph at lines 148--153
 ptm/m/n/10.95 ,
  []
 
-[16 <./images/firestore_colls.png> <./images/firestore_rule.png>]) [17]
+[16 <./images/firestore_colls.png> <./images/firestore_rule.png>]
+<images/class_diagram.png, id=398, 519.44063pt x 506.6428pt>
+File: images/class_diagram.png Graphic file (type png)
+<use images/class_diagram.png>
+Package pdftex.def Info: images/class_diagram.png  used on input line 175.
+(pdftex.def)             Requested size: 273.1835pt x 266.44757pt.
+) [17 <./images/class_diagram.png>]
 \openout2 = `kovetkeztetesek.aux'.
 
-
-(kovetkeztetesek.tex
+ (kovetkeztetesek.tex
 8. fejezet
 ) [18
 
@@ -1631,19 +1639,25 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
 (kovetkeztetesek.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
-Package rerunfilecheck Info: File `GRoutes.out' has not changed.
-(rerunfilecheck)             Checksum: 280190A7BF407941D6F77EFFF4ACF860;7313.
 
+
+Package rerunfilecheck Warning: File `GRoutes.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `GRoutes.out':
+(rerunfilecheck)             Before: E0825E94C7C51A7BF3CA242BF8D7E7B3;7454
+(rerunfilecheck)             After:  F5977BF6CE95E27D81C13A9B2806ED52;7930.
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
  ) 
 Here is how much of TeX's memory you used:
- 25951 strings out of 493308
- 473492 string characters out of 3138768
+ 25962 strings out of 493308
+ 473716 string characters out of 3138768
  587767 words of memory out of 3000000
- 28852 multiletter control sequences out of 15000+200000
+ 28857 multiletter control sequences out of 15000+200000
  73015 words of font info for 82 fonts, out of 3000000 for 9000
  1199 hyphenation exceptions out of 8191
  55i,9n,69p,1404b,589s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1657,9 +1671,9 @@ c/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
 Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/t
 imes/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on GRoutes.pdf (22 pages, 368493 bytes).
+Output written on GRoutes.pdf (22 pages, 416090 bytes).
 PDF statistics:
- 463 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
- 432 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 475 PDF objects out of 1000 (max. 8388607)
+ 93 named destinations out of 1000 (max. 500000)
+ 445 words of extra memory for PDF output out of 10000 (max. 10000000)
 
