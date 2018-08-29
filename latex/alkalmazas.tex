@@ -35,20 +35,23 @@ A főmenüből négy különböző oldalra navigálhatunk tovább: a keresési f
 
 \subsection{Keresési felület}
 
-\subsection{Térkép felület}
+Ezen a felületen van lehetőségünk útvonalak, helyszínek keresésére. Az "+" gomb megjelnít egy új mezőt, ahol további címeket adhatunk meg. A "nagyító" gomb a térkép felületre navigál, és kirajzolja a tervezett útvonalat. A keresés elindítása előtt, minden cím mellett van egy "térkép" gomb, ennek segítségével tudjuk megnézni, hogy valóban az az a hely, amire gondoltunk.
 
-Ez a felulet akkor jelenik meg, amikor megerintjuk a terkep gombot egy helyszin vagy egy elmentett utvonal mellett, valamint a keresesi felulet eredmenye is itt jelenik meg.
-Amennyiben egy helyintol erkezunk, megjelenik egy jelzo (marker) az adott koordinatan.
-A csillag gomb segitsegevel hozzaadhatunk egy utvonalat a kedvencek koze, ahol kesobb modosithatjuk a nevet.
+\subsection{Kedvencek}
+ 
+ Itt jelennek meg az általunk manuálisan elmentett utak, helyszínek. Minden bejegyzésnél négy gomb jelenik meg, ezeknek az funkcióik a következők:
+ 
+ \begin{description}
+ 	\setlength{\itemsep}{0.04mm}
+ 	\item[térkép] -- megjeleníti a térkép felületet, ahol ráközelít a helyszín koordinátáira, vagy kirajzolja az útvonalat.
+ 	\item[nagyító] -- a keresési felülethez navigál és kitölti a keresési mezőket, az útvonal csomópontjaíval, így a felhasználó könnyedén módosíthatja útvonaltervét.
+ 	\item[ceruza] -- módosítja a bejegyzés nevét.
+ 	\item[szemetes veder] -- törli a bejegyzést, ezáltal az adatbázisból is törlődni fog.
+ \end{description}
 
 \subsection{Múltbeli keresések}
 
-A keresési felület eredményéül kapott útvonalak megjelennek a múltbeli keresések menüpont alatt. Alapértelmezetten, a bejegyzések neve a keresési dátum és időpont lesz. Az "X" gombot megérintve törölhetünk egy bejegyzést, ezáltal az adatbázisból is törlődni fog. A "térkép" gomb megjeleníti a térkép felületet, ahol kirajzolódik az útvonal. Ez a felület a fentebb említett funkcionalitásokkal rendelkezik.
-
-\subsection{Kedvencek}
-A kedvencek felulet
-
-Itt harom muveletet hajthatunk vegre, mindegyiknek megfelel egy gomb.
+A keresési felület eredményéül kapott útvonalak megjelennek a múltbeli keresések menüpont alatt, nevüket a keresési dátum és időpont alkotja. A bejegyzéseknél a "Kedvenceknél" tárgyalt gombok találhatóak, azonos funkcióval, azzal a kivétellel, hogy a "ceruza" gombot a "csillag" helyettesíti, melynek segítségével elmenthetünk egy útvonalat a kedvencek közé.
 
 \subsection{Beállítások}
 
@@ -63,6 +66,17 @@ Ugyanitt megadhatjuk az alapértelmezett utazási módot, ami lehet gyaloglás, 
 Bár az egyszerűség kedvéért igyekeztem sok írás helyett szimbólumokat tenni a gombokra, de az applikációban található kevés szövegnek a nyelvét szintén itt lehet beállítani.
 
 A térképpel, navigációval kapcsolatos paraméterek módosítására is van lehetőség, mint példaul az alapértelmezett nagyítás, a pozíció lekérésének gyakorisága, a térképre való automatikus ránagyítás és ennek centralizálásának a gyakorisága navigáció közben, valamint a megtett út kirajzolásának a mennyisége.
+
+\subsection{Térkép felület}
+
+Ez a felület akkor jelenik meg, amikor megérintjük a térkép gombot egy helyszín vagy egy útvonal mellett, valamint a keresési felület eredménye is itt rajzolódik ki.
+Amennyiben egy helyszíntől érkezünk, megjelenik egy \(marker\)%
+\footnote{ %
+	jelző
+}  %
+az adott koordinátán.
+
+A "csillag" gomb segítségével hozzáadhatunk egy helyszínt vagy egy útvonalat a kedvencekhez, ahol később visszanézhetjük, módosíthatjuk a nevét. Alapértelmezetten, a bejegyzések neve a keresési dátum és időpont lesz. A "nagyító" gomb segítségével visszatérhetünk a keresési felületre, így könnyedén módosíthatjuk tervezett útvonalunkat. Az "navigáció" gomb segítségével elkezdhetünk navigálni a tervezett útvonalon.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Adatbázis}\label{sec:ALAP:adatelem}
