@@ -23,8 +23,6 @@
 
 Az alkalmazás elindítása után egy bejelentkezési felület fogadja a felhasználót. Itt kell megadni az e-mail címet, valamint a jelszót amivel a felhasználó regisztrált. Amennyiben elfelejtette a jelszavát, az "elfelejtett jelszó" gomb megnyomásával lehetőség van egy jelszó-visszaállító e-mail kiküldésére. 
 
-
-
 Ha egy új felhasználó szeretné igénybe venni az applikáció szolgáltatásait, akkor regisztrálnia kell. Ezt megteheti a regisztráció lapra való navigálás után, melyet a cím megérintésével, vagy a képernyőn az ujjának balra történő húzásával érheti el. Az e-mail cím és az új jelszó megadása után, a felhasználó egyből a főmenübe érkezik, mindeközben azonban egy aktivációs e-mailt is kap arra a címére, amivel regisztrált. A későbbiekben csak akkor fog tudni bejelentkezni, ha a kapott emailben az URL%
 \footnote{ %
 	Uniform Resource Locator, más néven webcím
@@ -33,27 +31,19 @@ Ha egy új felhasználó szeretné igénybe venni az applikáció szolgáltatás
 
 \subsection{Főmenü}
 
-A fomenubol negy kulonbozo oldalra navigalhatunk tovabb: a keresesi felulet, a regebbi keresesek megtekintese, a kedvencek menedzselese valamint a beallitasok.
-Az otodik (csoportok) oldal egy jovobeli funkcionalitas kifejlesztesere van fenntartva.
+A főmenüből négy különböző oldalra navigálhatunk tovább: a keresési felület, a régebbi keresések megtekintése, a kedvencek menedzselése, valamint a beállítások. Az ötödik (csoportok) oldal egy jövőbeli funkcionalitás kifejlesztésére van fenntartva.
 
 \subsection{Keresési felület}
-A keresesi felulet
 
 \subsection{Térkép felület}
 
-Terkep felulet
 Ez a felulet akkor jelenik meg, amikor megerintjuk a terkep gombot egy helyszin vagy egy elmentett utvonal mellett, valamint a keresesi felulet eredmenye is itt jelenik meg.
 Amennyiben egy helyintol erkezunk, megjelenik egy jelzo (marker) az adott koordinatan.
 A csillag gomb segitsegevel hozzaadhatunk egy utvonalat a kedvencek koze, ahol kesobb modosithatjuk a nevet.
 
 \subsection{Múltbeli keresések}
-A multbeli keresesek felulete
 
-A keresesi felulet eredmenyeul kapott utvonalak megjelennek a multbeli keresesek menupont alatt.
-Alapertelmezetten a bejegyzesek neve a keresesi datum es idopont lesy. 
-Az X gombot megerintve torolhetunk egy bejegyzest, ezaltal az adatbazisbol is torlodni fog.
-A terkep gomb megjeleniti a terkep feluletet, ahol kirajzolodik az utvonal. Ez a felulet a fentebb emlitett funkcionalitasokkal rendelkezik.
-
+A keresési felület eredményéül kapott útvonalak megjelennek a múltbeli keresések menüpont alatt. Alapértelmezetten, a bejegyzések neve a keresési dátum és időpont lesz. Az "X" gombot megérintve törölhetünk egy bejegyzést, ezáltal az adatbázisból is törlődni fog. A "térkép" gomb megjeleníti a térkép felületet, ahol kirajzolódik az útvonal. Ez a felület a fentebb említett funkcionalitásokkal rendelkezik.
 
 \subsection{Kedvencek}
 A kedvencek felulet
@@ -61,17 +51,18 @@ A kedvencek felulet
 Itt harom muveletet hajthatunk vegre, mindegyiknek megfelel egy gomb.
 
 \subsection{Beállítások}
-Beallitasok
 
-Itt ki tudjuk valasztani a limitet, hogy mennyi csomopont eseten melyik algoritmust hasynalja az alkalmazas.
-A megadott szamnal kisebb vagy egyenlo szamu csomopontok eseten a Concorde-nevu egzakt megoldasokat nyujto algoritmus fogja kicsamolni az idealis utvonalat.
-Ez az algoritmus a legpontosabb megoldasokat nyujtja, azonban az utazo ugynok problemajanak komplexitasa miatt, a csomopontok novekedesevel, a vegrehajtasi ido exponentialisan novekszik.
-Amennyiben a felhasznalo nagyon sok csomoponttal szeretne dolgozni es fontosabb neki az hogy belathato idon belul egy elfogadhato megoldast kapjon, de nem problema ha nem a leghatekonyabb utvonal rajzolodik ki,
-akkor a megadott szam feletti mennyisegu csomopontok eseten ay applikacio egy ugynevezett greedy algoritmust fog hasznalni, amely polinomialis komplexitassal rendelkezik, ez nagysagrendekkel gyorsabb az exponencialioshoz viszonyitva.
+Itt ki tudjuk választani a limitet, hogy mennyi csomópont esetén, melyik algoritmust használja az alkalmazás. A megadott számnál kisebb vagy egyenlő számú csomópontok esetén a \(Concorde\) nevű egzakt megoldásokat nyújtó algoritmus fogja kiszámolni az ideális útvonalat. Ez az algoritmus a legpontosabb megoldásokat nyújtja, azonban az "utazó ügynök" problémájának komplexitása miatt, a csomópontok növekedésével, a végrehajtási idő is exponenciálisan növekszik. Amennyiben a felhasználó nagyon sok csomóponttal szeretne dolgozni, és fontosabb neki az, hogy belátható időn belül egy elfogadható megoldást kapjon, de nem probléma, ha nem a leghatékonyabb útvonal rajzolódik ki, akkor a megadott szám feletti mennyiségű csomópontok esetén, az applikáció egy úgynevezett \(greedy\)%
+\footnote{ %
+	mohó
+}  %
+ algoritmust fog használni. Ez nagyságrendekkel gyorsabb az exponenciálishoz viszonyítva, azonban nem minden esetben nyújtja a legjobb megoldást.
 
-Ugyanitt megadhatjuk az alapertelmezett utazasi modot, ami lehet gyaloglas, valamint vezetes.
+Ugyanitt megadhatjuk az alapértelmezett utazási módot, ami lehet gyaloglás, valamint vezetés.
 
-Bar az egyszeruseg kedveert igyekeztem sok iras helyett szimbolumokat tenni a gombokra, de az applikacioban talalhato keves szovegnek a nyelvet szinten itt lehet beallitani.
+Bár az egyszerűség kedvéért igyekeztem sok írás helyett szimbólumokat tenni a gombokra, de az applikációban található kevés szövegnek a nyelvét szintén itt lehet beállítani.
+
+A térképpel, navigációval kapcsolatos paraméterek módosítására is van lehetőség, mint példaul az alapértelmezett nagyítás, a pozíció lekérésének gyakorisága, a térképre való automatikus ránagyítás és ennek centralizálásának a gyakorisága navigáció közben, valamint a megtett út kirajzolásának a mennyisége.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Adatbázis}\label{sec:ALAP:adatelem}
