@@ -41,6 +41,8 @@
 \select@language {magyar} \contentsline {subsection}{\numberline {7.1.6}Be\IeC {\'a}ll\IeC {\'\i }t\IeC {\'a}sok}{14}{subsection.7.1.6}
 \select@language {magyar} \contentsline {subsection}{\numberline {7.1.7}T\IeC {\'e}rk\IeC {\'e}p fel\IeC {\"u}let}{15}{subsection.7.1.7}
 \select@language {magyar} \contentsline {section}{\numberline {7.2}Adatb\IeC {\'a}zis}{15}{section.7.2}
-\select@language {magyar} \contentsline {section}{\numberline {7.3}Oszt\IeC {\'a}lyok}{15}{section.7.3}
-\select@language {magyar} \contentsline {section}{\numberline {7.4}Felmer\IeC {\"u}l\IeC {\H o} probl\IeC {\'e}m\IeC {\'a}k}{15}{section.7.4}
-\select@language {magyar} \contentsline {chapter}{\numberline {8}K\IeC {\"o}vetkeztet\IeC {\'e}sek}{16}{chapter.8}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.2.1}Autentik\IeC {\'a}ci\IeC {\'o}}{15}{subsection.7.2.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.2.2}Kollekci\IeC {\'o}k, Dokumentumok}{16}{subsection.7.2.2}
+\select@language {magyar} \contentsline {section}{\numberline {7.3}Oszt\IeC {\'a}lyok}{17}{section.7.3}
+\select@language {magyar} \contentsline {section}{\numberline {7.4}Felmer\IeC {\"u}l\IeC {\H o} probl\IeC {\'e}m\IeC {\'a}k}{17}{section.7.4}
+\select@language {magyar} \contentsline {chapter}{\numberline {8}K\IeC {\"o}vetkeztet\IeC {\'e}sek}{18}{chapter.8}

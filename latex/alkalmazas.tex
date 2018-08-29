@@ -81,6 +81,82 @@ A "csillag" gomb segítségével hozzáadhatunk egy helyszínt vagy egy útvonal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Adatbázis}\label{sec:ALAP:adatelem}
 
+ \begin{wrapfigure}{l}{0.5\linewidth}
+	\centering
+	\setlength{\abovecaptionskip}{0pt}
+	\setlength{\belowcaptionskip}{0pt}
+	\includegraphics[width=0.5\textwidth]{images/firebase_gradle}
+	\caption{A Firebase függőségei\label{fig:ALAP:sm2}}
+\end{wrapfigure}
+
+Adatbázisnak és az autentikáció menedzselésére Firebase-t használtam. Mielőtt bármilyen funkcióját is használhatnám ennek az applikációfejlesztési platformnak, be kellett jelentkezzek a Google felhasználómmal, csinálnom kellett egy projektet, majd ezt a projektet össze kellett kapcsolnom magával az applikációval amit fejleszteni szerettem volna. Van egy külön \(plugin\)%
+\footnote{ %
+	kiegészítés
+}  %
+ az \(Android Studio\)%
+ \footnote{ %
+ 	fejlesztési környezet android applikációk számára
+ }  %
+-ban, melynek segítségével könnyedén létre lehet hozni a ezt kapcsolatot. Előtte azonban az applikáció Gradle állományába be kellett jelentsem a \(core\), \(auth\) és \(firestore\) modulokat, mint függőségeket.
+ 
+
+ 
+
+\subsection{Autentikáció}
+
+A web-es felületen engedélyeznem kellett az e-mail/jelszó bejelentkezést. Ugyanitt állítottam be, hogy biztonsági okokból maximum hány regisztrációt engedjen a rendszer óránként ugyanarról az IP címről, jelenleg ez 100. Regisztációkor generálódik egy egyedi felhasználói ID, ennek segítségével oldom meg, hogy minden felhasználó csak a saját adataihoz férjen hozzá. A bejelentkezés, regisztráció, jelszó visszaállító e-mail küldése műveleteket a FirebaseAuth \(singleton\)%
+\footnote{ %
+	egy tervezési minta, az adott osztályból egy és csak is egy objektumot lehet létrehozni
+}  %
+ osztály metódusaival oldottam meg.
+ 
+ \begin{description}
+ 	\setlength{\itemsep}{0.04mm}
+ 	\item[createUserWithEmailAndPassword(email, jelszó)] -- kreál egy felhasználót az e-mail és jelszó karakterlánc paraméterek segítségével, majd sikeres válasz után be is jelentkezik
+ 	\item[signInWithEmailAndPassword(email, jelszó)] -- megpróbál bejelentkezni a megadott e-mail/jelszó kombinációval
+ 	\item[sendPasswordResetEmail(email)] -- küld egy jelszó visszaállító e-mailt a paraméterként megadott címre.
+ \end{description}
+
+Az aktiváviós e-mail küldéséhez a FirebaseUser osztály insztanciájának a sendEmailVerification() metódusát használtam.
+
+\subsection{Kollekciók, Dokumentumok}
+
+\begin{wrapfigure}{l}{0.6\linewidth}
+	\centering
+	\setlength{\abovecaptionskip}{0pt}
+	\setlength{\belowcaptionskip}{0pt}
+	\includegraphics[width=0.6\textwidth]{images/firestore_colls}
+	\caption{Firestore kollekciók\label{fig:ALAP:sm2}}
+\end{wrapfigure}
+
+A Firestore egy még Beta%
+\footnote{ %
+	még tesztelés alatt van
+}  %
+ verzióban levő no-sql, kulcs-érték párokra alapuló adatbázis, mely a Firebase platformon érhető el. Építőelemei a kollekciók és a dokumentumok, ezek váltakozva követik egymást, mivel egy kollekció csak dokumentumokat tartalmazhat, egy dokumentom viszont a kollekciók mellett adatokat (kulcs-érték párok) is tartalmazhat. 
+ 
+ \begin{wrapfigure}{l}{0.6\textwidth}
+ 	\centering
+ 	\setlength{\abovecaptionskip}{0pt}
+ 	\setlength{\belowcaptionskip}{0pt}
+ 	\includegraphics[width=0.6\textwidth]{images/firestore_rule}
+ 	\caption{Firestore szabály\label{fig:ALAP:sm2}}
+ \end{wrapfigure}
+ 
+Minden felhasználónak csak a saját dokumentumához van hozzáférése. Ezt egy úgynevezett szabály meghatározásával lehet elérni. Az adatbázis minden beérkező függvényhívást kiértékel a szabály alapján, és eldönti, hogy az adott kérésnek van-e elegendő jogosultsága. Amennyiben nincs, csak egy hibaüzenetet térít vissza.
+
+ A GRoutes alkalmazás esetében a következőképpen építettem fel a struktúrát: vagy egy \(users\) kollekció, amely a felhasználókat tartalmazza. Minden felhasználói dokumentumnak az ID-ja megegyezik az UID%
+\footnote{ %
+	egyedi felhasználói ID, ami regisztrációkor generálódik
+}  %
+-val. A felhasználói dokumentumok a \(favPlaces\), \(favouriteRoutes\) és \(history\) kollekciókat tartalmazzák, melyek rendre megfelelnek a "kedvenc helyek", "kedvenc útvonalak" és "múltbeli útvonalak" fogalmaknak. Ezek a kollekciók tartalmazzák a különböző bejegyzéseknek (helyek, útvonalak) megfelelő dokumentumokat, melyek magukat az adatokat tartalmazzák. Az adatok sajátos entitás objektumok, melyeket a kódban, bizonyos szabályok alapján, de az én elképzelésem szerint hoztam létre. 
+
+
+Egy út tartalmaz egy hely objektumokból álló tömböt a csomópontok számontartására, egy indexekből álló tömböt a csomópontok sorrendjének tárolására, valamint egy név mezőt.
+
+Egy hely objektum tartalmaz egy-egy karakterlánc típusú név és cím mezőt, valamint egy GeoPoint objektumot, ami a hely főldrajzi szélességi és hosszúsági fokait tárolja.
+ 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Osztályok}\label{sec:ALAP:adatelem}
 

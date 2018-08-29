@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.8.25)  29 AUG 2018 19:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.8.25)  29 AUG 2018 21:44
 entering extended mode
 **./GRoutes.tex
 (GRoutes.tex
@@ -1196,6 +1196,18 @@ LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
 LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
 
 
+LaTeX Warning: Label `fig:ALAP:sm2' multiply defined.
+
+
+LaTeX Warning: Label `fig:ALAP:sm2' multiply defined.
+
+
+LaTeX Warning: Label `fig:ALAP:sm2' multiply defined.
+
+
+LaTeX Warning: Label `fig:ALAP:sm2' multiply defined.
+
+
 LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
 
 
@@ -1475,7 +1487,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 39--39
 
  (alkalmazas.tex
 7. fejezet
-<images/login.png, id=337, 277.78781pt x 300.3722pt>
+<images/login.png, id=347, 277.78781pt x 300.3722pt>
 File: images/login.png Graphic file (type png)
 <use images/login.png>
 Package pdftex.def Info: images/login.png  used on input line 20.
@@ -1514,12 +1526,93 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 76--76
 [] 
  []
 
-) [15]
+<images/firebase_gradle.png, id=364, 521.69907pt x 61.73062pt>
+File: images/firebase_gradle.png Graphic file (type png)
+<use images/firebase_gradle.png>
+Package pdftex.def Info: images/firebase_gradle.png  used on input line 88.
+(pdftex.def)             Requested size: 227.6506pt x 26.93736pt.
+
+Underfull \hbox (badness 10000) detected at line 95
+\T1/ptm/m/n/8 4.
+ []
+
+
+Overfull \hbox (11.35796pt too wide) in paragraph at lines 95--95
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 99
+\T1/ptm/m/n/8 5.
+ []
+
+
+Overfull \hbox (11.35796pt too wide) in paragraph at lines 99--99
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 110
+\T1/ptm/m/n/8 6.
+ []
+
+
+Overfull \hbox (11.35796pt too wide) in paragraph at lines 110--110
+[] 
+ []
+
+[15 <./images/firebase_gradle.png>]
+<images/firestore_colls.png, id=378, 576.65437pt x 255.20343pt>
+File: images/firestore_colls.png Graphic file (type png)
+<use images/firestore_colls.png>
+Package pdftex.def Info: images/firestore_colls.png  used on input line 128.
+(pdftex.def)             Requested size: 273.1835pt x 120.90356pt.
+
+Underfull \hbox (badness 10000) detected at line 135
+\T1/ptm/m/n/8 7.
+ []
+
+
+Overfull \hbox (11.35796pt too wide) in paragraph at lines 135--135
+[] 
+ []
+
+
+Package wrapfig Warning: Collision between wrapping environments on input line 
+138.
+
+<images/firestore_rule.png, id=380, 502.87875pt x 112.92188pt>
+File: images/firestore_rule.png Graphic file (type png)
+<use images/firestore_rule.png>
+Package pdftex.def Info: images/firestore_rule.png  used on input line 142.
+(pdftex.def)             Requested size: 273.1835pt x 61.34218pt.
+
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 14
+6.
+
+
+Underfull \hbox (badness 10000) detected at line 151
+\T1/ptm/m/n/8 8.
+ []
+
+
+Overfull \hbox (11.35796pt too wide) in paragraph at lines 151--151
+[] 
+ []
+
+
+Underfull \hbox (badness 2726) in paragraph at lines 148--153
+\T1/ptm/m/n/10.95 ná-lói do-ku-men-tu-mok a $\OML/cmm/m/it/10.95 favPlaces$\T1/
+ptm/m/n/10.95 ,
+ []
+
+[16 <./images/firestore_colls.png> <./images/firestore_rule.png>]) [17]
 \openout2 = `kovetkeztetesek.aux'.
 
- (kovetkeztetesek.tex
+
+(kovetkeztetesek.tex
 8. fejezet
-) [16
+) [18
 
 
 
@@ -1527,7 +1620,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 76--76
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [17
+) [19
 
 
 ]
@@ -1539,7 +1632,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
 Package rerunfilecheck Info: File `GRoutes.out' has not changed.
-(rerunfilecheck)             Checksum: C2822740B0CE79E26B5BBFCD2F45B03B;6995.
+(rerunfilecheck)             Checksum: 280190A7BF407941D6F77EFFF4ACF860;7313.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1547,10 +1640,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
  ) 
 Here is how much of TeX's memory you used:
- 25922 strings out of 493308
- 472900 string characters out of 3138768
+ 25951 strings out of 493308
+ 473492 string characters out of 3138768
  587767 words of memory out of 3000000
- 28838 multiletter control sequences out of 15000+200000
+ 28852 multiletter control sequences out of 15000+200000
  73015 words of font info for 82 fonts, out of 3000000 for 9000
  1199 hyphenation exceptions out of 8191
  55i,9n,69p,1404b,589s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1564,9 +1657,9 @@ c/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
 Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/t
 imes/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on GRoutes.pdf (20 pages, 313929 bytes).
+Output written on GRoutes.pdf (22 pages, 368493 bytes).
 PDF statistics:
- 424 PDF objects out of 1000 (max. 8388607)
- 76 named destinations out of 1000 (max. 500000)
- 401 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 463 PDF objects out of 1000 (max. 8388607)
+ 88 named destinations out of 1000 (max. 500000)
+ 432 words of extra memory for PDF output out of 10000 (max. 10000000)
 
