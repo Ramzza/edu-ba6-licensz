@@ -160,22 +160,95 @@ Egy hely objektum tartalmaz egy-egy karakterlánc típusú név és cím mezőt,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Osztályok}\label{sec:ALAP:adatelem}
 
+\begin{figure}
+	\centering
+	\setlength{\abovecaptionskip}{-10pt}
+	\setlength{\belowcaptionskip}{0pt}
+	\includegraphics[width=1\textwidth]{images/class_diagram}
+	\caption{Osztálydiagramm\label{fig:ALAP:sm2}}
+\end{figure}
+
 \subsection{Activity-k}\label{sec:ALAP:adatelem}
+
+Egy android applikációban a UI%
+\footnote{ %
+	user interface - felhasználói felület
+}  %
+-t XML%
+\footnote{ %
+	Extensible Markup Language - Kiterjeszthető Jelölő Nyelv
+}  %
+állományok segítségével szerkeszthetjük meg, ezek azonban csak a külalakot adja meg. A háttérben végrehajtódó logikáért az Activity osztályok felelnek. A GRoutes alkalmazás különböző használati eseteihez más-más \(activity\) és XML állománypár tartozik.
+
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[LoginTabActivity] -- ez a bejelentkezési felület, tehát ez fogad minket az alkalmazás indításakor. Itt történik az e-mail és a jelszó mezők validálása, formátum ellenőrzése a bejelentkezési próbálkozás előtt. Használja a DatabaseAssist autentikációval foglalkozó metódusait, majd a válasz visszaérkezése után a LoggedInActivity-hez navigál.
+	\item[LoggedInActivity] -- ez a főmenü. Amint beléptünk ide, a háttérben betöltjük a felhasználó adatait (múltbeli keresések, kedvencek). Innen tudunk tovább navigálni a főbb menüpontokhoz.
+	\item[FavActivity] --  ez a "Kedvencek" felület. Mivel itt már komplexebb műveleteket kell végrehajtani, ezért azokat egy segédosztályba csoportosítottam, egy köztes réteget létrehozva a UI és az adatbázissal foglalkozó osztály között.
+	\item[HistoryActivity] -- ez a "múltbeli keresések" menüpont, rendelkezik segédosztállyal 
+	\item[MultiRouteActivity] -- ez felel az útvonalak kirajzolásáért, rendelkezik segédosztállyal 
+	\item[SearchActivity] -- ez a keresés menüpont, rendelkezik segédosztállyal 
+	\item[ShowMapActivity] -- a helyek megjelenítéséért felel
+\end{description}
 
 \subsection{Assist osztályok}\label{sec:ALAP:adatelem}
 
+Általánosan, az alábbi segédosztályok végzik el a különböző Activity-k feladatait. Továbbá ők vannak kapcsolatban a CacheManager osztállyal, amely az adatok frissen tartásáért felel.
+
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[FavAssist] -- feltölti adatokkal a "Kedvencek" felületet, dinamikusan beágyazza az XML-be a bejegyzéseket, továbbítja az activity módosítási, törlési szándékait a CacheManagernek
+	\item[HistoryAssist] -- a FavAssist osztályhoz hasonló feladatokat végez el a HistoryActivity-nek. Egy múltbeli keresés kedvencekhez való hozzáadását is lemenedzseli
+	\item[MultiRoutAssist] -- lekéri a csomópontok közti útvonalat a DirectionApi segítségével, majd kirajzolja a tervezett útvonalat a Polyline%
+	\footnote{ %
+		vonallánc
+	}  %
+ osztály használatával. A navigálásért is felel.
+	\item[SearchAssist] -- feldolgozza a keresési címeket, majd a megfelelő adatstruktúrát lekommunikálja a CacheManager-nek
+\end{description}
+
 \subsection{Általános segédosztályok}\label{sec:ALAP:adatelem}
+
+A fontosabb általános műveletek végrehajtására létrehoztam néhány Singleton mintára készült segédosztályt.
+
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[DatabaseAssist] -- ez felel mindenféle Firebase-el kapcsolatos kommunikációért. Feladatai közé tartozik a regisztráció, bejelentkezés, az ezekkel kapcsolatos e-mail küldések, valamint a CRUD operációk elvégzése.
+	\item[CacheManager] -- a köztopnti adatmenedzselő osztály. Ő tölti be, aktualizálja, szolgálja ki a segédosztályokat az adatokkal, továbbítja kéréseiket a DatabaseAssist-nak. A LoginTabActivity kivételével csak ő áll kapcsolatban a DatabaseAssist segédosztállyal.
+	\item[RouteCalculator] -- az optimális útvonal meghatározásáért felel (az utazó ügynök problémájának megoldása)
+\end{description}
 
 \subsection{Entitás osztályok}\label{sec:ALAP:adatelem}
 
-\begin{figure}
-	\centering
-	\setlength{\abovecaptionskip}{0pt}
-	\setlength{\belowcaptionskip}{0pt}
-	\includegraphics[width=0.6\textwidth]{images/class_diagram}
-	\caption{Osztálydiagramm\label{fig:ALAP:sm2}}
-\end{figure}
+Az alkalmazás két nagyon fontos logikai struktúrát használ: helyek és útvonalak. Ezekkel több műveletet is kell végezni, mint például átalakítások, keresések, bizonyos paraméter alapján történő módosítások. Ezért számukra létrehoztam egy-egy entitás osztályt. 
+
+A Firestore-ba való egyszerű mentés érdekében bizonyos kritériumoknak meg kell felelniük: rendelkezniük kell egy paraméter nélküli publikus konstruktorral, valamint az elmenteni kívánt attríbútumoknak publikus \(getter\) metódusokkal. Ezért azoknak az attribútumoknak a \(getter\) metódusait, amelyeket nem kívántam elmenteni, átneveztem úgy, hogy a \(ret%
+\footnote{ %
+	return - visszatérít
+}  %
+-\) prefixet használtam.
+
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[PlaceEntity] -- három attribútuma van: egy String típusú név, egy GeoPoint típusú (magába foglalja a földrajzi szélességi és hosszúsági fokokat) helyszín és egy String típusú cím
+	\item[RouteEntity] -- négy attribútuma van: egy String típusú ID (az adatbázisban történő azonosításra), egy String típusú név, egy egész számokból álló ArrayList típusú sorrend (a csomópontok bejárási sorrendjének tárolására) valamint egy helszínekből álló ArrayList típusú csomópont (csomópontok tárolása)
+\end{description}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Felmerülő problémák}\label{sec:ALAP:adatelem}
 
+
+\subsection{Aszinkron függvényhívások}\label{sec:ALAP:adatelem}
+
+Több olyan használati eset van, amikor egy bizonyos metódus az interneten keresztül kommunikál. Ez mindig okozhat problémákat, de a szinkronhívásokat kivételkezeléssel egyszerúen meg lehet oldani. Több esetben, mint például a bejelentkezéskor vagy az adatok lekérdezésekor, a program nem vár a válaszra, hanem tovább végzi a következő műveleteket. Ez olyan helyzetekhez vezethet, hogy megnyitunk egy felületet és még nincsenek beöltve az adataink. 
+
+Ezt a problémát úgy oldottam meg, hogy a DatabaseAssist osztály fog utólag jelezni annak az osztálynak ahonnan a kérés érkezett, amint választ kapott.
+
+
+\subsection{Adatok aktualizálása az activity-k között}\label{sec:ALAP:adatelem}
+
+Mivel az applikáció több különböző pontján van lehetőség az adatok hozzáadására, módosítására, törlésére, ezért fontos, hogy mindig, mindenhol a legfrissebb adatok birtokában legyünk.
+
+Ezért vezettem be a CacheManager osztályt. Ez nem csak tárolja az aktuális adatokat, hanem az első lekérdezés kivételével, minden adatbázisműveletet lokálisan is elvégez, így a felhasználónak nem kell várnia, hogy a "múltbeli keresések" menüpont alatt megjelenjen a friss keresés, mivel azonnal hozzá lesz adva. Ellenkező esetben meg kéne várni, míg elmentjük az adatokat, majd lekérdezzük őket.

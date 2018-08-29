@@ -46,7 +46,9 @@
 \select@language {magyar} \contentsline {section}{\numberline {7.3}Oszt\IeC {\'a}lyok}{17}{section.7.3}
 \select@language {magyar} \contentsline {subsection}{\numberline {7.3.1}Activity-k}{17}{subsection.7.3.1}
 \select@language {magyar} \contentsline {subsection}{\numberline {7.3.2}Assist oszt\IeC {\'a}lyok}{17}{subsection.7.3.2}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.3.3}\IeC {\'A}ltal\IeC {\'a}nos seg\IeC {\'e}doszt\IeC {\'a}lyok}{17}{subsection.7.3.3}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.3.4}Entit\IeC {\'a}s oszt\IeC {\'a}lyok}{17}{subsection.7.3.4}
-\select@language {magyar} \contentsline {section}{\numberline {7.4}Felmer\IeC {\"u}l\IeC {\H o} probl\IeC {\'e}m\IeC {\'a}k}{17}{section.7.4}
-\select@language {magyar} \contentsline {chapter}{\numberline {8}K\IeC {\"o}vetkeztet\IeC {\'e}sek}{18}{chapter.8}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.3.3}\IeC {\'A}ltal\IeC {\'a}nos seg\IeC {\'e}doszt\IeC {\'a}lyok}{19}{subsection.7.3.3}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.3.4}Entit\IeC {\'a}s oszt\IeC {\'a}lyok}{19}{subsection.7.3.4}
+\select@language {magyar} \contentsline {section}{\numberline {7.4}Felmer\IeC {\"u}l\IeC {\H o} probl\IeC {\'e}m\IeC {\'a}k}{19}{section.7.4}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.4.1}Aszinkron f\IeC {\"u}ggv\IeC {\'e}nyh\IeC {\'\i }v\IeC {\'a}sok}{19}{subsection.7.4.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.4.2}Adatok aktualiz\IeC {\'a}l\IeC {\'a}sa az activity-k k\IeC {\"o}z\IeC {\"o}tt}{20}{subsection.7.4.2}
+\select@language {magyar} \contentsline {chapter}{\numberline {8}K\IeC {\"o}vetkeztet\IeC {\'e}sek}{21}{chapter.8}
