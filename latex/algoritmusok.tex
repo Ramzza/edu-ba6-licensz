@@ -13,13 +13,54 @@
 
 \subsection{Brute force}
 
+A legegyszerűbb megközelítés, az összes permutációt kipróbálni, és kiválasztani ezek közül a legjobbat. Ennek a komplexitása azonban \(O(n!)\), így ezt már 20 városnál se lehet alkalmazni.
+
+
 \subsection{Held-Karp algoritmus}
 
+Az algoritmus komplexitása a legrosszabb esetben \(O(n^2*2^n)\).
+
+Legyen \(S \subseteq {2, \dots, N}\) részhalmaza a városoknak, és \(c \in S\) úgy, hogy \(D(S,c)\) a minimális távolság kezdve az első várostól, meglátogatva az összes várost \(S\)-ből, majd visszaérve \(c\) városba.
+
+ha \(S = {c}\), akkor \(D(S,c) = d_{1,c}\), különben:
+
+\begin{equation}
+D(S,c) = min_{x \in S-c}(D(S - c,x)+d_{x,c})
+\end{equation}
+
+Ezután a minimális út az összes város érintésével:
+
+\begin{equation}
+M = min_{c \in \{2, \dots, N\}}(D(\{2, \dots, N\}, c)+d_{c, 1})
+\end{equation}
+
+Egy \{\(n_1, \dots, n_N\)\} út minimális, ha teljesíti:
+
+\begin{equation}
+M = (D(\{2, \dots, N\}, n_N)+d_{n_N, 1})
+\end{equation}
+
 \subsection{Concorde algoritmus}
+
+A \(Concorde\) algoritmus egzakt megoldást nyújt a TSP-re. Ennek segítségével megtalálták az optimális megoldást a TSPLIB%
+\footnote{ %
+	a TSP-re példa adatokat tartalmazó könyvtár
+}  %
+ mind a 110 példájára, ahol a legnagyobb 85900 várost tartalmaz.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Heurisztikus algoritmusok}\label{sec:ALAP:adatelem}
 
 \subsection{Greedy - legközelebbi szomszéd}
+
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[1. lépés] -- kezdjünk egy véletlenszerűen kiválasztott csomóponttal, melyet beállítunk aktuálisnak
+	\item[2. lépés] -- keressük meg a legrövidebb élet, amely összeköti az aktuális csúcsot, és egy meg nem látogatott \(V\) csúcsot
+	\item[3. lépés] -- beállítjuk \(V\)-t aktuális cs]csnak
+	\item[4. lépés] -- megjelöljük, hogy már meglátogattuk \(V\)-t
+	\item[5. lépés] -- ha minden csomópontot meglátogattunk, akkor algoritmus vége
+	\item[6. lépés] -- menjünk a 2. lépéshez
+\end{description}
 
 \subsection{Lin-Kernighan heurisztika}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.8.25)  30 AUG 2018 04:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.8.25)  30 AUG 2018 05:37
 entering extended mode
 **./GRoutes.tex
 (GRoutes.tex
@@ -1374,7 +1374,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.36 ...ne {7.1.4}Kedvencek}{16}{subsection.7.1.4}
+l.36 ...ne {7.1.4}Kedvencek}{17}{subsection.7.1.4}
                                                    [2
 
 ])
@@ -1484,16 +1484,26 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 24--24
 
  (algoritmusok.tex
 5. fejezet
-) [12
+
+Underfull \hbox (badness 10000) detected at line 48
+\T1/ptm/m/n/8 1.
+ []
+
+
+Overfull \hbox (11.35796pt too wide) in paragraph at lines 48--48
+[] 
+ []
+
+[12
 
 
 
-]
+]) [13]
 \openout2 = `technologiak.aux'.
 
  (technologiak.tex
 6. fejezet
-[13
+[14
 
 
 
@@ -1517,12 +1527,12 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 39--39
 [] 
  []
 
-) [14]
+) [15]
 \openout2 = `alkalmazas.aux'.
 
  (alkalmazas.tex
 7. fejezet
-<images/login.png, id=374, 277.78781pt x 300.3722pt>
+<images/login.png, id=385, 277.78781pt x 300.3722pt>
 File: images/login.png Graphic file (type png)
 <use images/login.png>
 Package pdftex.def Info: images/login.png  used on input line 20.
@@ -1537,7 +1547,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 29--29
 [] 
  []
 
-[15
+[16
 
 
 
@@ -1551,7 +1561,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 61--61
 [] 
  []
 
-[16]
+[17]
 Underfull \hbox (badness 10000) detected at line 76
 \T1/ptm/m/n/8 3.
  []
@@ -1561,7 +1571,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 76--76
 [] 
  []
 
-<images/firebase_gradle.png, id=392, 521.69907pt x 61.73062pt>
+<images/firebase_gradle.png, id=403, 521.69907pt x 61.73062pt>
 File: images/firebase_gradle.png Graphic file (type png)
 <use images/firebase_gradle.png>
 Package pdftex.def Info: images/firebase_gradle.png  used on input line 88.
@@ -1596,8 +1606,8 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 110--110
 [] 
  []
 
-[17 <./images/firebase_gradle.png>]
-<images/firestore_colls.png, id=406, 576.65437pt x 255.20343pt>
+[18 <./images/firebase_gradle.png>]
+<images/firestore_colls.png, id=417, 576.65437pt x 255.20343pt>
 File: images/firestore_colls.png Graphic file (type png)
 <use images/firestore_colls.png>
 Package pdftex.def Info: images/firestore_colls.png  used on input line 128.
@@ -1616,7 +1626,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 135--135
 Package wrapfig Warning: Collision between wrapping environments on input line 
 138.
 
-<images/firestore_rule.png, id=408, 502.87875pt x 112.92188pt>
+<images/firestore_rule.png, id=419, 502.87875pt x 112.92188pt>
 File: images/firestore_rule.png Graphic file (type png)
 <use images/firestore_rule.png>
 Package pdftex.def Info: images/firestore_rule.png  used on input line 142.
@@ -1641,8 +1651,8 @@ Underfull \hbox (badness 2726) in paragraph at lines 148--153
 ptm/m/n/10.95 ,
  []
 
-[18 <./images/firestore_colls.png> <./images/firestore_rule.png>]
-<images/class_diagram.png, id=420, 519.44063pt x 506.6428pt>
+[19 <./images/firestore_colls.png> <./images/firestore_rule.png>]
+<images/class_diagram.png, id=431, 519.44063pt x 506.6428pt>
 File: images/class_diagram.png Graphic file (type png)
 <use images/class_diagram.png>
 Package pdftex.def Info: images/class_diagram.png  used on input line 167.
@@ -1677,7 +1687,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 205--205
 [] 
  []
 
-[19] [20 <./images/class_diagram.png>]
+[20] [21 <./images/class_diagram.png>]
 Overfull \hbox (0.89204pt too wide) detected at line 228
 \T1/ptm/m/n/8 12.
  []
@@ -1687,12 +1697,12 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 228--228
 [] 
  []
 
-[21]) [22]
+[22]) [23]
 \openout2 = `kovetkeztetesek.aux'.
 
  (kovetkeztetesek.tex
 8. fejezet
-) [23
+) [24
 
 
 
@@ -1700,7 +1710,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 228--228
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [24
+) [25
 
 
 ]
@@ -1720,8 +1730,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
  ) 
 Here is how much of TeX's memory you used:
- 25974 strings out of 493308
- 473853 string characters out of 3138768
+ 25979 strings out of 493308
+ 473914 string characters out of 3138768
  587766 words of memory out of 3000000
  28859 multiletter control sequences out of 15000+200000
  73015 words of font info for 82 fonts, out of 3000000 for 9000
@@ -1729,17 +1739,19 @@ Here is how much of TeX's memory you used:
  55i,10n,69p,1404b,589s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8ac.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/t
-imes/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on GRoutes.pdf (27 pages, 436118 bytes).
+/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8ac.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/ti
+mes/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
+Output written on GRoutes.pdf (28 pages, 458833 bytes).
 PDF statistics:
- 517 PDF objects out of 1000 (max. 8388607)
- 103 named destinations out of 1000 (max. 500000)
+ 534 PDF objects out of 1000 (max. 8388607)
+ 108 named destinations out of 1000 (max. 500000)
  461 words of extra memory for PDF output out of 10000 (max. 10000000)
 
