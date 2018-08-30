@@ -11,42 +11,41 @@
 \select@language {magyar} \contentsline {subsection}{\numberline {3.4.4}K\IeC {\"o}nigsbergi hidak probl\IeC {\'e}m\IeC {\'a}ja}{9}{subsection.3.4.4}
 \select@language {magyar} \contentsline {subsection}{\numberline {3.4.5}Legr\IeC {\"o}videbb \IeC {\'u}t probl\IeC {\'e}ma}{9}{subsection.3.4.5}
 \select@language {magyar} \contentsline {chapter}{\numberline {4}Az utaz\IeC {\'o} \IeC {\"u}gyn\IeC {\"o}k probl\IeC {\'e}m\IeC {\'a}ja (TSP)}{10}{chapter.4}
-\select@language {magyar} \contentsline {section}{\numberline {4.1}A Hamilton k\IeC {\"o}rrel val\IeC {\'o} kapcsolat}{10}{section.4.1}
-\select@language {magyar} \contentsline {section}{\numberline {4.2}A probl\IeC {\'e}ma komplexit\IeC {\'a}sa}{10}{section.4.2}
-\select@language {magyar} \contentsline {section}{\numberline {4.3}Egzakt megold\IeC {\'a}sok}{10}{section.4.3}
-\select@language {magyar} \contentsline {section}{\numberline {4.4}Approxim\IeC {\'a}ci\IeC {\'o}k}{10}{section.4.4}
-\select@language {magyar} \contentsline {section}{\numberline {4.5}Aszimmetrikus TSP}{10}{section.4.5}
-\select@language {magyar} \contentsline {chapter}{\numberline {5}TSP algoritmusok}{11}{chapter.5}
-\select@language {magyar} \contentsline {section}{\numberline {5.1}Egzakt algoritmusok}{11}{section.5.1}
-\select@language {magyar} \contentsline {subsection}{\numberline {5.1.1}Brute force}{11}{subsection.5.1.1}
-\select@language {magyar} \contentsline {subsection}{\numberline {5.1.2}Held-Karp algoritmus}{11}{subsection.5.1.2}
-\select@language {magyar} \contentsline {subsection}{\numberline {5.1.3}Concorde algoritmus}{11}{subsection.5.1.3}
-\select@language {magyar} \contentsline {section}{\numberline {5.2}Heurisztikus algoritmusok}{11}{section.5.2}
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.1}Greedy - legk\IeC {\"o}zelebbi szomsz\IeC {\'e}d}{11}{subsection.5.2.1}
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.2}Lin-Kernighan heurisztika}{11}{subsection.5.2.2}
-\select@language {magyar} \contentsline {chapter}{\numberline {6}Technol\IeC {\'o}gi\IeC {\'a}k}{12}{chapter.6}
-\select@language {magyar} \contentsline {section}{\numberline {6.1}Android}{12}{section.6.1}
-\select@language {magyar} \contentsline {section}{\numberline {6.2}Gradle}{13}{section.6.2}
-\select@language {magyar} \contentsline {section}{\numberline {6.3}Firebase}{13}{section.6.3}
-\select@language {magyar} \contentsline {section}{\numberline {6.4}Maps API}{13}{section.6.4}
-\select@language {magyar} \contentsline {chapter}{\numberline {7}GRoutes - alkalmaz\IeC {\'a}s bemutat\IeC {\'a}sa}{14}{chapter.7}
-\select@language {magyar} \contentsline {section}{\numberline {7.1}Funkcionalit\IeC {\'a}sok}{14}{section.7.1}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.1.1}Bejelentkez\IeC {\'e}s}{14}{subsection.7.1.1}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.1.2}F\IeC {\H o}men\IeC {\"u}}{14}{subsection.7.1.2}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.1.3}Keres\IeC {\'e}si fel\IeC {\"u}let}{15}{subsection.7.1.3}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.1.4}Kedvencek}{15}{subsection.7.1.4}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.1.5}M\IeC {\'u}ltbeli keres\IeC {\'e}sek}{15}{subsection.7.1.5}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.1.6}Be\IeC {\'a}ll\IeC {\'\i }t\IeC {\'a}sok}{15}{subsection.7.1.6}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.1.7}T\IeC {\'e}rk\IeC {\'e}p fel\IeC {\"u}let}{16}{subsection.7.1.7}
-\select@language {magyar} \contentsline {section}{\numberline {7.2}Adatb\IeC {\'a}zis}{16}{section.7.2}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.2.1}Autentik\IeC {\'a}ci\IeC {\'o}}{16}{subsection.7.2.1}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.2.2}Kollekci\IeC {\'o}k, Dokumentumok}{17}{subsection.7.2.2}
-\select@language {magyar} \contentsline {section}{\numberline {7.3}Oszt\IeC {\'a}lyok}{18}{section.7.3}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.3.1}Activity-k}{18}{subsection.7.3.1}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.3.2}Assist oszt\IeC {\'a}lyok}{18}{subsection.7.3.2}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.3.3}\IeC {\'A}ltal\IeC {\'a}nos seg\IeC {\'e}doszt\IeC {\'a}lyok}{20}{subsection.7.3.3}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.3.4}Entit\IeC {\'a}s oszt\IeC {\'a}lyok}{20}{subsection.7.3.4}
-\select@language {magyar} \contentsline {section}{\numberline {7.4}Felmer\IeC {\"u}l\IeC {\H o} probl\IeC {\'e}m\IeC {\'a}k}{20}{section.7.4}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.4.1}Aszinkron f\IeC {\"u}ggv\IeC {\'e}nyh\IeC {\'\i }v\IeC {\'a}sok}{20}{subsection.7.4.1}
-\select@language {magyar} \contentsline {subsection}{\numberline {7.4.2}Adatok aktualiz\IeC {\'a}l\IeC {\'a}sa az activity-k k\IeC {\"o}z\IeC {\"o}tt}{21}{subsection.7.4.2}
-\select@language {magyar} \contentsline {chapter}{\numberline {8}K\IeC {\"o}vetkeztet\IeC {\'e}sek}{22}{chapter.8}
+\select@language {magyar} \contentsline {section}{\numberline {4.1}A probl\IeC {\'e}ma komplexit\IeC {\'a}sa}{10}{section.4.1}
+\select@language {magyar} \contentsline {section}{\numberline {4.2}Egzakt megold\IeC {\'a}sok}{10}{section.4.2}
+\select@language {magyar} \contentsline {section}{\numberline {4.3}Approxim\IeC {\'a}ci\IeC {\'o}k}{11}{section.4.3}
+\select@language {magyar} \contentsline {section}{\numberline {4.4}Aszimmetrikus TSP}{11}{section.4.4}
+\select@language {magyar} \contentsline {chapter}{\numberline {5}TSP algoritmusok}{12}{chapter.5}
+\select@language {magyar} \contentsline {section}{\numberline {5.1}Egzakt algoritmusok}{12}{section.5.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.1.1}Brute force}{12}{subsection.5.1.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.1.2}Held-Karp algoritmus}{12}{subsection.5.1.2}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.1.3}Concorde algoritmus}{12}{subsection.5.1.3}
+\select@language {magyar} \contentsline {section}{\numberline {5.2}Heurisztikus algoritmusok}{12}{section.5.2}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.1}Greedy - legk\IeC {\"o}zelebbi szomsz\IeC {\'e}d}{12}{subsection.5.2.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.2}Lin-Kernighan heurisztika}{12}{subsection.5.2.2}
+\select@language {magyar} \contentsline {chapter}{\numberline {6}Technol\IeC {\'o}gi\IeC {\'a}k}{13}{chapter.6}
+\select@language {magyar} \contentsline {section}{\numberline {6.1}Android}{13}{section.6.1}
+\select@language {magyar} \contentsline {section}{\numberline {6.2}Gradle}{14}{section.6.2}
+\select@language {magyar} \contentsline {section}{\numberline {6.3}Firebase}{14}{section.6.3}
+\select@language {magyar} \contentsline {section}{\numberline {6.4}Maps API}{14}{section.6.4}
+\select@language {magyar} \contentsline {chapter}{\numberline {7}GRoutes - alkalmaz\IeC {\'a}s bemutat\IeC {\'a}sa}{15}{chapter.7}
+\select@language {magyar} \contentsline {section}{\numberline {7.1}Funkcionalit\IeC {\'a}sok}{15}{section.7.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.1.1}Bejelentkez\IeC {\'e}s}{15}{subsection.7.1.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.1.2}F\IeC {\H o}men\IeC {\"u}}{15}{subsection.7.1.2}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.1.3}Keres\IeC {\'e}si fel\IeC {\"u}let}{16}{subsection.7.1.3}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.1.4}Kedvencek}{16}{subsection.7.1.4}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.1.5}M\IeC {\'u}ltbeli keres\IeC {\'e}sek}{16}{subsection.7.1.5}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.1.6}Be\IeC {\'a}ll\IeC {\'\i }t\IeC {\'a}sok}{16}{subsection.7.1.6}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.1.7}T\IeC {\'e}rk\IeC {\'e}p fel\IeC {\"u}let}{17}{subsection.7.1.7}
+\select@language {magyar} \contentsline {section}{\numberline {7.2}Adatb\IeC {\'a}zis}{17}{section.7.2}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.2.1}Autentik\IeC {\'a}ci\IeC {\'o}}{17}{subsection.7.2.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.2.2}Kollekci\IeC {\'o}k, Dokumentumok}{18}{subsection.7.2.2}
+\select@language {magyar} \contentsline {section}{\numberline {7.3}Oszt\IeC {\'a}lyok}{19}{section.7.3}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.3.1}Activity-k}{19}{subsection.7.3.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.3.2}Assist oszt\IeC {\'a}lyok}{19}{subsection.7.3.2}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.3.3}\IeC {\'A}ltal\IeC {\'a}nos seg\IeC {\'e}doszt\IeC {\'a}lyok}{21}{subsection.7.3.3}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.3.4}Entit\IeC {\'a}s oszt\IeC {\'a}lyok}{21}{subsection.7.3.4}
+\select@language {magyar} \contentsline {section}{\numberline {7.4}Felmer\IeC {\"u}l\IeC {\H o} probl\IeC {\'e}m\IeC {\'a}k}{21}{section.7.4}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.4.1}Aszinkron f\IeC {\"u}ggv\IeC {\'e}nyh\IeC {\'\i }v\IeC {\'a}sok}{21}{subsection.7.4.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {7.4.2}Adatok aktualiz\IeC {\'a}l\IeC {\'a}sa az activity-k k\IeC {\"o}z\IeC {\"o}tt}{22}{subsection.7.4.2}
+\select@language {magyar} \contentsline {chapter}{\numberline {8}K\IeC {\"o}vetkeztet\IeC {\'e}sek}{23}{chapter.8}
