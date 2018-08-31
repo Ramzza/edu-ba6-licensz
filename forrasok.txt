@@ -18,3 +18,5 @@ https://firebase.google.com/
 [3]Daniel-Marcus-Graph-Theory_-A-Problem-Oriented-Approach2008
 
 kasa zoltan grafalgoritmusok 2007
+
+https://github.com/jvkersch/pyconcorde
