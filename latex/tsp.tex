@@ -1,15 +1,37 @@
 %!TEX root = GRoutes.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{TSP algoritmusok}\label{ch:ALAP}
+\chapter{Az utazó ügynök problémája (TSP)}\label{ch:ALAP}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{osszefoglal}
-	Ebben a fejezetben az utazó ügynök problémáját megoldó algoritmusokat fogom részletesen tárgyalni.
-	
-\end{osszefoglal}
+
+Az utazó ügynök problémája magába foglalja a Hamilton-kör létezésnek a problémáját is. Adott valamennyi város, amelyeket az utazó ügynök úgy kell meglátogasson, hogy mindegyik városba egyszer és csakis egyszer menjen be, valamint érjen vissza a kiindulási pontba.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{A probléma komplexitása}\label{sec:ALAP:adatelem}
+
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[P] -- azokat a problémákat foglalja magába, melyeket egy determinisztikus Turing-gép polinomiális időben képes megoldani
+	\item[NP] -- azokat a problémákat foglalja magába, melyeket egy nem-determinisztikus Turing gép polinomiális időben képes megoldani. Ezeknek a megoldását polinomiális időn belül le lehet ellenőrizni determinisztikus Turing-géppel.
+	\item[NP-nehéz] -- egy probléma amely "legalább olyan nehéz, mint a legnehezebb probléma az NP-ben"
+	\item[NP-teljes] -- egy probléma NP-teljes ha úgy az NP, mint az NP-nehéz halamznak is eleme, így tehát ezek a legnehezebb komputacionális problémák
+\end{description}
+
+
+Az utazó ügynök problémája magába foglalja a Hamilton kör problémáját is, ami NP-teljes, így tehát a TSP%
+\footnote{ %
+	travelling talesman problem - az utazó ügynök problémája
+}  %
+ is NP-teljes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aszimmetrikus TSP}\label{sec:ALAP:adatelem}
+
+Amennyiben irányított gráfokkal dolgozunk, abban az esetben az aszimmetrikus TSP-ről beszélünk. Nem minden TSP algoritmus működik ATSP-re is, ezért előfordulhat, hogy át kell alakítanunk a gráfot, visszavezetve a TSP-re. A visszavezetés után, \(n\) csomópontból álló ATSP egy \(2n\) csomópontból álló TSP-t fog eredményezni.
+
 \section{Egzakt algoritmusok}\label{sec:ALAP:adatelem}
+
+Az egzatk algoritmusok minden esetben az optimális megoldást térítik vissza, komplexitásuk azonban exponenticális. Így a csomópontok növekedésével a futási sebesség exponenciálisan fog nőni. Kutatási szemptontot leszámítva, nem lehetne ezeket az algoritmusokat átlagos felhasználói környezetben alkalmazni, ugyanis már 20 csomópont után nem lehet kivárni a megoldást. 
 
 \subsection{Brute force}
 
@@ -48,25 +70,28 @@ A \(Concorde\) segítségével megtalálták az optimális megoldást a TSPLIB%
 \footnote{ %
 	a TSP-re példa adatokat tartalmazó könyvtár
 }  %
- mind a 110 példájára, ahol a legnagyobb 85900 várost tartalmaz.
- 
- Az fennebb látható eredmények egy 2.8 GHz-es Intel Xeon processzor egy magjának használatával lettek kiszámolva, az \textit{ILOG CPLEX} lineáris programozási feladatmegoldó segítségével. Mindegyik adathalmaz 100 csomópontból áll.
- 
- \begin{table}[]
- 	\begin{tabular}{l|l}
- 		\textbf{Adathalmaz} & \textbf{Futási idő} (másodperc) \\
- 		\hline
- 		kroA100         & 0.31  \\
- 		kroB100         & 0.58 \\
- 		kroC100         & 0.30 \\   
- 		kroD100         & 0.33        
- 	\end{tabular}
- \end{table}
+mind a 110 példájára, ahol a legnagyobb 85900 várost tartalmaz.
+
+Az fennebb látható eredmények egy 2.8 GHz-es Intel Xeon processzor egy magjának használatával lettek kiszámolva, az \textit{ILOG CPLEX} lineáris programozási feladatmegoldó segítségével. Mindegyik adathalmaz 100 csomópontból áll.
+
+\begin{table}[]
+	\begin{tabular}{l|l}
+		\textbf{Adathalmaz} & \textbf{Futási idő} (másodperc) \\
+		\hline
+		kroA100         & 0.31  \\
+		kroB100         & 0.58 \\
+		kroC100         & 0.30 \\   
+		kroD100         & 0.33        
+	\end{tabular}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Heurisztikus algoritmusok}\label{sec:ALAP:adatelem}
 
 \subsection{Greedy - legközelebbi szomszéd}
+
+Mivel az egzakt algoritmusokat csak igazán kevés használati esetben lehet alkalmazni, ezért a mohó algoritmusok mellett is dönthetünk. Ezek polinomiális idő alatt elvégzik a feladatod, azonban nem mindig az optimumot térítik vissza. Az eltérés mértéke függhet azonban az implemetációtól.
+
 
 \begin{description}
 	\setlength{\itemsep}{0.04mm}

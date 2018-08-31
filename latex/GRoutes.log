@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.8.25)  31 AUG 2018 03:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.8.25)  31 AUG 2018 21:19
 entering extended mode
 **./GRoutes.tex
 (GRoutes.tex
@@ -1129,13 +1129,9 @@ Package: wrapfig 2003/01/31  v 3.6
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ) (GRoutes.aux
-(bevezet.aux) (graf_def_alapok.aux
+(bevezet.aux) (grafok.aux
 
-LaTeX Warning: Label `ch:ALAP' multiply defined.
-
-) (graf_problemak.aux
-
-LaTeX Warning: Label `ch:ALAP' multiply defined.
+LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
 
 
 LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
@@ -1146,7 +1142,7 @@ LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
 
 LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
 
-) (tsp_modszerek.aux
+) (tsp.aux
 
 LaTeX Warning: Label `ch:ALAP' multiply defined.
 
@@ -1155,16 +1151,6 @@ LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
 
 
 LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
-
-
-LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
-
-
-LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
-
-) (algoritmusok.aux
-
-LaTeX Warning: Label `ch:ALAP' multiply defined.
 
 
 LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
@@ -1173,9 +1159,6 @@ LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
 LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
 
 ) (technologiak.aux
-
-LaTeX Warning: Label `ch:ALAP' multiply defined.
-
 
 LaTeX Warning: Label `sec:ALAP:adatelem' multiply defined.
 
@@ -1235,23 +1218,23 @@ LaTeX Warning: Label `ch:ALAP' multiply defined.
 ))
 \openout1 = `GRoutes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 74.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 75.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
@@ -1288,7 +1271,7 @@ LaTeX Warning: Please use \usepackage[latin2]{inputenc} with
 
 \c@lstlisting=\count159
 \AtBeginShipoutBox=\box89
-Package hyperref Info: Link coloring ON on input line 74.
+Package hyperref Info: Link coloring ON on input line 75.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -1297,33 +1280,33 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count160
 )
-LaTeX Info: Redefining \ref on input line 74.
-LaTeX Info: Redefining \pageref on input line 74.
-LaTeX Info: Redefining \nameref on input line 74.
+LaTeX Info: Redefining \ref on input line 75.
+LaTeX Info: Redefining \pageref on input line 75.
+LaTeX Info: Redefining \nameref on input line 75.
 
 (GRoutes.out) (GRoutes.out)
 \@outlinefile=\write4
 \openout4 = `GRoutes.out'.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 77.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 78.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <18> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 77.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 78.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <26> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 77.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 78.
  [1
 
 {C:/Users/User3/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 93.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 94.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <18> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 93.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 94.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <26> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 93.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 94.
 
-Overfull \hbox (3.04001pt too wide) in paragraph at lines 93--93
+Overfull \hbox (3.04001pt too wide) in paragraph at lines 94--94
 []  []
  []
 
@@ -1331,30 +1314,30 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.93 
+l.94 
       [1 <./logo_ubb.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 93--93
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
 
  []
 
 
-Overfull \hbox (3.04001pt too wide) in paragraph at lines 93--93
+Overfull \hbox (3.04001pt too wide) in paragraph at lines 94--94
 []  []
  []
 
 [2 <./logo_ubb.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 93--93
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
 
  []
 
 
-Overfull \hbox (3.04001pt too wide) in paragraph at lines 93--93
+Overfull \hbox (3.04001pt too wide) in paragraph at lines 94--94
 []  []
  []
 
 [3 <./logo_ubb.pdf>]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 99.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 100.
  (GRoutes.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
 
@@ -1374,7 +1357,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.36 ...si fel\IeC {\"u}let}{18}{subsection.7.1.3}
+l.37 ...}p fel\IeC {\"u}let}{17}{subsection.5.1.7}
                                                    [2
 
 ])
@@ -1385,7 +1368,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.111 \include{bevezet}
+l.112 \include{bevezet}
                         [3]
 \openout2 = `bevezet.aux'.
 
@@ -1413,23 +1396,25 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 19--19
 [] 
  []
 
-[4
+) [4
 
 
-]) [5]
-\openout2 = `graf_def_alapok.aux'.
+] [5]
+\openout2 = `grafok.aux'.
 
- (graf_def_alapok.tex
+ (grafok.tex
 2. fejezet
 LaTeX Font Info:    Font shape `T1/ptm/bx/sl' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/sl' tried instead on input line 6.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 12.
 
-Underfull \hbox (badness 10000) detected at line 32
+Underfull \hbox (badness 10000) detected at line 35
 \T1/ptm/m/n/8 1.
  []
 
 
-Overfull \hbox (11.35796pt too wide) in paragraph at lines 32--32
+Overfull \hbox (11.35796pt too wide) in paragraph at lines 35--35
 [] 
  []
 
@@ -1437,34 +1422,24 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 32--32
 
 
 
-]) [7]
-\openout2 = `graf_problemak.aux'.
-
- (graf_problemak.tex
-3. fejezet
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 12.
+]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 57.
 
-Underfull \hbox (badness 10000) detected at line 36
-\T1/ptm/m/n/8 1.
+Underfull \hbox (badness 10000) detected at line 66
+\T1/ptm/m/n/8 2.
  []
 
 
-Overfull \hbox (11.35796pt too wide) in paragraph at lines 36--36
+Overfull \hbox (11.35796pt too wide) in paragraph at lines 66--66
 [] 
  []
 
-[8
+[7]) [8]
+\openout2 = `tsp.aux'.
 
-
-
-]) [9]
-\openout2 = `tsp_modszerek.aux'.
-
- (tsp_modszerek.tex
-4. fejezet
+ (tsp.tex
+3. fejezet
 
 Underfull \hbox (badness 10000) detected at line 24
 \T1/ptm/m/n/8 1.
@@ -1475,35 +1450,30 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 24--24
 [] 
  []
 
-[10
+[9
 
 
 
-]) [11]
-\openout2 = `algoritmusok.aux'.
-
- (algoritmusok.tex
-5. fejezet
-
-Underfull \hbox (badness 10000) detected at line 48
-\T1/ptm/m/n/8 1.
+]
+Underfull \hbox (badness 10000) detected at line 72
+\T1/ptm/m/n/8 2.
  []
 
 
-Overfull \hbox (11.35796pt too wide) in paragraph at lines 48--48
+Overfull \hbox (11.35796pt too wide) in paragraph at lines 72--72
 [] 
  []
 
-[12
 
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 77.
 
-
-] [13]) [14]
+[10] [11]) [12]
 \openout2 = `technologiak.aux'.
 
  (technologiak.tex
-6. fejezet
-[15
+4. fejezet
+[13
 
 
 
@@ -1527,12 +1497,12 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 39--39
 [] 
  []
 
-) [16]
+) [14]
 \openout2 = `alkalmazas.aux'.
 
  (alkalmazas.tex
-7. fejezet
-<images/login.png, id=395, 277.78781pt x 300.3722pt>
+5. fejezet
+<images/login.png, id=372, 277.78781pt x 300.3722pt>
 File: images/login.png Graphic file (type png)
 <use images/login.png>
 Package pdftex.def Info: images/login.png  used on input line 20.
@@ -1547,7 +1517,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 29--29
 [] 
  []
 
-[17
+[15
 
 
 
@@ -1561,7 +1531,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 61--61
 [] 
  []
 
-[18]
+[16]
 Underfull \hbox (badness 10000) detected at line 76
 \T1/ptm/m/n/8 3.
  []
@@ -1571,7 +1541,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 76--76
 [] 
  []
 
-<images/firebase_gradle.png, id=412, 521.69907pt x 61.73062pt>
+<images/firebase_gradle.png, id=390, 521.69907pt x 61.73062pt>
 File: images/firebase_gradle.png Graphic file (type png)
 <use images/firebase_gradle.png>
 Package pdftex.def Info: images/firebase_gradle.png  used on input line 88.
@@ -1606,8 +1576,8 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 110--110
 [] 
  []
 
-[19 <./images/firebase_gradle.png>]
-<images/firestore_colls.png, id=426, 576.65437pt x 255.20343pt>
+[17 <./images/firebase_gradle.png>]
+<images/firestore_colls.png, id=404, 576.65437pt x 255.20343pt>
 File: images/firestore_colls.png Graphic file (type png)
 <use images/firestore_colls.png>
 Package pdftex.def Info: images/firestore_colls.png  used on input line 128.
@@ -1626,7 +1596,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 135--135
 Package wrapfig Warning: Collision between wrapping environments on input line 
 138.
 
-<images/firestore_rule.png, id=428, 502.87875pt x 112.92188pt>
+<images/firestore_rule.png, id=406, 502.87875pt x 112.92188pt>
 File: images/firestore_rule.png Graphic file (type png)
 <use images/firestore_rule.png>
 Package pdftex.def Info: images/firestore_rule.png  used on input line 142.
@@ -1651,8 +1621,8 @@ Underfull \hbox (badness 2726) in paragraph at lines 148--153
 ptm/m/n/10.95 ,
  []
 
-[20 <./images/firestore_colls.png> <./images/firestore_rule.png>]
-<images/class_diagram.png, id=440, 519.44063pt x 506.6428pt>
+[18 <./images/firestore_colls.png> <./images/firestore_rule.png>]
+<images/class_diagram.png, id=418, 519.44063pt x 506.6428pt>
 File: images/class_diagram.png Graphic file (type png)
 <use images/class_diagram.png>
 Package pdftex.def Info: images/class_diagram.png  used on input line 167.
@@ -1687,7 +1657,7 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 205--205
 [] 
  []
 
-[21] [22 <./images/class_diagram.png>]
+[19] [20 <./images/class_diagram.png>]
 Overfull \hbox (0.89204pt too wide) detected at line 228
 \T1/ptm/m/n/8 12.
  []
@@ -1697,12 +1667,12 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 228--228
 [] 
  []
 
-[23]) [24]
+[21]) [22]
 \openout2 = `kovetkeztetesek.aux'.
 
  (kovetkeztetesek.tex
-8. fejezet
-) [25
+6. fejezet
+) [23
 
 
 
@@ -1710,33 +1680,32 @@ Overfull \hbox (11.35796pt too wide) in paragraph at lines 228--228
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [26
+) [24
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
- (GRoutes.aux (bevezet.aux) (graf_def_alapok.aux) (graf_problemak.aux)
-(tsp_modszerek.aux) (algoritmusok.aux) (technologiak.aux) (alkalmazas.aux)
-(kovetkeztetesek.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
+ (GRoutes.aux (bevezet.aux) (grafok.aux) (tsp.aux) (technologiak.aux)
+(alkalmazas.aux) (kovetkeztetesek.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 137.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 137.
 Package rerunfilecheck Info: File `GRoutes.out' has not changed.
-(rerunfilecheck)             Checksum: 23497D2B5DF9EEBDECB130043607A12A;7964.
+(rerunfilecheck)             Checksum: 3F6EFB89E7C0ADDC5E903DF4978596B4;7412.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 137.
  ) 
 Here is how much of TeX's memory you used:
- 25982 strings out of 493308
- 473955 string characters out of 3138768
- 587766 words of memory out of 3000000
- 28860 multiletter control sequences out of 15000+200000
- 73015 words of font info for 82 fonts, out of 3000000 for 9000
+ 25960 strings out of 493308
+ 473090 string characters out of 3138768
+ 587746 words of memory out of 3000000
+ 28855 multiletter control sequences out of 15000+200000
+ 75863 words of font info for 84 fonts, out of 3000000 for 9000
  1199 hyphenation exceptions out of 8191
- 55i,10n,69p,1404b,589s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,10n,69p,1404b,591s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
@@ -1748,10 +1717,11 @@ s/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy1
 /MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8ac.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/ti
 mes/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on GRoutes.pdf (29 pages, 464608 bytes).
+:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on GRoutes.pdf (27 pages, 464279 bytes).
 PDF statistics:
- 545 PDF objects out of 1000 (max. 8388607)
- 110 named destinations out of 1000 (max. 500000)
- 469 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 524 PDF objects out of 1000 (max. 8388607)
+ 105 named destinations out of 1000 (max. 500000)
+ 445 words of extra memory for PDF output out of 10000 (max. 10000000)
 

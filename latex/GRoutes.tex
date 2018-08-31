@@ -2,6 +2,7 @@
 \documentclass[final]{ubb_dolgozat}
 \usepackage{definitions}
 \usepackage{wrapfig}
+\usepackage{color}
 
 
 % milyen nyelveken akarunk forráskódot megjeleníteni
@@ -46,14 +47,14 @@ Lorenzovici Zsombor
 
 %%
 \tutorHU{%
-dr. Gaskó Noémi,\newline egyetemi adjunktus\\
+dr. Gaskó Noémi,\newline egyetemi docens\\
 % a hozzátartozás akkor szükség, ha NEM BBTE-s a tanár
 %{\large Babe\c{s}--Bolyai Tudományegyetem,\\
 % Matematika és Informatika Kar}% ha különbözik, akkor fel kell tûntetni
 }
 %%
 \tutorRO{%
-Lector dr. Gaskó Noémi\\
+Conf. dr. Gaskó Noémi\\
 % az egyetem akkor szükség, ha nem BBTE-s a tanás, a minta a BBTE-t
 % tartalmazza
 % {\large Universitatea Babe\c{s}--Bolyai,\\ % dacã diferã!!!
@@ -61,7 +62,7 @@ Lector dr. Gaskó Noémi\\
 }
 %%
 \tutorEN{%
-Assist prof. dr. Gaskó Noémi
+Assoc. prof. dr. Gaskó Noémi
 % {\large Babe\c{s}--Bolyai University,\\
 % Faculty of Mathematics and Informatics}
 }
@@ -110,13 +111,13 @@ This work is the result of my own activity. I have neither given nor received un
 % a bevezetõ fejezet FILE-ja.
 \include{bevezet}
 
-\include{graf_def_alapok}
+\include{grafok}
 
-\include{graf_problemak}
+%\include{graf_problemak}
 
-\include{tsp_modszerek}
+\include{tsp}
 
-\include{algoritmusok}
+%\include{algoritmusok}
 
 \include{technologiak}
 
@@ -125,15 +126,12 @@ This work is the result of my own activity. I have neither given nor received un
 \include{kovetkeztetesek}
 
 
-\appendix
 
 
-{ \renewcommand{\baselinestretch}{0.8}
-  \normalsize 
-  \setlength{\itemsep}{-2.4mm}
-  \setlength{\bibspacing}{0.67\baselineskip}
-  \bibliographystyle{abbrvnat_hu}
-  \bibliography{dolgozat}
+{ \renewcommand{\baselinestretch}{0.8}\normalsize %
+	\setlength{\itemsep}{-2.4mm}
+	\setlength{\bibspacing}{0.67\baselineskip}
+	\bibliographystyle{abbrvnat_hu}
+	\bibliography{dolgozat}
 }
-
 \end{document}
