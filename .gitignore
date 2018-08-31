@@ -3,11 +3,19 @@
 ./latex/*.log
 
 ./latex/*.gz
+
 latex/alkalmazas.aux
+
 latex/bevezet.aux
+
 latex/grafok.aux
+
 latex/GRoutes.log
+
 latex/GRoutes.synctex.gz
+
 latex/kovetkeztetesek.aux
+
 latex/technologiak.aux
+
 latex/tsp.aux
