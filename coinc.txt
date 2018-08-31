@@ -1,0 +1,193 @@
+ Concorde is a computer code for the symmetric traveling salesman problem (TSP) and some related network optimization problems. The code is written in the ANSI C programming language and it is available for academic research use; for other uses, contact William Cook for licensing options.
+Concorde's TSP solver has been used to obtain the optimal solutions to all 110 of the TSPLIB instances; the largest having 85,900 cities.
+
+The Concorde callable library includes over 700 functions permitting users to create specialized codes for TSP-like problems. All Concorde functions are thread-safe for programming in shared-memory parallel environments; the main TSP solver includes code for running over networks of UNIX workstations.
+
+Concorde now supports the QSopt linear programming solver. Executable versions of concorde with qsopt for Linux and Solaris are now available
+
+Hans Mittelmann has created a NEOS Server for Concorde, allowing users to solve TSP instances online.
+
+Concorde Graphical User Interface
+
+
+initial Concorde 	Concorde running solver 	Concorde showing  solution
+The Concorde graphical user interface can be used to apply the Concorde TSP Solver to a specified set of cities. The Concorde solver uses the cutting-plane method, iteratively solving linear programming relaxations of the TSP. The interface shows the solver's progress at the end of each major iteration of cutting planes by coloring the edges according to their current LP values. Once the optimal tour is found it is shown by adding red edges to the display.
+
+The time needed for the Concorde solver for a given instance can vary considerably with the number of cities and the complexity of the problem.
+
+The Graphical User Interface implements in addition to the optimal Concorde solver the following edge generating algorithms:
+
+Delaunay Triangulation, 
+Minimum Spanning Tree, and 
+various Nearest Neighbor Set generators.
+It also computes the following heuristic traveling salesman tours:
+Greedy, 
+Boruvka, Quick Boruvka, 
+Nearest Neighbor, 
+Random, and 
+Chained Lin-Kernighan.
+The Concorde interface can read and write graphs from and to files in various formats. Users may add, delete, and move a graph's vertices interactively. The interface consists of two display panes. One is used to show the graph, the other to print textual information about the graph, the algorithm's progress and results.
+
+The Concorde interface is available for download via a windows setup script, see Downloads.
+
+
+
+In Pursuit of the Traveling Salesman				New book on the TSP to be published by Princeton University Press. Aimed at a general audience, the text provides everything you will need to join the attack on the salesman problem! To receive a note when the book is available (or just to show your support for Concorde and the TSP), please "Like" the In Pursuit of the Traveling Salesman. Facebook page
+
+
+Lin Kernighan command (Heuristics menu)
+
+This command computes a Lin Kernighan tour and prints information about the computed tour to the Output pane.
+
+The Lin Kernighan command is parameterized by:
+
+the number of kicks to be used per iteration, which defaults to the number of nodes in the current graph,
+
+the kick type, which may be Geometric, Random, or Close,
+
+the sparse edge set to be used, which is chosen in the Sparse Edge Set tab of the command's dialog box,
+
+the starting tour, which is chosen from a list of options in the Staring Tour tab of the command's dialog box.
+
+The Lin Kernighan command  uses the current edge norm to compute the distance between two nodes, see Set Edge Norm.
+
+Set Norm command (Edges menu)
+
+This commands allows the user to choose which edge norm commands should be use to compute edge lengths.
+
+There are five norms to choose from:
+
+Euclidian (the default), ATT, Maximum, Geometric, and Geographic.
+
+The currently active norm is shown in the status bar, see Status Bar
+
+
+
+	
+Benchmark Information
+
+
+We report below the performance of Concorde (03.12.19) on a subset of 87 of the easier TSPLIB instances. These instances are all those that could be solved in under 1,000 seconds on a Compaq XP1000 workstation using the (99.12.15) version of Concorde. A full set of TSPLIB benchmarks for Concorde (99.12.15) can be found on the Benchmarks-99.12.15 page.
+
+The benchmark runs reported below were carried out on a single processor of a dual-processor 2.8 GHz Intel Xeon PC with a 533 MHz front-side-bus and 2 GByte of RAM. The ILOG CPLEX (Version 6.5) linear programming solver was used in these computations.
+
+For each instance we give the number of CPU seconds used in the computation and the the number of nodes in the branch-and-bound search tree. The benchmark runs were carried out with the default version of Concorde (for more difficult instances, the running times can often be improved by using the options "-m -C 24" or greater to invoke multiple passes of the local-cuts routine).
+
+Name
+
+Running Time
+
+Search Nodes
+
+	
+Name
+
+Running Time
+
+Search Nodes
+
+burma14	0.02	1		ulysses16	0.12	1
+gr17	0.04	1		gr21	0.01	1
+ulysses22	0.29	1		gr24	0.02	1
+fri26	0.03	1		bayg29	0.05	1
+bays29	0.04	1		dantzig42	0.09	1
+swiss42	0.05	1		att48	0.22	1
+gr48	0.18	1		hk48	0.08	1
+eil51	0.12	1		berlin52	0.13	1
+brazil58	0.24	1		st70	0.20	1
+eil76	0.11	1		pr76	0.60	1
+gr96	0.84	1		rat99	0.40	1
+kroA100	0.31	1		kroB100	0.58	1
+kroC100	0.30	1		kroD100	0.33	1
+kroE100	0.75	1		rd100	0.22	1
+eil101	0.24	1		lin105	0.22	1
+pr107	0.37	1		gr120	0.48	1
+pr124	1.04	1		bier127	0.53	1
+ch130	0.65	1		pr136	1.12	1
+gr137	2.18	1		pr144	1.01	1
+ch150	0.91	1		kroA150	1.47	1
+kroB150	2.50	3		pr152	2.98	1
+u159	0.42	1		si175	5.75	3
+brg180	0.26	1		rat195	6.25	3
+d198	3.83	3		kroA200	2.24	1
+kroB200	1.06	1		gr202	2.90	1
+ts225	7.04	1		tsp225	5.18	1
+pr226	1.06	1		gr229	12.40	7
+gil262	3.61	3		pr264	1.05	1
+a280	2.48	1		pr299	5.33	1
+lin318	2.78	1		rd400	25.72	9
+fl417	23.48	3		gr431	31.94	9
+pr439	73.62	15		pcb442	9.44	9
+d493	43.13	5		att532	32.24	5
+ali535	9.50	1		si535	21.73	3
+pa561	52.06	7		u574	22.99	3
+rat575	70.30	17		p654	8.57	1
+d657	83.04	13		gr666	31.31	7
+u724	73.78	15		rat783	16.79	1
+dsj1000	153.16	13		pr1002	9.92	1
+si1032	107.19	1		u1060	141.12	13
+vm1084	234.66	13		pcb1173	168.11	13
+rl1304	103.01	1		nrw1379	108.12	7
+u1432	35.90	1		d1655	69.08	3
+pr2392	35.04
+
+Download Information
+
+
+The full source code to the Concorde network optimization package, as well as executables for various platforms, and a Windows graphical user interface to Concorde's traveling salesman solver are available for academic research use; for other uses, contact William Cook for licensing options. 
+
+
+Source Code
+
+The Concorde source code is distributed as a gzipped tar file. To install the code follow the instructions given in the README and Installation Guide.
+
+gzipped tar file	 	version date	 	 
+Concorde-03.12.19	   	Dec 19, 2003	 	ANSI C Code as gzipped tar file
+Concorde-99.12.15	   	Dec 15, 1999	 	Older code, no longer supported
+Concorde-97.08.27	   	Aug 8, 1997	 	Older code, no longer supported
+
+Executable Programs
+
+Executable versions of Concorde and Linkern are available for Linux, Solaris, and Windows/Cygwin. Concorde is the cutting-plane-based exact TSP solver (using the QSopt LP solver) and Linkern is an implementation of the Chained-Lin-Kernighan heuristic for the TSP. The executable codes are given as gzipped files. The Windows/Cygwin codes will run under Windows 98/ME/NT/2000/XP if at least the minimal version of the Cygwin environment is installed.
+
+gzipped executable
+concorde-linux	Concorde for Red Hat Linux 8.0
+linkern-linux	Linkern for Red Hat Linux 8.0
+concorde-solaris32	Concorde for Solaris 32-bit
+linkern-solaris32	Linkern for Solaris 32-bit
+concorde-solaris64	Concorde for Solaris 64-bit
+linkern-solaris64	Linkern for Solaris 64-bit
+concorde-cygwin	Concorde for Windows/Cygwin
+linkern-cygwin	Linkern for Windows/Cygwin
+Graphical User Interface for Windows
+
+The graphical user interface to Concorde's traveling salesman solver is available for Windows 98/ME/NT/2000/XP. Download and execute concorde installer to install the interface. 
+
+
+Domino-Parity
+
+Source code for domino-parity inequalities written by D. Espinoza and M. Goycoolea is given in the gzipped tarfile DP. This code will be supported as an add-on in the next release of Concorde.
+
+
+
+
+
+
+
+Az algoritmus lépései:
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[1. lépés] -- generáljunk véletlenszeruen egy T körutat
+	\item[2. lépés] -- legyen \(i=1\), kiválasztjuk a \(t_1\) kiindulási pontot
+	\item[3. lépés] -- kiválasztjuk az \(x_1=(t_1,t_2)\) törlendo élet
+	\item[4. lépés] -- kiválasztjuk az \(y_1=(t_2,t_3)\) élet, amely az \(x_1\)-et helyettesítené úgy, hogy \(G_1>0\) (nyereség). Ha ez nem lehetséges, ugorjunk a 12. lépéshez. 
+	\item[5. lépés] -- növeljük \(i\)-t (\(i\)++)
+	\item[6. lépés] -- Válasszuk ki \(x_i=(t_\{2i-1\},t_\{2i\})\)-t úgy, hogy:
+	\item[7. lépés] -- 
+	\item[8. lépés] -- ha van olyan alternatíva \(y_2\)-re, amit még nem próbáltunk, akkor legyen \(i=2\) és ugorjunk a 7. lépéshez.
+	\item[9. lépés] -- ha van olyan alternatíva \(x_2\)-re, amit még nem próbáltunk, akkor legyen \(i=2\) és ugorjunk a 6. lépéshez.
+	\item[10. lépés] -- ha van olyan alternatíva \(y_1\)-re, amit még nem próbáltunk, akkor legyen \(i=1\) és ugorjunk a 4. lépéshez.
+	\item[11. lépés] -- ha van olyan alternatíva \(x_1\)-re, amit még nem próbáltunk, akkor legyen \(i=1\) és ugorjunk a 3. lépéshez.
+	\item[12. lépés] -- ha van olyan alternatíva \(t_1\)-re, amit még nem próbáltunk, akkor ugorjunk a 2. lépéshez.
+	\item[13. lépés] -- álljunk le (vagy ugorjunk az 1. lépéshez)
+\end{description}

@@ -63,4 +63,20 @@ A \(Concorde\) algoritmus egzakt megoldást nyújt a TSP-re. Ennek segítségév
 	\item[6. lépés] -- menjünk a 2. lépéshez
 \end{description}
 
+\subsection{2-opt algoritmus}
+
+A 2-opt algoritmus egy lokális kereső algoritmus, mely egy meglévő utat javít fel. Ezt az algoritmust elsőként Croes javasolta 1958-ban, az alapműveletet azonban már Flood is javasolta 1956-ban. Ez abból áll, hogy egy meglévő körútból kitörlünk két élet, úgy hogy ezeknek nincs közös csúcsúk, majd a csomópontokat újra összekötjük. Erre egy lehetőség van úgy, hogy ne az előző utat kapjuk. Amennyiben az újonnan kapott körút rövidebb, megtartjuk. Ezeket a cseréket minden lehetséges kombinációra elvégezzük. Az így kapot körutat 2-optimálisnak nevezzük.
+
 \subsection{Lin-Kernighan heurisztika}
+
+A 2-opt algoritmus általánosítása révén született meg az egyik leghatékonyabb approximációs algoritmus a szimmetrikus TSP megoldására, a Lin-Kernighan algoritmus. Egy körút k-optimális, ha nem lehetséges egy rövidebb körutat kapni \(k\) darab él, más \(k\) darab éllel való helyettesítés után. Minél nagyobb a \(k\) értéke, annál valószínűbb, hogy az algoritmus végrehajtása után az optimális megoldást kapjuk, ugyanakkor nagyobb adathalmazra gyorsan növekszik a \(k\) darab élcsere ellenőrzéséhez szükséges műveletek száma. Egy hátránya tehát a \(k-opt\) algoritmusoknak, hogy futás előtt meg kell adni a \(k\) értékét. Ezt a hátrányt igyekszik kiküszöbölni a Lin-Kernighan algoritmus, azáltal, hogy futása során változtatja \(k\)-nak az értékét.
+
+Legyen \(T\) az aktuális körút. Minden iterációban, az algoritmus igyekszik találni két \(X = \{x_1,\dots,x_k\}\) és \(Y = \{y_1,\dots,y_k\}\) élekből álló halmazokat, melyekre igaz az, hogy a \(T\) körútból az \(X\)-ben található éleket az \(Y\)-ból vett élekkel helyettesítve egy jobb körutat kapunk. Ezeknek az éleknek a felcserélését \(k-opt\) lépésnek nevezzük. Ahhoz, hogy kellően hatékony algoritmust kapjunk, az \(X\) és \(Y\) halmazokhoz tartozó éleknek meg kell felelniük bizonyos kritériumoknak:
+
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[(a) A szekvenciális csere kritériuma] -- \(x_i\)-nek, valamint \(y_i\)-nek rendelkezniük kell egy közös csúccsal, ugyanígy \(y_i\)-nek és \(x_{i+1}\)-nek is. Így tehát a \(x_1,y_1,x_2,y_2,\dots,x_k,y_k\) sorozat egy szomszédos élekből álló láncot alkot.
+	\item[(b) A megvalósíthatósági kritérium] -- szükséges továbbá, hogy \(x_i = (t_\{2i-1\},t_\{2i\})\) úgy legyen kiválasztva, hogy ha a \(t_\{2i\}\)-t csatlakoztatjuk a \(t_1\)-hez, az így kapott gráf körút maradjon. Ez a kritérium az algoritmus futási idejének csökkentéséért, valamint a kódolás leegyszerűsítéséért lett bevonva.
+	\item[(c) A pozitív nyereség kritériuma] -- az \(y_i\)-t úgy kell kiválasztani, hogy a nyereség a javaslot cserék után pozitív maradjon. Ez a feltétel kulcsfontosságú az algoritmus hatékonyságának szempontjából.
+	\item[(d) A diszjunktivitás kritérium] -- az \(X\) és \(Y\) halmazoknak diszjunktnak kell lenniük
+\end{description}
