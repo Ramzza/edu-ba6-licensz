@@ -19,3 +19,15 @@ latex/kovetkeztetesek.aux
 latex/technologiak.aux
 
 latex/tsp.aux
+*.bst
+*.aux
+*.toc
+*.pdf
+*.ldf
+*.blg
+*.out
+*.sty
+*.pl
+*.gz
+*.log
+*.bbl
