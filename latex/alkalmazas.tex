@@ -252,3 +252,17 @@ Ezt a problémát úgy oldottam meg, hogy a DatabaseAssist osztály fog utólag 
 Mivel az applikáció több különböző pontján van lehetőség az adatok hozzáadására, módosítására, törlésére, ezért fontos, hogy mindig, mindenhol a legfrissebb adatok birtokában legyünk.
 
 Ezért vezettem be a CacheManager osztályt. Ez nem csak tárolja az aktuális adatokat, hanem az első lekérdezés kivételével, minden adatbázisműveletet lokálisan is elvégez, így a felhasználónak nem kell várnia, hogy a "múltbeli keresések" menüpont alatt megjelenjen a friss keresés, mivel azonnal hozzá lesz adva. Ellenkező esetben meg kéne várni, míg elmentjük az adatokat, majd lekérdezzük őket.
+
+\subsection{Koordináta osztályok}
+
+Egy földrajzi koordináta nem egy bonyolult adatszerkezet: tartalmaz egy földrajzi szélességi fokot, valamint egy hosszúsági fokot. Mégis három különböző osztályra volt szükség a reprezentálásához. 
+
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[GeoPoint] -- a Firestore egyik beépített adattípusa, így az adatbázis miatt, az egyszerű tárolás, valamint CRUD műveletekkel való kompatibilitás miatt szükség volt ennek használatára.
+	\item[com.google.android.gms.maps.model.LatLng] -- a GoogleMap osztály használja. Ha egy \textit{Marker}-t szeretnénk egy térkép \textit{activity}-ben használni, akkor egy ilyen objektumot kell paraméterként átadjunk.
+	\item[com.google.maps.model.LatLng] -- a Direction API, valamint a Distance Matrix API metódusaiban, paraméterként használt típus.
+\end{description}
+
+A \textit{Java} nyelvben nincs lehetőség egy importált osztály elnevezésére úgy, mint például \textit{Python}-ban. Ez azt eredményezte, hogy minden \textit{LatLng} típusú objektum létrehozásakor explicit meg kellett adni az egész csomag (\textit{package}) importálási ösvényét, mivel a két osztály neve megegyezik, és ez ambiguitást eredményez a \textit{compiler} számára.
+
