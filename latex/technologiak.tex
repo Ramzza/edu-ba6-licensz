@@ -16,16 +16,49 @@
 	\setlength{\abovecaptionskip}{0pt}
 	\setlength{\belowcaptionskip}{0pt}
 	\includegraphics[width=0.9\textwidth, scale=0.9]{images/android}
-	\caption{Android\label{fig:ALAP:sm2}}
+	\caption{Az Android platform komponensei\label{fig:ALAP:sm2}}
 \end{figure}
 
 Az Android egy nyílt forráskódú, Linux kernel alapú többfelhasználós operációs rendszer, ahol minden applikáció egy külön felhasználó. Hivatalos nyelvei a Java és a Kotlin. Alapértelmezetten, a rendszer minden applikációnak kioszt egy egyedi Linux felhasználói ID-t (az ID-t csak a rendszer használja, és ismeretlen az applikáció számára). Az operációs rendszer úgy osztja ki a hozzáfárési jogokat az applikáció állományai számára, hogy csak az a felhasználói ID férjen hozzájuk, amivel az adott applikáció rendelkezik. Minden folyamat (process) rendelkezik a saját virtuális gépével, tehát minden applikáció kódja egymástól teljesen izoláltan fut. Alapértelmezetten minden applikáció a saját Linux folyamatában fut. Az Android operációs rendszer elindítja a folyamatot, amikor az applikáció valamelyik komponensének szüksége van rá, majd leállítja azt, mikor többé már nincs rá szükség, vagy ha a rendszernek mermóriát kell lefoglalnia, más applikációk számára. Az Android operációs rendszer “a legkevesebb kiváltság elvét” (“the principle of least privilige”) alkalmazza, tehát alapértelmezetten, minden applikációnak csak azokhoz a komponensekhez van hozzáférése, amik szükségesek a feladatának elvégzéséhez, és semmi egyébhez.
 
 Egy android applikációnak négy fajta komponense lehet: Activity, Service, Broadcast receiver, Content provider. Ezek közül az Activity szolgál a felhasználóval történő interakció eszközéül, ez ugyanis egy felhasználói felülettel rendelkező képernyő. Activity-k, Service-k és Broadcast receiver-ek egy aszinkron üzenet által aktiválódnak, amit Intent-nek (szándék) nevezünk.
 
-Az Activity egy osztály (class), amely a logikát tartalmazza, a felhasználói felületért azonban egy ehhez tartozó XML állomány felel, ami a különböző UI elemeket (gombok, szövegdobozok, konténerek) tartalmazza.
-
 Az AndroidManifest.xml egy konfigurációs állomány, ami a projekt gyökér könyvtárában található. Itt vannak deklarálva az applikáció komponensei, valamint a szükséges hozzáférési jogokat is itt kell feltünteni.
+
+\subsection{A Linux kernel}
+
+Az Android platform alapja a Linux kernel (mag). Például az Android Runtime (futási környezet) a Linux magjára támaszkodik olyan funkcionalitásokért, mint a futási szálak kezelése és az alacsony szintű memóriakezelés.
+
+\subsection{Hardware Abstraction Layer (HAL)}
+
+A hardver absztrakciós réteg olyan szabványos interfészeket (interface) biztosít, amelyek segítségével az eszköz hardvereinek funkcionalitásait a Java API keretrendszeren belül használhatjuk. A HAL több könyvtárból, modulból áll, melyek mindegyike implementálegy interfészt valamely hardver-komponens számára, mint például a kamera vagy a bluetooth. Amikor a keretrendszer API egy függvényhívással használatba akarja venni az eszköz hardver-komponensét, akkor az Android operációs rendszer betölti az adott komponenshez tartozó könyvtár modult.
+
+\subsection{Android Runtime}
+
+Azokon az eszközökön, amelyeken az Android 5.0 (API szint 21) vagy nagyobb verziója fut, minden applikáció a saját folyamatában (process) fut, a saját ART instanciájában. Az ART úgy lett megírva, hogy több virtuális gépet hozzon létre, kevés memóriával rendelkező eszközökön úgy, hogy úgynevezet DEX (Dalvik Executable Format) állományokat hajt végre. A DEX egy bájtkód formátum, különösképpen az Android-ra tervezték és arra van optimalizálva, hogy kevés memóriát vegyen igénybe. A build rendszerek a forráskódot DEX bájtkódra fordítják, melyek majd az Android platformon fognak futni.
+
+Az ART főbb funkciói közé tartozik: a futásidejű (JIT), valamint futási idő előtti ( AOT) forditás, az optimalizált szemétgyűjtés (Garbage Collection). Android 9 (API 28) vagy annál magasabb verziókon az alkalmazás DEX állományai sokkal kompaktabb gépi kóddá vannak átalakítva.
+
+\subsection{Natív C/C++ könyvtárak}
+
+Az Android több alap rendszerkomponense, mint például az ART és a HAL, natív kódban íródtak, melyeknek szükségük van C/C++ könyvtárakra. A Java keretrendszer API segítségével ezeknek a natív könyvtáraknak több funkcionalitását is igénybe vehetjük. Például az OpenGl ES-hez az Android keretrendszer Java OpenGL API-ja segítségével férhetünk hozzá, hogy támogatást nyerjünk a rajzoláshoz, valamint a 2D és 3D grafikák manipulálásához.
+
+\subsection{Java API keretrendszer}
+
+Az Android operációs rendszer funkciói a Java nyelven íródott API-kon keresztül érhetők el. Ezek az API-k az építőelemek, melyek segítségével létrehozhatunk egy applikációt.
+
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[View rendszer] -- felhasználói felületért felelő XML állományok, amik a különböző UI elemeket (gombok, szövegdobozok, konténerek) tartalmazzák.
+	\item[Erőforráskezelő (Resource Manager)] -- ez szolgáltatja az alkalmazás által, a forráskódon kívül igénybe vett erőforrásokat, mint például a fordítható karakterláncok, grafikai elemek, alaprajz (layout) fájlok.
+	\item[Értesítéskezelő (Notification Manager)] -- engedélyezi az alkalmazások számára, hogy értesítéseket jelenítsenek meg az állapotsorban (status bar).
+	\item[Activity-kezelő] -- az applikációk életciklusáért felel, valamint a múltbeli navigációkat is elmenti. Az Activity osztályok a View-k mögötti logikát tartalmazzák.
+	\item[Tartalom szolgáltató (Content Provider)] -- segítségével tudnak az alkalmazások egymás adataihoz hozzáférni, vagy megosztani saját adataikat.
+\end{description}
+
+\subsection{Rendszer alkalmazások}
+
+Van néhány alkalmazás, ami alapból benne van az Android-ban, ezek többek között az üzenetküldésért, naptárért, internetes böngészésért és a névjegyekért felelnek. A rendszer alkalmazásoknak nincs különleges státuszuk, bármely harmadik féltől származó applikáció átveheti alapértelmezettként az adott funkciók kezeléséért felelő szerepet. Kivételt képez a Beállítások (Settings) alkalmazás. A beépített alklamazások funkcionalitásait a fejlesztők a saját applikációikban is igénybe vehetik, példa erre a "megosztás SMS-ként", amikor a megosztani kívánt szöveget egy rendszeralkalmazás segítségével küldik el.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -65,21 +98,22 @@ Az Andoid Studio-hoz (az android hivatalos fejlesztői környezete) tartozó Gra
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Firebase}\label{sec:ALAP:szerkeszt}
 
+\subsection{Autentikáció}
+
+A felhasználók menedzselésére, mint a regisztráció, bejelentkezés, e-mail cím aktiválása, elfelejtett jelszó visszaállítása, a Firebase Authentication szolgáltatást használtam.
+
+
+\subsection{Firestore}
+
 A felhasználók adatainak, beállításainak tárolására, kezelésére a Firestore nevű no-sql (.json) alapú adatbázist használtam, mely a CRUD%
 \footnote{ %
 	create, read, update, delete
 }  %
- műveletekhez is biztosít metódusokat. Logikai éptőelemei a kollekciók (collection) és a dokumentumok (document). Az előbbi tartalmazhat dokumentumokat, míg az utóbbi alkollekciókat, vagy magukat az adatokat. Az adatok kulcs, érték párok, az értékek lehetnek számok, karakterláncok, tömbök, geopontok vagy akár sajátos osztályok. Amennyiben sajátos osztály akarunk használni, annak rendelkeznie kell egy publikus konstruktorral, melynek nincsenek paraméterei, valamint az attribútumokhoz kell tartozzon egy-egy publikus „getter”%
- \footnote{ %
- 	egy paraméter nélküli metódus, mely egy attribútumot térít vissza - példa: String getName()
- }  %
- metódus. Az adatbázisban található adatokhoz való hozzáférést egy szabállyal kell megadni, amelyet a szerver leellenőriz a CRUD műveletek végrehajtása esetén.
-
-A felhasználók menedzselésére, mint a regisztráció, bejelentkezés, e-mail cím aktiválása, elfelejtett jelszó visszaállítása, a Firebase Authentication szolgáltatást használtam.
-
-\subsection{Autentikáció}
-
-\subsection{Firestore}
+műveletekhez is biztosít metódusokat. Logikai éptőelemei a kollekciók (collection) és a dokumentumok (document). Az előbbi tartalmazhat dokumentumokat, míg az utóbbi alkollekciókat, vagy magukat az adatokat. Az adatok kulcs, érték párok, az értékek lehetnek számok, karakterláncok, tömbök, geopontok vagy akár sajátos osztályok. Amennyiben sajátos osztály akarunk használni, annak rendelkeznie kell egy publikus konstruktorral, melynek nincsenek paraméterei, valamint az attribútumokhoz kell tartozzon egy-egy publikus „getter”%
+\footnote{ %
+	egy paraméter nélküli metódus, mely egy attribútumot térít vissza - példa: String getName()
+}  %
+metódus. Az adatbázisban található adatokhoz való hozzáférést egy szabállyal kell megadni, amelyet a szerver leellenőriz a CRUD műveletek végrehajtása esetén.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -87,10 +121,10 @@ A felhasználók menedzselésére, mint a regisztráció, bejelentkezés, e-mail
 
 \subsection{Distance Matrix API}
 
-
+A csomópontok közti távolságok mátrixának lekérdezésére a Distance Matrix API-t használtam.
 
 \subsection{Directions API}
 
-A csomópontok közti távolságok mátrixának lekérdezésére a Distance Matrix API-t, valamint két csomópont közötti útvonal meghatározására a Directions API-t használtam.
+Két csomópont közötti útvonalat a Directions API segítségével határoztam meg.
 
 
