@@ -100,20 +100,35 @@ Az Andoid Studio-hoz (az android hivatalos fejlesztői környezete) tartozó Gra
 
 \subsection{Autentikáció}
 
-A felhasználók menedzselésére, mint a regisztráció, bejelentkezés, e-mail cím aktiválása, elfelejtett jelszó visszaállítása, a Firebase Authentication szolgáltatást használtam.
+A Firebase Authentication egy backend (szerver oldali) szolgáltatást nyújt melynek segítségével a felhasználók autentikációját oldhatjuk meg. Az autentikáció módjaként támogatja a jelszó, telefonszám, valamint népszerű indentitás szolgáltatók, mint például a Google, Facebook vagy Twitter használatát. Az aktuális ipari standardokat használja, mint az OAuth 2.0 és az OpenID Connect. Feladatai közé tartozik a regisztráció, bejelentkezés, e-mail cím aktiválása és az elfelejtett jelszó visszaállítása.
 
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[Felhasználók tulajdonságai] -- a Firebase felhasználónak a programozási megfelelője a FirebaseUser osztály. Egy ilyen felhszanáló előre meghatározott attribútumokkal rendelkezik, minden egyéb információt az adatbázisban lehet tárolni. Ezek az alaptulajdonságok az egyedi ID, a fő e-mail cím, a név és egy kép URL. Ha egy felhasználó az e-mail cím/ jelszó kombinációval regisztrál, akkor csak a fő e-mail cím attribútum kap értéket, valamint az egyedi ID is kigenerálódik.
+	\item[Aktuális felhasználó] -- amikor egy felhasználó regisztrál vagy bejelentkezik, ő válik az Auth instancia aktuális felhasználójává. A FirebaseAuth tárolja a felhasználó státuszát, így az applikáció újraindításakor nem vesztődik el a felhasználó információja. Ha kijelentkezik, akkor az Auth instancia már nem fogja tovább tárolni FirebaseUser referenciáját, az aktuális felhasználó megszűnik létezni.
+	\item[Felhasználói életciklus] -- az Auth listener (figyelő) értesítést kap ha egy felhasználó bejelentkezik, kijelentkezik, a belépési tokenje frissítődik vagy ha az Auth objektum befejezi az inicializálást.
+	\item[Autentikációs tokenek] -- A Firebase ID token akkor jön létre, amikor egy felhasználó bejelentkezik egy Firebase applikációba. Ez egy aláírt JSON Web Token (JWT), amely biztonságosan tudja azonosítani a felhasználót egy Firebase projektben. Ezek a tokenek tartalmazzák a felhasználó alapvető információit, mint például az egyedi ID. Ennek segítségével leellenőrizhetjük, hogy ki az éppen bejelentkezett felhasználó.
+\end{description}
 
-\subsection{Firestore}
+\subsection{Cloud Firestore}
 
-A felhasználók adatainak, beállításainak tárolására, kezelésére a Firestore nevű no-sql (.json) alapú adatbázist használtam, mely a CRUD%
+A felhasználók adatainak, beállításainak tárolására, kezelésére a Cloud Firestore nevű no-sql adatbázist használtam, mely a CRUD%
 \footnote{ %
 	create, read, update, delete
 }  %
-műveletekhez is biztosít metódusokat. Logikai éptőelemei a kollekciók (collection) és a dokumentumok (document). Az előbbi tartalmazhat dokumentumokat, míg az utóbbi alkollekciókat, vagy magukat az adatokat. Az adatok kulcs, érték párok, az értékek lehetnek számok, karakterláncok, tömbök, geopontok vagy akár sajátos osztályok. Amennyiben sajátos osztály akarunk használni, annak rendelkeznie kell egy publikus konstruktorral, melynek nincsenek paraméterei, valamint az attribútumokhoz kell tartozzon egy-egy publikus „getter”%
-\footnote{ %
-	egy paraméter nélküli metódus, mely egy attribútumot térít vissza - példa: String getName()
-}  %
-metódus. Az adatbázisban található adatokhoz való hozzáférést egy szabállyal kell megadni, amelyet a szerver leellenőriz a CRUD műveletek végrehajtása esetén.
+műveletekhez is biztosít metódusokat. Az adatbázisban található adatokhoz való hozzáférést egy szabállyal kell megadni, amelyet a szerver leellenőriz a CRUD műveletek végrehajtása esetén. Fő adottságai:
+
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[Flexibilitás] -- a Cloud Firestore adatmodellje támogatja a flexibilis, hierarchikus adatsruktúrákat. Az adatokat dokumentumokban tárolja, melyeket kollekciókba lehet rendezni. A dokumentumok komplex, egymásba ágyazott objektumokat is tárolhatnak az alkollekciók mellett. Az adatok kulcs, érték párok, az értékek lehetnek számok, karakterláncok, tömbök, geopontok vagy akár sajátos osztályok. Amennyiben sajátos osztály akarunk használni, annak rendelkeznie kell egy publikus konstruktorral, melynek nincsenek paraméterei, valamint az attribútumokhoz kell tartozzon egy-egy publikus „getter”%
+	\footnote{ %
+		egy paraméter nélküli metódus, mely egy attribútumot térít vissza - példa: String getName()
+	}  %
+	metódus.
+	\item[Kifejező lekérdezés] -- olyan lekérdezéseket alkalmazhatunk, melyek visszatérítenek egy specifikus dokumentumot, vagy akár az összes dokumentumot a kollekcióból, ami illeszkedik a lekérdezési paraméterekhez. Több filtert is alkalmazhatunk, ezek lehetnek láncoltak is, valamint kombináltak a rendezéssel. Az indexelésből kifolyólag a teljesítmény nem az adathalmaztól, hanem az eredményhalmaz méretétől fog függni.
+	\item[Valós idejű frissítések] -- adatszinkronizálást alkalmaz, így az összeköttetésben levő eszközökön mind frissülni fognak az információk.
+	\item[Offline támogatás] -- az alkalmazás által használt adatokat cache-eli, így internet nélkül is tudjuk ezeket írni, olvasni. Majd amikor az összeköttetés újra létrejön, a lokális változtatások szinkronizálva lesznek a felhővel.
+\end{description}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
