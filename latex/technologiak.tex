@@ -128,6 +128,7 @@ műveletekhez is biztosít metódusokat. Az adatbázisban található adatokhoz 
 	\item[Kifejező lekérdezés] -- olyan lekérdezéseket alkalmazhatunk, melyek visszatérítenek egy specifikus dokumentumot, vagy akár az összes dokumentumot a kollekcióból, ami illeszkedik a lekérdezési paraméterekhez. Több filtert is alkalmazhatunk, ezek lehetnek láncoltak is, valamint kombináltak a rendezéssel. Az indexelésből kifolyólag a teljesítmény nem az adathalmaztól, hanem az eredményhalmaz méretétől fog függni.
 	\item[Valós idejű frissítések] -- adatszinkronizálást alkalmaz, így az összeköttetésben levő eszközökön mind frissülni fognak az információk.
 	\item[Offline támogatás] -- az alkalmazás által használt adatokat cache-eli, így internet nélkül is tudjuk ezeket írni, olvasni. Majd amikor az összeköttetés újra létrejön, a lokális változtatások szinkronizálva lesznek a felhővel.
+	\item[Skálázhatóság] -- a Cloud Firestore igénybe veszi a Google Cloud Platform infrastruktúráját. Ezáltal képes automatikus multi-régiós adatreplikációt, erős konzisztencia-garanciát, atomikus batch-műveleteket, valamint valódi tranzakciós támogatottságot nyújtani. 
 \end{description}
 
 
