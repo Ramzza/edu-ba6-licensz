@@ -144,6 +144,10 @@ Opcionális paraméterként az indulási, érkezési időpontokat szintén megad
 
 \subsection{Directions API}
 
-Két csomópont közötti útvonalat a Directions API segítségével határoztam meg.
+A Directions API meghatározza két helyszín között az leghatékonyabb útvonalat. Alapvetően utazási időre van optimalizálva. A lekérdezés módja a Distance Matrix API-hoz hasonló. A lekérdezésre egy elég bonyolult JSON vagy XML formátumú választ kapunk. Ez magába foglalja a pontokat, melyek segítségével a térképen kirajzolhatjuk az útvonalat, és a navigációhoz szükséges adatokat, információkat.
+
+A PolyUtil osztály segítségével dekódolhatjuk a válaszként érkezett pontokat, majd a Polyline osztály segítségével egy összefüggő vonalként kirajzolhatjuk a térképre.
+
+
 
 
