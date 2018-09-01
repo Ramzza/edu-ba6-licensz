@@ -236,6 +236,53 @@ Get Data	Create queries or use realtime listeners to retrieve data from the data
 
 \subsection{Distance Matrix API}
 
+ntroduction
+The Distance Matrix API is a service that provides travel distance and time for a matrix of origins and destinations. The API returns information based on the recommended route between start and end points, as calculated by the Google Maps API, and consists of rows containing duration and distance values for each pair.
+
+Note: This service does not return detailed route information. Route information can be obtained by passing the desired single origin and destination to the Directions API.
+
+Before you begin
+This document is intended for developers who wish to compute travel distance and time between a number of points within maps provided by one of the Google Maps APIs. It provides an introduction to using the API and reference material on the available parameters.
+
+Before you start developing with the Distance Matrix API, review the authentication requirements (you need an API key) and the API usage and billing information (you need to enable billing on your project).
+
+Distance Matrix Requests
+A Distance Matrix API request takes the following form:
+
+https://maps.googleapis.com/maps/api/distancematrix/outputFormat?parameters
+where outputFormat may be either of the following values:
+
+json (recommended), indicates output in JavaScript Object Notation (JSON); or
+xml, indicates output as XML.
+Note: URLs must be properly encoded to be valid and are limited to 8192 characters for all web services. Be aware of this limit when constructing your URLs. Note that different browsers, proxies, and servers may have different URL character limits as well.
+
+HTTPS or HTTP
+Security is important and HTTPS is recommended whenever possible, especially for applications that include sensitive user data, such as a user's location, in requests. Using HTTPS encryption makes your application more secure, and more resistant to snooping or tampering.
+
+If HTTPS is not possible, to access the Distance Matrix API over HTTP, use:
+
+http://maps.googleapis.com/maps/api/distancematrix/outputFormat?parameters
+Request Parameters
+Certain parameters are required while others are optional. As is standard in URLs, all parameters are separated using the ampersand  character.
+
+Request Parameters
+Certain parameters are required while others are optional. As is standard in URLs, all parameters are separated using the ampersand character.
+
+Required parameters
+origins — The starting point for calculating travel distance and time. You can supply one or more locations separated by the pipe character (|), in the form of an address, latitude/longitude coordinates, or a place ID:
+If you pass an address, the service geocodes the string and converts it to a latitude/longitude coordinate to calculate distance. This coordinate may be different from that returned by the Geocoding API, for example a building entrance rather than its center.
+origins=Bobcaygeon+ON|24+Sussex+Drive+Ottawa+ON
+If you pass latitude/longitude coordinates, they are used unchanged to calculate distance. Ensure that no space exists between the latitude and longitude values.
+origins=41.43206,-81.38992|-33.86748,151.20699
+If you supply a place ID, you must prefix it with placeid. You can only specify a place ID if the request includes an API key or a Google Maps APIs Premium Plan client ID. You can retrieve place IDs from the Geocoding API and the Places SDK (including Place Autocomplete). For an example using place IDs from Place Autocomplete, see Place Autocomplete and Directions. For more about place IDs, see the place ID overview.
+origins=placeid:ChIJ3S-JXmauEmsRUcIaWtf4MzE
+Alternatively, you can supply an encoded set of coordinates using the Encoded Polyline Algorithm. This is particularly useful if you have a large number of origin points, because the URL is significantly shorter when using an encoded polyline.
+Encoded polylines must be prefixed with enc and followed by a colon. For example: origins=enc:gfoEtohhU:
+You can also include multiple encoded polylines, separated by the pipe character . For example: origins=
+destinations — One or more locations to use as the finishing point for calculating travel distance and time. The options for the destinations parameter are the same as for the origins parameter, described above.
+key — Your application's API key. This key identifies your application for purposes of quota management. Learn how to get a key.
+Note: Google Maps APIs Premium Plan customers may use either an API key, or a valid client ID and digital signature, in your Distance Matrix requests. Get more information on authentication parameters for Premium Plan customers
+
 \subsection{Directions API}
 
 A csomópontok közti távolságok mátrixának lekérdezésére a Distance Matrix API-t, valamint két csomópont közötti útvonal meghatározására a Directions API-t használtam.
