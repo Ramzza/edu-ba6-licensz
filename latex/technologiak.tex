@@ -121,7 +121,26 @@ metódus. Az adatbázisban található adatokhoz való hozzáférést egy szabá
 
 \subsection{Distance Matrix API}
 
-A csomópontok közti távolságok mátrixának lekérdezésére a Distance Matrix API-t használtam.
+A Distance Matrix API egy olyan szolgáltatás, ami visszatéríti az utazási távolságot és időt egy kiindulási és érkezési helyekből álló mátrixhoz. A lekérdezés paraméterei:
+
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[origins (kiindulási pontok)] -- megadhatunk egy földrajzi pontokból álló tömböt, amelyek rendelkeznek szélességi és hosszúsági fok attribútumokkal. Amennyiben karakterláncként adunk meg valódi címeket, a szolgáltatás megpróbálja ezt geokódolni, ezáltal átalakítani az előbb említett formátumba.
+	\item[destinations (érkezési pontok)] --  a kiindulási pontokhoz hasonló opciók érvényesek.
+	\item[key (kulcs)] -- az applikációhoz tartozó Google fejlesztési kulcs. Ennek segítségével használhatjuk a Google által közzétett API-kat. Mivel egy adott lekérdezés mennyiség után nem ingyenes a szolgáltatás, ezért a web-es felületen lekorlátozhatjuk a fejlesztői kulcsunkhoz való hozzáférést, hogy illetéktelen kezekbe kerülve se szívja le a mérlegünket. A korlátozásokat beállíthjatjuk IP-címre, Android, valamint iOS alkalmazásokra.
+	\item[utazási mód (opcionális)] -- vezetés (alapértelmezett), séta, biciklizés, tömegközlekedés.
+	\item[mértékegység (opcionális)] -- metrikus (alapértelmezett), birodalmi
+\end{description}
+
+Opcionális paraméterként az indulási, érkezési időpontokat szintén megadhatjuk. A lekérdezésre egy JSON (JavaScript Object Notation) vagy egy XML formátumú válasz érkezik, egy jól meghatározott struktúrával:
+
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[státusz] -- amennyiben sikeres volt a lekérdezésunk, válaszul itt OK-t kapunk. Hiba esetén a következő üzenetekkel találkozhatunk: INVALID\_REQUEST (helytelen formátumú kérés), MAX\_ELEMENTS\_EXCEEDED (a kérésenkénti csomópont limit meghaladása), OVER\_DAILY\_LIMIT (hiányzó API kulcs, általunk beállított limit, érvénytelen fizetési mód), OVER\_QUERY\_LIMIT (a megengedett időintervallumon belül túl sok lekérdezés), REQUEST\_DENIED (a szolgáltatás nem engedélyezi az alkalmazás számára a Distance Matrix használatát), UNKNOWN\_ERROR (szerver oldali hiba).
+	\item[kiindulási pontok címei] -- az eredeti lekérdezésből visszatérített objektumok.
+	\item[érkezési pontok címei] -- az eredeti lekérdezésből visszatérített objektumok.
+	\item[sorok] -- ez tartalmazza az adatokat. Egy adott struktúrájú elemekből álló tömbből áll, ahol az elemek tartalmazzák a státuszt, az időtartamot és a távolságot.
+\end{description}
 
 \subsection{Directions API}
 
