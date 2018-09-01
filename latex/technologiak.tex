@@ -75,70 +75,34 @@ The system apps function both as apps for users and to provide key capabilities 
 
 A Gradle egy nyílt forráskódú projektépítő eszköz (build automation tool). A Groovy, vagy Kotlin nyelvű scriptekbe, megadhatjuk a projektünk külső függöségeit (például API-k, library-k), melyeket letölti, majd lekompillálja és lefordítja a forráskódot.
 
-Incremental Builds
-Gradle checks in between build runs whether the input, output or an implementation of a task has changed since the last build invocation. If not, the task is considered up to date and is not executed. Gradle also considers the configuration of the task as part of its input.
+\subsection{Teljesítmény}
 
-Task Output Caching
-If a task has already been executed on another computer, Gradle can skip the execution locally, and instead load the task's outputs from the build cache. The typical use case is to let CI builds push to a shared build cache, and allow developers to pull from it. A local build cache is also available to reuse task outputs produced earlier on the same machine.
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[Inkrementális build] -- a Gradle leellenőrzi a build-ek futtatása között, hogy változtak-e a bemeneti adatok, a kimeneti adatok, vagy egy feladat implementációja az utolsó build meghívása óta. Ha nem változtak, akkor a feladatot (task) nem hajtja végre még egyszer. Egy faladat konfigurációja is bemeneti adatként tekintendő.
+	\item[Inktrementális részfeladatok] -- részfeladatok esetén is számon tartja, hogy változtak-e a bemeneti, valamint a kimeneti adatok, így pontosan meg tudja állaptíani, hogy mi változott, így nem biztos, hogy mindent újra kell build-elnie.
+	\item[Párhuzamos végrehajtás] -- lehetőség van a feladatok és a részfeladatok párhuzamos végrehajtására, ami jelentősen növeli a build végrehajtásának sebességét.
+	\item[Függőségek párhuzamos letöltése] -- a függőségek letőltése párhuzamosan zajlik, igény szerint, vagyis csak akkor, amikor szükség van ezekre.
+\end{description}
 
-Incremental Subtasks
-When Gradle discovers that the input or output of a task has changed between build runs, the task is executed again. The task can use the incremental API to learn what files exactly have changed. With this information the task may not need to rebuild everything.
+\subsection{Függőségkezelés}
 
-Compiler Daemon
-When you need to fork the compilation process, Gradle creates a daemon process that is reused within a multi project build. This provides a dramatic speed improvement for the compilation process.
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[Tranzitív függőségek] -- függőség menedzselő rendszer lévén, a Gradle gondoskodik a tranzitív függőségek letöltéséről, valamint kezeléséről.
+	\item[Külső függőségek] -- amikor a függőségek "távoli raktárakban" (remote repository) találhatóak, akkor ezeket eltárolja egy lokálisan, így egymást követő build-ek során újra felhasználja, elkerülvén a felesleges hálózati forgalmat.
+\end{description}
 
-Parallel Execution
-Gradle allows parallel execution of tasks and intra-task work through a Worker API. Parallelism is very fine-grained, resulting in faster performance.
+\subsection{Android alkalmazások}
 
-Parallel Download of Dependencies
-Gradle will download both dependency metadata (typically `pom.xml`) and artifacts in parallel. This is done on demand, only when the artifacts are actually required.
+Az Andoid Studio-hoz (az android hivatalos fejlesztői környezete) tartozó Gradle kiegészítő az android alkalmazások hivatalos build eszköze, melyet az android fejlesztői csapata tart karban.
 
-
-Android Applications
-Official Android Build Tool
-The Gradle Android Plugin and Android Studio are official tools provided and maintained by the Android SDK Tools team.
-
-Android Domain Build Language
-Describe your project via an Android-specific DSL. Tell Gradle about your project, now how to build it. Avoid the overly verbose need to explicitly implement the complex build process of Android projects.
-
-Full Integration with Android Studio
-Gradle is deeply integrated with Android Studio, the official Android IDE. In fact, Android Studio has no internal builder, it instead delegates all build tasks to Gradle. This "unified build system" ensures correctness across all your builds, whether they be run from Android Studio, the command line, or a continuous integration build server.
-
-Build Variants
-Declare your build types and product flavors and let Gradle handle the rest. No need to copy and paste build logic over and over for each of your project's variants. Use the expressive DSL to declare only what is different about your variants.
-
-Android Library Projects
-Android library projects are treated as first-class citizens in Gradle's multi-project build model. This enables all the benefits provided by Gradle's multi-project build support, such as project dependencies, and incremental builds.
-
-Manifest Merging
-Manifests and resource files are automatically merged, and individual entries overridden from variant source files. Build APKs with different application names, SKD versions or even required permissions.
-
-Per-Variant Dependency Management
-Gradle's advanced dependency management features are available to Android projects and can be configured uniquely for each build variant. Declare dependencies relevant to only certain variants or customize dependency resolution for each of your build variants.
-
-Application Signing
-Automate signing your applications. Debug build variants are, by default, signed with a debug key for installation on development devices. Declare additional signing configurations for publication to the Google Play store.
-
-ProGuard Support
-Easily configure ProGuard on your project to enable obfuscation and minification of the built APK. Configure ProGuard independently for each build type, allow an unoptimized APK for development and optimized one for release.
-
-Unit Testing
-Run unit tests against your Android application or library. Unit tests run in a standard Java JVM against a mocked Android SDK implementation facilitating fast-feedback test development, eliminating the overhead of building a separate APK and running tests of a device or emulator.
-
-On-device Functional Testing
-For tests that require a real Android environment for proper execution, bundle your test in a separate APK to be installed and run on an Android device or emulator. Separate APKs are built for each build variant allowing you to build and test every variant of your app in a single Gradle build.
-
-APK Splits
-Efficiently build multiple APKs for differing device display densities or ABIs by configuring Gradle to reuse shared build outputs.
-
-Multidex Support
-Utilize multidex support to avoid the 65k method limit imposed by Android DEX files.
-
-NDK Support
-Integrate your build with the Android NDK. Build application that depend on native libraries, projects that compile C/C++ into native libraries or both.
-
-Databinding
-Using binding classes generated by your Gradle build you can drastically simplify the way you interact with Android views. No more interacting with views directly, simply update the backing object and your view is kept up to date.
+\begin{description}
+	\setlength{\itemsep}{0.04mm}
+	\item[Teljes integráció az Android Studio-val] -- a Gradle olyannyira mélyen van integrálva az Android Studio-ba, hogy az utóbbinak nincs is saját build eszköze, hanem őt bízza meg a build-elési feladatokkal.
+	\item[Automatikus aláírás] -- automatikusan aláírja a fejlesztett applikációkat, ami szükséges ahhoz, hogy feltöltsük ezeket a Google Play áruházba.
+	\item[Multidex támogatás] -- ez lehetővé teszi, hogy meghaladjuk a 65000-es metódusszám limitet, mely az Anroid DEX állományokra vonatkozik és az applikáció .apk-ba való csomagolásakor történik az ellenőrzése.
+\end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Firebase}\label{sec:ALAP:szerkeszt}
