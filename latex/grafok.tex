@@ -80,6 +80,16 @@ Egy Euler-út egy gráfban egy olyan út, amely minden élet magába foglal, egy
 
 Egy gráf akkor és csakis akkor tartalmaz zárt Euler-utat, ha minden csúcshoz páros számú él tartozik, valamint minden él ugyanahhoz a komponenshez tartozik. Egy gráf akkor és csakis akkor tartalmaz nyílt Euler-utat, ha pontosan két csúcshoz tartozik páratlan számú él, és minden él egyazon komponenshez tartozik.
 
+\begin{figure}
+	\centering
+	\setlength{\abovecaptionskip}{0pt}
+	\setlength{\belowcaptionskip}{0pt}
+	\includegraphics[width=0.9\textwidth, scale=0.9]{images/konigsberg}
+	\caption[]%
+	{Königsbergi hidak\\
+		{\white .}\hfill\url{https://cdn.britannica.com/s:700x450/77/74877-004-6D15B0BD.jpg/}}
+\end{figure}
+
 \subsection{Legrövidebb út probléma}
 
 Legrövidebb út problémájára egy megoldás Dijkstra algoritmusa, mely visszatéríti a legrövidebb utat a kiinduló csúcsból az összes többi csúcsba. Negatív súlyú élek esetén nem működik. Az algoritmus komplexitása \(O(n^2)\), ahol \(n\) a csúcsok száma.
