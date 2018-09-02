@@ -90,14 +90,14 @@ Az alábbi eredményeket egy 2.8 GHz-es Intel Xeon processzor egy magjának hasz
 
 \subsection{Greedy - legközelebbi szomszéd}
 
-Mivel az egzakt algoritmusokat csak igazán kevés használati esetben lehet alkalmazni, ezért a mohó algoritmusok mellett is dönthetünk. Ezek polinomiális idő alatt elvégzik a feladatod, azonban nem mindig az optimumot térítik vissza. Az eltérés mértéke függhet azonban az implementációtól.
+Mivel az egzakt algoritmusokat csak igazán kevés használati esetben lehet alkalmazni, ezért a mohó algoritmusok mellett is dönthetünk. Ezek polinomiális idő alatt elvégzik a feladatot, azonban nem mindig az optimális megoldást térítik vissza. Az eltérés mértéke függhet azonban az implementációtól.
 
 
 \begin{description}
 	\setlength{\itemsep}{0.04mm}
 	\item[1. lépés] -- kezdjünk egy véletlenszerűen kiválasztott csomóponttal, melyet beállítunk aktuálisnak
 	\item[2. lépés] -- keressük meg a legrövidebb élet, amely összeköti az aktuális csúcsot, és egy meg nem látogatott \(V\) csúcsot
-	\item[3. lépés] -- beállítjuk \(V\)-t aktuális cs]csnak
+	\item[3. lépés] -- beállítjuk \(V\)-t aktuális csúcsnak
 	\item[4. lépés] -- megjelöljük, hogy már meglátogattuk \(V\)-t
 	\item[5. lépés] -- ha minden csomópontot meglátogattunk, akkor algoritmus vége
 	\item[6. lépés] -- menjünk a 2. lépéshez
@@ -105,7 +105,7 @@ Mivel az egzakt algoritmusokat csak igazán kevés használati esetben lehet alk
 
 \subsection{2-opt algoritmus}
 
-A 2-opt algoritmus egy lokális kereső algoritmus, mely egy meglévő utat javít fel. Ezt az algoritmust elsőként Croes javasolta 1958-ban, az alapműveletet azonban már Flood is javasolta 1956-ban. Ez abból áll, hogy egy meglévő körútból kitörlünk két élet, úgy hogy ezeknek nincs közös csúcsúk, majd a csomópontokat újra összekötjük. Erre egy lehetőség van úgy, hogy ne az előző utat kapjuk. Amennyiben az újonnan kapott körút rövidebb, megtartjuk. Ezeket a cseréket minden lehetséges kombinációra elvégezzük. Az így kapot körutat 2-optimálisnak nevezzük.
+A 2-opt algoritmus egy lokális kereső algoritmus, mely egy meglévő utat javít fel. Ezt az algoritmust elsőként Croes javasolta 1958-ban, az alapműveletet azonban már Flood is javasolta 1956-ban. Ez abból áll, hogy egy meglévő körútból kitörlünk két élet, úgy hogy ezeknek nincs közös csúcsúk, majd a csomópontokat újra összekötjük. Erre egy lehetőség van úgy, hogy ne az előző utat kapjuk. Amennyiben az újonnan kapott körút rövidebb, megtartjuk. Ezeket a cseréket minden lehetséges kombinációra elvégezzük. Az így kapott körutat 2-optimálisnak nevezzük.
 
 \subsection{Lin-Kernighan heurisztika}
 

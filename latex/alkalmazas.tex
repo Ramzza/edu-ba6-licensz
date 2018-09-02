@@ -89,7 +89,7 @@ A "csillag" gomb segítségével hozzáadhatunk egy helyszínt vagy egy útvonal
 	\caption{A Firebase függőségei\label{fig:ALAP:sm2}}
 \end{wrapfigure}
 
-Adatbázisnak és az autentikáció menedzselésére Firebase-t használtam. Mielőtt bármilyen funkcióját is használhatnám ennek az applikációfejlesztési platformnak, be kellett jelentkezzek a Google felhasználómmal, készítenem kellett egy projektet, majd ezt a projektet össze kellett kapcsolnom magával az applikációval amit fejleszteni szerettem volna. Van egy külön \(plugin\)%
+Adatbázisnak és az autentikáció menedzselésére Firebase-t használtam. Mielőtt bármilyen funkcióját is használhatnám ennek az applikációfejlesztési platformnak, be kellett jelentkezzek a Google felhasználómmal, készítenem kellett egy projektet, majd ezt a projektet össze kellett kapcsolnom magával az applikációval, amit fejleszteni szerettem volna. Van egy külön \(plugin\)%
 \footnote{ %
 	kiegészítés
 }  %
@@ -112,12 +112,12 @@ A web-es felületen engedélyeznem kellett az e-mail/jelszó bejelentkezést. Ug
  
  \begin{description}
  	\setlength{\itemsep}{0.04mm}
- 	\item[createUserWithEmailAndPassword(email, jelszó)] -- kreál egy felhasználót az e-mail és jelszó karakterlánc paraméterek segítségével, majd sikeres válasz után be is jelentkezik
+ 	\item[createUserWithEmailAndPassword(email, jelszó)] -- létrehoz egy felhasználót az e-mail és jelszó karakterlánc paraméterek segítségével, majd sikeres válasz után be is jelentkezik
  	\item[signInWithEmailAndPassword(email, jelszó)] -- megpróbál bejelentkezni a megadott e-mail/jelszó kombinációval
  	\item[sendPasswordResetEmail(email)] -- küld egy jelszó visszaállító e-mailt a paraméterként megadott címre.
  \end{description}
 
-Az aktiváviós e-mail küldéséhez a FirebaseUser osztály insztanciájának a sendEmailVerification() metódusát használtam.
+Az aktivációs e-mail küldéséhez a FirebaseUser osztály insztanciájának a sendEmailVerification() metódusát használtam.
 
 \subsection{Kollekciók, Dokumentumok}
 
@@ -145,7 +145,7 @@ A Firestore egy még Beta%
  
 Minden felhasználónak csak a saját dokumentumához van hozzáférése. Ezt egy úgynevezett szabály meghatározásával lehet elérni. Az adatbázis minden beérkező függvényhívást kiértékel a szabály alapján, és eldönti, hogy az adott kérésnek van-e elegendő jogosultsága. Amennyiben nincs, csak egy hibaüzenetet térít vissza.
 
- A GRoutes alkalmazás esetében a következőképpen építettem fel a struktúrát: vagy egy \(users\) kollekció, amely a felhasználókat tartalmazza. Minden felhasználói dokumentumnak az ID-ja megegyezik az UID%
+ A GRoutes alkalmazás esetében a következőképpen építettem fel a struktúrát: van egy \(users\) kollekció, amely a felhasználókat tartalmazza. Minden felhasználói dokumentumnak az ID-ja megegyezik az UID%
 \footnote{ %
 	egyedi felhasználói ID, ami regisztrációkor generálódik
 }  %
@@ -182,7 +182,7 @@ Egy android applikációban a UI%
 
 \begin{description}
 	\setlength{\itemsep}{0.04mm}
-	\item[LoginTabActivity] -- ez a bejelentkezési felület, tehát ez fogad minket az alkalmazás indításakor. Itt történik az e-mail és a jelszó mezők validálása, formátum ellenőrzése a bejelentkezési próbálkozás előtt. Használja a DatabaseAssist autentikációval foglalkozó metódusait, majd a válasz visszaérkezése után a LoggedInActivity-hez navigál.
+	\item[LoginTabActivity] -- ez a bejelentkezési felület, tehát ez fogad minket az alkalmazás indításakor. Itt történik az e-mail és a jelszó mezők validálása, a formátum ellenőrzése a bejelentkezési próbálkozás előtt. Használja a DatabaseAssist autentikációval foglalkozó metódusait, majd a válasz visszaérkezése után a LoggedInActivity-hez navigál.
 	\item[LoggedInActivity] -- ez a főmenü. Amint beléptünk ide, a háttérben betöltjük a felhasználó adatait (múltbeli keresések, kedvencek). Innen tudunk tovább navigálni a főbb menüpontokhoz.
 	\item[FavActivity] --  ez a "Kedvencek" felület. Mivel itt már komplexebb műveleteket kell végrehajtani, ezért azokat egy segédosztályba csoportosítottam, egy köztes réteget létrehozva a UI és az adatbázissal foglalkozó osztály között.
 	\item[HistoryActivity] -- ez a "múltbeli keresések" menüpont, rendelkezik segédosztállyal 
@@ -203,7 +203,7 @@ Egy android applikációban a UI%
 	\footnote{ %
 		vonallánc
 	}  %
- osztály használatával. A navigálásért is felel.
+ osztály használatával, továbbá a navigálásért is felel.
 	\item[SearchAssist] -- feldolgozza a keresési címeket, majd a megfelelő adatstruktúrát lekommunikálja a CacheManager-nek
 \end{description}
 
@@ -214,7 +214,7 @@ A fontosabb általános műveletek végrehajtására létrehoztam néhány Singl
 \begin{description}
 	\setlength{\itemsep}{0.04mm}
 	\item[DatabaseAssist] -- ez felel mindennemű Firebase-el kapcsolatos kommunikációért. Feladatai közé tartozik a regisztráció, bejelentkezés, az ezekkel kapcsolatos e-mail küldések, valamint a CRUD operációk elvégzése.
-	\item[CacheManager] -- a köztopnti adatmenedzselő osztály. Ő tölti be, aktualizálja, szolgálja ki a segédosztályokat az adatokkal, továbbítja kéréseiket a DatabaseAssist-nak. A LoginTabActivity kivételével csak ő áll kapcsolatban a DatabaseAssist segédosztállyal.
+	\item[CacheManager] -- a központi adatmenedzselő osztály. Ő tölti be, aktualizálja, szolgálja ki a segédosztályokat az adatokkal, továbbítja kéréseiket a DatabaseAssist-nak. A LoginTabActivity kivételével csak ő áll kapcsolatban a DatabaseAssist segédosztállyal.
 	\item[RouteCalculator] -- az optimális útvonal meghatározásáért felel (az utazó ügynök problémájának megoldása)\cite{pyconc}
 \end{description}
 
@@ -242,7 +242,7 @@ A Firestore-ba való egyszerű mentés érdekében bizonyos kritériumoknak meg 
 
 \subsection{Aszinkron függvényhívások}\label{sec:ALAP:adatelem}
 
-Több olyan használati eset van, amikor egy bizonyos metódus az interneten keresztül kommunikál egy szerverrel. Ez mindig okozhat problémákat, de a szinkronhívásokat kivételkezeléssel egyszerúen meg lehet oldani. Több esetben, mint például a bejelentkezéskor vagy az adatok lekérdezésekor, a program nem vár a válaszra, hanem tovább végzi a következő műveleteket. Ez olyan helyzetekhez vezethet, hogy megnyitunk egy felületet és még nincsenek beöltve az adataink. 
+Több olyan használati eset van, amikor egy bizonyos metódus az interneten keresztül kommunikál egy szerverrel. Ez mindig okozhat problémákat, de a szinkronhívásokat kivételkezeléssel egyszerűen meg lehet oldani. Több esetben, mint például a bejelentkezéskor vagy az adatok lekérdezésekor, a program nem vár a válaszra, hanem tovább végzi a következő műveleteket. Ez olyan helyzetekhez vezethet, hogy megnyitunk egy felületet és még nincsenek betöltve az adataink. 
 
 Ezt a problémát úgy oldottam meg, hogy a DatabaseAssist osztály fog utólag jelezni annak az osztálynak ahonnan a kérés érkezett, amint választ kapott.
 
@@ -259,7 +259,7 @@ Egy földrajzi koordináta nem egy bonyolult adatszerkezet: tartalmaz egy földr
 
 \begin{description}
 	\setlength{\itemsep}{0.04mm}
-	\item[GeoPoint] -- a Firestore egyik beépített adattípusa, így az adatbázis miatt, az egyszerű tárolás, valamint CRUD műveletekkel való kompatibilitás miatt szükség volt ennek használatára.
+	\item[GeoPoint] -- a Firestore egyik beépített adattípusa, így az adatbázis, az egyszerű tárolás, valamint CRUD műveletekkel való kompatibilitás miatt szükség volt ennek használatára.
 	\item[com.google.android.gms.maps.model.LatLng] -- a GoogleMap osztály használja. Ha egy \textit{Marker}-t szeretnénk egy térkép \textit{activity}-ben használni, akkor egy ilyen objektumot kell paraméterként átadjunk.
 	\item[com.google.maps.model.LatLng] -- a Direction API, valamint a Distance Matrix API metódusaiban, paraméterként használt típus.
 \end{description}
