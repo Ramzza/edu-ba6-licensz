@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Az utazó ügynök problémája magába foglalja a Hamilton-kör létezésnek a problémáját is. Adott valamennyi város, amelyeket az utazó ügynök úgy kell meglátogasson, hogy mindegyik városba egyszer és csakis egyszer menjen be, valamint érjen vissza a kiindulási pontba.
+Az utazó ügynök problémája magába foglalja a Hamilton-kör létezésnek a problémáját is. Adott valamennyi város, amelyeket az utazó ügynök úgy kell meglátogasson, hogy mindegyik városba egyszer és csakis egyszer menjen be, valamint érjen vissza a kiindulási pontba, és a megtett út a legrövidebb legyen.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{A probléma komplexitása}\label{sec:ALAP:adatelem}
@@ -14,7 +14,7 @@ Az utazó ügynök problémája magába foglalja a Hamilton-kör létezésnek a 
 	\item[P] -- azokat a problémákat foglalja magába, melyeket egy determinisztikus Turing-gép polinomiális időben képes megoldani
 	\item[NP] -- azokat a problémákat foglalja magába, melyeket egy nem-determinisztikus Turing gép polinomiális időben képes megoldani. Ezeknek a megoldását polinomiális időn belül le lehet ellenőrizni determinisztikus Turing-géppel.
 	\item[NP-nehéz] -- egy probléma amely "legalább olyan nehéz, mint a legnehezebb probléma az NP-ben"
-	\item[NP-teljes] -- egy probléma NP-teljes ha úgy az NP, mint az NP-nehéz halamznak is eleme, így tehát ezek a legnehezebb komputacionális problémák
+	\item[NP-teljes] -- egy probléma NP-teljes ha úgy az NP, mint az NP-nehéz halmaznak is eleme, így tehát ezek a legnehezebb komputacionális problémák
 \end{description}
 
 
@@ -31,20 +31,20 @@ Amennyiben irányított gráfokkal dolgozunk, abban az esetben az aszimmetrikus 
 
 \section{Egzakt algoritmusok}\label{sec:ALAP:adatelem}
 
-Az egzatk algoritmusok minden esetben az optimális megoldást térítik vissza, komplexitásuk azonban exponenticális. Így a csomópontok növekedésével a futási sebesség exponenciálisan fog nőni. Kutatási szemptontot leszámítva, nem lehetne ezeket az algoritmusokat átlagos felhasználói környezetben alkalmazni, ugyanis már 20 csomópont után nem lehet kivárni a megoldást. 
+Az egzatk algoritmusok minden esetben az optimális megoldást térítik vissza, komplexitásuk azonban exponenciális. Így a csomópontok növekedésével a futási sebesség exponenciálisan fog nőni. Kutatási szemptontot leszámítva, nem lehetne ezeket az algoritmusokat átlagos felhasználói környezetben alkalmazni, ugyanis már 20 csomópont után nem lehet kivárni a megoldást. 
 
 \subsection{Brute force}
 
-A legegyszerűbb megközelítés, az összes permutációt kipróbálni, és kiválasztani ezek közül a legjobbat. Ennek a komplexitása azonban \(O(n!)\), így ezt már 20 városnál se lehet alkalmazni.
+A legegyszerűbb megközelítés, az összes permutációt kipróbálni, és kiválasztani ezek közül a legjobbat. Ennek a komplexitása azonban \(O(n!)\), így ezt már 20 városnál sem lehet alkalmazni.
 
 
 \subsection{Held-Karp algoritmus}
 
 Az algoritmus komplexitása a legrosszabb esetben \(O(n^2*2^n)\).
 
-Legyen \(S \subseteq {2, \dots, N}\) részhalmaza a városoknak, és \(c \in S\) úgy, hogy \(D(S,c)\) a minimális távolság kezdve az első várostól, meglátogatva az összes várost \(S\)-ből, majd visszaérve \(c\) városba.
+Legyen \(S \subseteq {2, \dots, N}\) részhalmaza a városoknak és \(d_{ij}\) az \(i\) és \(j\) városok közötti távolság. Továbbá \(c \in S\) úgy, hogy \(D(S,c)\) a minimális távolság kezdve az első várostól, meglátogatva az összes várost \(S\)-ből, majd visszaérve \(c\) városba.
 
-ha \(S = {c}\), akkor \(D(S,c) = d_{1,c}\), különben:
+Ha \(S = {c}\), akkor \(D(S,c) = d_{1,c}\), különben:
 
 \begin{equation}
 D(S,c) = min_{x \in S-c}(D(S - c,x)+d_{x,c})
@@ -72,7 +72,7 @@ A \(Concorde\) segítségével megtalálták az optimális megoldást a TSPLIB%
 }  %
 mind a 110 példájára, ahol a legnagyobb 85900 várost tartalmaz.
 
-Az alábbi eredmények egy 2.8 GHz-es Intel Xeon processzor egy magjának használatával lettek kiszámolva, az \textit{ILOG CPLEX} lineáris programozási feladatmegoldó segítségével. Mindegyik adathalmaz 100 csomópontból áll.
+Az alábbi eredményeket egy 2.8 GHz-es Intel Xeon processzor egy magjának használatával számolták ki, az \textit{ILOG CPLEX} lineáris programozási feladatmegoldó segítségével. Mindegyik adathalmaz 100 csomópontból áll.
 
 \begin{table}[]
 	\begin{tabular}{l|l}
@@ -90,7 +90,7 @@ Az alábbi eredmények egy 2.8 GHz-es Intel Xeon processzor egy magjának haszn�
 
 \subsection{Greedy - legközelebbi szomszéd}
 
-Mivel az egzakt algoritmusokat csak igazán kevés használati esetben lehet alkalmazni, ezért a mohó algoritmusok mellett is dönthetünk. Ezek polinomiális idő alatt elvégzik a feladatod, azonban nem mindig az optimumot térítik vissza. Az eltérés mértéke függhet azonban az implemetációtól.
+Mivel az egzakt algoritmusokat csak igazán kevés használati esetben lehet alkalmazni, ezért a mohó algoritmusok mellett is dönthetünk. Ezek polinomiális idő alatt elvégzik a feladatod, azonban nem mindig az optimumot térítik vissza. Az eltérés mértéke függhet azonban az implementációtól.
 
 
 \begin{description}
@@ -109,14 +109,14 @@ A 2-opt algoritmus egy lokális kereső algoritmus, mely egy meglévő utat jav�
 
 \subsection{Lin-Kernighan heurisztika}
 
-A 2-opt algoritmus általánosítása révén született meg az egyik leghatékonyabb approximációs algoritmus a szimmetrikus TSP megoldására, a Lin-Kernighan algoritmus\cite{lin_kern}. Egy körút k-optimális, ha nem lehetséges egy rövidebb körutat kapni \(k\) darab él, más \(k\) darab éllel való helyettesítés után. Minél nagyobb a \(k\) értéke, annál valószínűbb, hogy az algoritmus végrehajtása után az optimális megoldást kapjuk, ugyanakkor nagyobb adathalmazra gyorsan növekszik a \(k\) darab élcsere ellenőrzéséhez szükséges műveletek száma. Egy hátránya tehát a \(k-opt\) algoritmusoknak, hogy futás előtt meg kell adni a \(k\) értékét. Ezt a hátrányt igyekszik kiküszöbölni a Lin-Kernighan algoritmus, azáltal, hogy futása során változtatja \(k\)-nak az értékét.
+A 2-opt algoritmus általánosítása révén született meg az egyik leghatékonyabb approximációs algoritmus a szimmetrikus TSP megoldására, a Lin-Kernighan algoritmus\cite{lin_kern}. Egy körút k-optimális, ha nem lehetséges egy rövidebb körutat kapni \(k\) darab él, más \(k\) darab éllel való helyettesítése után. Minél nagyobb a \(k\) értéke, annál valószínűbb, hogy az algoritmus végrehajtása után az optimális megoldást kapjuk, ugyanakkor nagyobb adathalmazra gyorsan növekszik a \(k\) darab élcsere ellenőrzéséhez szükséges műveletek száma. Egy hátránya tehát a \(k-opt\) algoritmusoknak, hogy futás előtt meg kell adni a \(k\) értékét. Ezt a hátrányt igyekszik kiküszöbölni a Lin-Kernighan algoritmus, azáltal, hogy futása során változtatja \(k\)-nak az értékét.
 
-Legyen \(T\) az aktuális körút. Minden iterációban, az algoritmus igyekszik találni két \(X = \{x_1,\dots,x_k\}\) és \(Y = \{y_1,\dots,y_k\}\) élekből álló halmazokat, melyekre igaz az, hogy a \(T\) körútból az \(X\)-ben található éleket az \(Y\)-ból vett élekkel helyettesítve egy jobb körutat kapunk. Ezeknek az éleknek a felcserélését \(k-opt\) lépésnek nevezzük. Ahhoz, hogy kellően hatékony algoritmust kapjunk, az \(X\) és \(Y\) halmazokhoz tartozó éleknek meg kell felelniük bizonyos kritériumoknak:
+Legyen \(T\) az aktuális körút. Minden iterációban, az algoritmus igyekszik találni két \(X = \{x_1,\dots,x_k\}\) és \(Y = \{y_1,\dots,y_k\}\) élekből álló halmazt, melyekre igaz az, hogy a \(T\) körútból az \(X\)-ben található éleket az \(Y\)-ból vett élekkel helyettesítve egy jobb körutat kapunk. Ezeknek az éleknek a felcserélését \(k-opt\) lépésnek nevezzük. Ahhoz, hogy kellően hatékony algoritmust kapjunk, az \(X\) és \(Y\) halmazokhoz tartozó éleknek meg kell felelniük bizonyos kritériumoknak:
 
 \begin{description}
 	\setlength{\itemsep}{0.04mm}
 	\item[(a) A szekvenciális csere kritériuma] -- \(x_i\)-nek, valamint \(y_i\)-nek rendelkezniük kell egy közös csúccsal, ugyanígy \(y_i\)-nek és \(x_{i+1}\)-nek is. Így tehát a \(x_1,y_1,x_2,y_2,\dots,x_k,y_k\) sorozat egy szomszédos élekből álló láncot alkot.
-	\item[(b) A megvalósíthatósági kritérium] -- szükséges továbbá, hogy \(x_i = (t_\{2i-1\},t_\{2i\})\) úgy legyen kiválasztva, hogy ha a \(t_\{2i\}\)-t csatlakoztatjuk a \(t_1\)-hez, az így kapott gráf körút maradjon. Ez a kritérium az algoritmus futási idejének csökkentéséért, valamint a kódolás leegyszerűsítéséért lett bevonva.
+	\item[(b) A megvalósíthatósági kritérium] -- szükséges továbbá, hogy \(x_i = (t_{\{2i-1\}},t_{\{2i\}})\) úgy legyen kiválasztva, hogy ha a \(t_{\{2i\}}\)-t csatlakoztatjuk a \(t_1\)-hez, az így kapott gráf körút maradjon. Ez a kritérium az algoritmus futási idejének csökkentéséért, valamint a kódolás leegyszerűsítéséért lett bevonva.
 	\item[(c) A pozitív nyereség kritériuma] -- az \(y_i\)-t úgy kell kiválasztani, hogy a nyereség a javaslot cserék után pozitív maradjon. Ez a feltétel kulcsfontosságú az algoritmus hatékonyságának szempontjából.
 	\item[(d) A diszjunktivitás kritérium] -- az \(X\) és \(Y\) halmazoknak diszjunktnak kell lenniük
 \end{description}

@@ -35,7 +35,7 @@ A főmenüből négy különböző oldalra navigálhatunk tovább: a keresési f
 
 \subsection{Keresési felület}
 
-Ezen a felületen van lehetőségünk útvonalak, helyszínek keresésére. Az "+" gomb megjelnít egy új mezőt, ahol további címeket adhatunk meg. A "nagyító" gomb a térkép felületre navigál, és kirajzolja a tervezett útvonalat. A keresés elindítása előtt, minden cím mellett van egy "térkép" gomb, ennek segítségével tudjuk megnézni, hogy valóban az az a hely, amire gondoltunk.
+Ezen a felületen van lehetőségünk útvonalak, helyszínek keresésére. A "+" gomb megjelenít egy új mezőt, ahol további címeket adhatunk meg. A "nagyító" gomb a térkép felületre navigál, és kirajzolja a tervezett útvonalat. A keresés elindítása előtt, minden cím mellett van egy "térkép" gomb, ennek segítségével tudjuk megnézni, hogy valóban az az a hely, amire gondoltunk.
 
 \subsection{Kedvencek}
  
@@ -89,7 +89,7 @@ A "csillag" gomb segítségével hozzáadhatunk egy helyszínt vagy egy útvonal
 	\caption{A Firebase függőségei\label{fig:ALAP:sm2}}
 \end{wrapfigure}
 
-Adatbázisnak és az autentikáció menedzselésére Firebase-t használtam. Mielőtt bármilyen funkcióját is használhatnám ennek az applikációfejlesztési platformnak, be kellett jelentkezzek a Google felhasználómmal, csinálnom kellett egy projektet, majd ezt a projektet össze kellett kapcsolnom magával az applikációval amit fejleszteni szerettem volna. Van egy külön \(plugin\)%
+Adatbázisnak és az autentikáció menedzselésére Firebase-t használtam. Mielőtt bármilyen funkcióját is használhatnám ennek az applikációfejlesztési platformnak, be kellett jelentkezzek a Google felhasználómmal, készítenem kellett egy projektet, majd ezt a projektet össze kellett kapcsolnom magával az applikációval amit fejleszteni szerettem volna. Van egy külön \(plugin\)%
 \footnote{ %
 	kiegészítés
 }  %
@@ -178,7 +178,7 @@ Egy android applikációban a UI%
 \footnote{ %
 	Extensible Markup Language - Kiterjeszthető Jelölő Nyelv
 }  %
-állományok segítségével szerkeszthetjük meg, ezek azonban csak a külalakot adja meg. A háttérben végrehajtódó logikáért az Activity osztályok felelnek. A GRoutes alkalmazás különböző használati eseteihez más-más \(activity\) és XML állománypár tartozik.
+állományok segítségével szerkeszthetjük meg, ezek azonban csak a külalakot adják meg. A háttérben végrehajtódó logikáért az Activity osztályok felelnek. A GRoutes alkalmazás különböző használati eseteihez más-más \(activity\) és XML állománypár tartozik.
 
 \begin{description}
 	\setlength{\itemsep}{0.04mm}
@@ -213,7 +213,7 @@ A fontosabb általános műveletek végrehajtására létrehoztam néhány Singl
 
 \begin{description}
 	\setlength{\itemsep}{0.04mm}
-	\item[DatabaseAssist] -- ez felel mindenféle Firebase-el kapcsolatos kommunikációért. Feladatai közé tartozik a regisztráció, bejelentkezés, az ezekkel kapcsolatos e-mail küldések, valamint a CRUD operációk elvégzése.
+	\item[DatabaseAssist] -- ez felel mindennemű Firebase-el kapcsolatos kommunikációért. Feladatai közé tartozik a regisztráció, bejelentkezés, az ezekkel kapcsolatos e-mail küldések, valamint a CRUD operációk elvégzése.
 	\item[CacheManager] -- a köztopnti adatmenedzselő osztály. Ő tölti be, aktualizálja, szolgálja ki a segédosztályokat az adatokkal, továbbítja kéréseiket a DatabaseAssist-nak. A LoginTabActivity kivételével csak ő áll kapcsolatban a DatabaseAssist segédosztállyal.
 	\item[RouteCalculator] -- az optimális útvonal meghatározásáért felel (az utazó ügynök problémájának megoldása)
 \end{description}
@@ -242,7 +242,7 @@ A Firestore-ba való egyszerű mentés érdekében bizonyos kritériumoknak meg 
 
 \subsection{Aszinkron függvényhívások}\label{sec:ALAP:adatelem}
 
-Több olyan használati eset van, amikor egy bizonyos metódus az interneten keresztül kommunikál. Ez mindig okozhat problémákat, de a szinkronhívásokat kivételkezeléssel egyszerúen meg lehet oldani. Több esetben, mint például a bejelentkezéskor vagy az adatok lekérdezésekor, a program nem vár a válaszra, hanem tovább végzi a következő műveleteket. Ez olyan helyzetekhez vezethet, hogy megnyitunk egy felületet és még nincsenek beöltve az adataink. 
+Több olyan használati eset van, amikor egy bizonyos metódus az interneten keresztül kommunikál egy szerverrel. Ez mindig okozhat problémákat, de a szinkronhívásokat kivételkezeléssel egyszerúen meg lehet oldani. Több esetben, mint például a bejelentkezéskor vagy az adatok lekérdezésekor, a program nem vár a válaszra, hanem tovább végzi a következő műveleteket. Ez olyan helyzetekhez vezethet, hogy megnyitunk egy felületet és még nincsenek beöltve az adataink. 
 
 Ezt a problémát úgy oldottam meg, hogy a DatabaseAssist osztály fog utólag jelezni annak az osztálynak ahonnan a kérés érkezett, amint választ kapott.
 

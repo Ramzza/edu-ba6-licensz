@@ -1,5 +1,5 @@
 
-\chapter{Technológiák}
+\chapter{Felhasznált technológiák}
 
 \begin{osszefoglal}
 	Ebben a fejezetben, a projekt elkészítése során felhasznált technológiákat ismertetem.
@@ -13,7 +13,9 @@
 	\setlength{\abovecaptionskip}{0pt}
 	\setlength{\belowcaptionskip}{0pt}
 	\includegraphics[width=0.9\textwidth, scale=0.9]{images/android}
-	\caption{Az Android platform komponensei\label{fig:ALAP:sm2}}
+	 \caption[]%
+	{Az Android platform komponensei\\
+		{\white .}\hfill\url{https://developer.android.com/guide/platform/}}
 \end{figure}
 
 Az Android\cite{android} egy nyílt forráskódú, Linux kernel alapú többfelhasználós operációs rendszer, ahol minden applikáció egy külön felhasználó. Hivatalos nyelvei a Java és a Kotlin. Alapértelmezetten, a rendszer minden applikációnak kioszt egy egyedi Linux felhasználói ID-t (az ID-t csak a rendszer használja, és ismeretlen az applikáció számára). Az operációs rendszer úgy osztja ki a hozzáfárési jogokat az applikáció állományai számára, hogy csak az a felhasználói ID férjen hozzájuk, amivel az adott applikáció rendelkezik. Minden folyamat (process) rendelkezik a saját virtuális gépével, tehát minden applikáció kódja egymástól teljesen izoláltan fut. Alapértelmezetten minden applikáció a saját Linux folyamatában fut. Az Android operációs rendszer elindítja a folyamatot, amikor az applikáció valamelyik komponensének szüksége van rá, majd leállítja azt, mikor többé már nincs rá szükség, vagy ha a rendszernek mermóriát kell lefoglalnia, más applikációk számára. Az Android operációs rendszer “a legkevesebb kiváltság elvét” (“the principle of least privilige”) alkalmazza, tehát alapértelmezetten, minden applikációnak csak azokhoz a komponensekhez van hozzáférése, amik szükségesek a feladatának elvégzéséhez, és semmi egyébhez.
@@ -28,13 +30,13 @@ Az Android platform alapja a Linux kernel (mag). Például az Android Runtime (f
 
 \subsection{Hardware Abstraction Layer (HAL)}
 
-A hardver absztrakciós réteg olyan szabványos interfészeket (interface) biztosít, amelyek segítségével az eszköz hardvereinek funkcionalitásait a Java API keretrendszeren belül használhatjuk. A HAL több könyvtárból, modulból áll, melyek mindegyike implementálegy interfészt valamely hardver-komponens számára, mint például a kamera vagy a bluetooth. Amikor a keretrendszer API egy függvényhívással használatba akarja venni az eszköz hardver-komponensét, akkor az Android operációs rendszer betölti az adott komponenshez tartozó könyvtár modult.
+A hardver absztrakciós réteg olyan szabványos interfészeket (interface) biztosít, amelyek segítségével az eszköz hardvereinek funkcionalitásait a Java API keretrendszeren belül használhatjuk. A HAL több könyvtárból, modulból áll, melyek mindegyike implementál egy interfészt valamely hardver-komponens számára, mint például a kamera vagy a bluetooth. Amikor a keretrendszer API egy függvényhívással használatba akarja venni az eszköz hardver-komponensét, akkor az Android operációs rendszer betölti az adott komponenshez tartozó könyvtár modult.
 
 \subsection{Android Runtime}
 
-Azokon az eszközökön, amelyeken az Android 5.0 (API szint 21) vagy nagyobb verziója fut, minden applikáció a saját folyamatában (process) fut, a saját ART instanciájában. Az ART úgy lett megírva, hogy több virtuális gépet hozzon létre, kevés memóriával rendelkező eszközökön úgy, hogy úgynevezet DEX (Dalvik Executable Format) állományokat hajt végre. A DEX egy bájtkód formátum, különösképpen az Android-ra tervezték és arra van optimalizálva, hogy kevés memóriát vegyen igénybe. A build rendszerek a forráskódot DEX bájtkódra fordítják, melyek majd az Android platformon fognak futni.
+Azokon az eszközökön, amelyeken az Android 5.0 (API szint 21) vagy újabb verziója fut, minden applikáció a saját folyamatában (process) fut, a saját ART instanciájában. Az ART úgy lett megírva, hogy több virtuális gépet hozzon létre kevés memóriával rendelkező eszközökön úgy, hogy úgynevezet DEX (Dalvik Executable Format) állományokat hajt végre. A DEX egy bájtkód formátum, különösképpen az Android-ra tervezték és arra van optimalizálva, hogy kevés memóriát vegyen igénybe. A build rendszerek a forráskódot DEX bájtkódra fordítják, melyek majd az Android platformon fognak futni.
 
-Az ART főbb funkciói közé tartozik: a futásidejű (JIT), valamint futási idő előtti ( AOT) forditás, az optimalizált szemétgyűjtés (Garbage Collection). Android 9 (API 28) vagy annál magasabb verziókon az alkalmazás DEX állományai sokkal kompaktabb gépi kóddá vannak átalakítva.
+Az ART főbb funkciói közé tartozik: a futásidejű (JIT), valamint futási idő előtti ( AOT) fordítás, az optimalizált szemétgyűjtés (Garbage Collection). Android 9 (API 28) vagy annál magasabb verziókon az alkalmazás DEX állományai sokkal kompaktabb gépi kóddá vannak átalakítva.
 
 \subsection{Natív C/C++ könyvtárak}
 
@@ -55,19 +57,19 @@ Az Android operációs rendszer funkciói a Java nyelven íródott API-kon keres
 
 \subsection{Rendszer alkalmazások}
 
-Van néhány alkalmazás, ami alapból benne van az Android-ban, ezek többek között az üzenetküldésért, naptárért, internetes böngészésért és a névjegyekért felelnek. A rendszer alkalmazásoknak nincs különleges státuszuk, bármely harmadik féltől származó applikáció átveheti alapértelmezettként az adott funkciók kezeléséért felelő szerepet. Kivételt képez a Beállítások (Settings) alkalmazás. A beépített alklamazások funkcionalitásait a fejlesztők a saját applikációikban is igénybe vehetik, példa erre a "megosztás SMS-ként", amikor a megosztani kívánt szöveget egy rendszeralkalmazás segítségével küldik el.
+Van néhány alkalmazás, ami alapból benne van az Android-ban, ezek többek között az üzenetküldésért, naptárért, internetes böngészésért és a névjegyekért felelnek. A rendszer alkalmazásoknak nincs különleges státuszuk, bármely harmadik féltől származó applikáció átveheti alapértelmezettként az adott funkciók kezeléséért felelő szerepet. Kivételt képez a Beállítások (Settings) alkalmazás. A beépített alkalmazások funkcionalitásait a fejlesztők a saját applikációikban is igénybe vehetik, példa erre a "megosztás SMS-ként", amikor a megosztani kívánt szöveget egy rendszeralkalmazás segítségével küldik el.
 
 
 \section{Gradle}
 
-A Gradle\cite{gradle} egy nyílt forráskódú projektépítő eszköz (build automation tool). A Groovy, vagy Kotlin nyelvű scriptekbe, megadhatjuk a projektünk külső függöségeit (például API-k, library-k), melyeket letölti, majd lekompillálja és lefordítja a forráskódot.
+A Gradle\cite{gradle} egy nyílt forráskódú projektépítő eszköz (build automation tool). A Groovy, vagy Kotlin nyelvű scriptekbe megadhatjuk a projektünk külső függöségeit (például API-k, library-k), melyeket letölt, majd lekompillálja és lefordítja a forráskódot.
 
 \subsection{Teljesítmény}
 
 \begin{description}
 	\setlength{\itemsep}{0.04mm}
 	\item[Inkrementális build] -- a Gradle leellenőrzi a build-ek futtatása között, hogy változtak-e a bemeneti adatok, a kimeneti adatok, vagy egy feladat implementációja az utolsó build meghívása óta. Ha nem változtak, akkor a feladatot (task) nem hajtja végre még egyszer. Egy faladat konfigurációja is bemeneti adatként tekintendő.
-	\item[Inktrementális részfeladatok] -- részfeladatok esetén is számon tartja, hogy változtak-e a bemeneti, valamint a kimeneti adatok, így pontosan meg tudja állaptíani, hogy mi változott, így nem biztos, hogy mindent újra kell build-elnie.
+	\item[Inkrementális részfeladatok] -- részfeladatok esetén is számon tartja, hogy változtak-e a bemeneti, valamint a kimeneti adatok, így pontosan meg tudja állapítani, hogy mi változott, így nem biztos, hogy mindent újra kell build-elnie.
 	\item[Párhuzamos végrehajtás] -- lehetőség van a feladatok és a részfeladatok párhuzamos végrehajtására, ami jelentősen növeli a build végrehajtásának sebességét.
 	\item[Függőségek párhuzamos letöltése] -- a függőségek letőltése párhuzamosan zajlik, igény szerint, vagyis csak akkor, amikor szükség van ezekre.
 \end{description}
@@ -115,12 +117,12 @@ műveletekhez is biztosít metódusokat. Az adatbázisban található adatokhoz 
 
 \begin{description}
 	\setlength{\itemsep}{0.04mm}
-	\item[Flexibilitás] -- a Cloud Firestore adatmodellje támogatja a flexibilis, hierarchikus adatsruktúrákat. Az adatokat dokumentumokban tárolja, melyeket kollekciókba lehet rendezni. A dokumentumok komplex, egymásba ágyazott objektumokat is tárolhatnak az alkollekciók mellett. Az adatok kulcs, érték párok, az értékek lehetnek számok, karakterláncok, tömbök, geopontok vagy akár sajátos osztályok. Amennyiben sajátos osztály akarunk használni, annak rendelkeznie kell egy publikus konstruktorral, melynek nincsenek paraméterei, valamint az attribútumokhoz kell tartozzon egy-egy publikus „getter”%
+	\item[Flexibilitás] -- a Cloud Firestore adatmodellje támogatja a flexibilis, hierarchikus adatsruktúrákat. Az adatokat dokumentumokban tárolja, melyeket kollekciókba lehet rendezni. A dokumentumok komplex, egymásba ágyazott objektumokat is tárolhatnak az alkollekciók mellett. Az adatok kulcs-érték párok, az értékek lehetnek számok, karakterláncok, tömbök, geopontok vagy akár sajátos osztályok. Amennyiben sajátos osztály akarunk használni, annak rendelkeznie kell egy publikus konstruktorral, melynek nincsenek paraméterei, valamint az attribútumokhoz kell tartozzon egy-egy publikus „getter”%
 	\footnote{ %
 		egy paraméter nélküli metódus, mely egy attribútumot térít vissza - példa: String getName()
 	}  %
 	metódus.
-	\item[Kifejező lekérdezés] -- olyan lekérdezéseket alkalmazhatunk, melyek visszatérítenek egy specifikus dokumentumot, vagy akár az összes dokumentumot a kollekcióból, ami illeszkedik a lekérdezési paraméterekhez. Több filtert is alkalmazhatunk, ezek lehetnek láncoltak is, valamint kombináltak a rendezéssel. Az indexelésből kifolyólag a teljesítmény nem az adathalmaztól, hanem az eredményhalmaz méretétől fog függni.
+	\item[Kifejező lekérdezés] -- olyan lekérdezéseket alkalmazhatunk, melyek visszatérítenek egy specifikus dokumentumot, vagy akár az összes dokumentumot a kollekcióból, ami illeszkedik a lekérdezési paraméterekhez. Több szűrőt is alkalmazhatunk, ezek lehetnek láncoltak is, valamint kombináltak a rendezéssel. Az indexelésből kifolyólag a teljesítmény nem az adathalmaztól, hanem az eredményhalmaz méretétől fog függeni.
 	\item[Valós idejű frissítések] -- adatszinkronizálást alkalmaz, így az összeköttetésben levő eszközökön mind frissülni fognak az információk.
 	\item[Offline támogatás] -- az alkalmazás által használt adatokat cache-eli, így internet nélkül is tudjuk ezeket írni, olvasni. Majd amikor az összeköttetés újra létrejön, a lokális változtatások szinkronizálva lesznek a felhővel.
 	\item[Skálázhatóság] -- a Cloud Firestore igénybe veszi a Google Cloud Platform infrastruktúráját. Ezáltal képes automatikus multi-régiós adatreplikációt, erős konzisztencia-garanciát, atomikus batch-műveleteket, valamint valódi tranzakciós támogatottságot nyújtani. 
@@ -146,7 +148,7 @@ Opcionális paraméterként az indulási, érkezési időpontokat szintén megad
 
 \begin{description}
 	\setlength{\itemsep}{0.04mm}
-	\item[státusz] -- amennyiben sikeres volt a lekérdezésunk, válaszul itt OK-t kapunk. Hiba esetén a következő üzenetekkel találkozhatunk: INVALID\_REQUEST (helytelen formátumú kérés), MAX\_ELEMENTS\_EXCEEDED (a kérésenkénti csomópont limit meghaladása), OVER\_DAILY\_LIMIT (hiányzó API kulcs, általunk beállított limit, érvénytelen fizetési mód), OVER\_QUERY\_LIMIT (a megengedett időintervallumon belül túl sok lekérdezés), REQUEST\_DENIED (a szolgáltatás nem engedélyezi az alkalmazás számára a Distance Matrix használatát), UNKNOWN\_ERROR (szerver oldali hiba).
+	\item[státusz] -- amennyiben sikeres volt a lekérdezésunk, válaszul itt OK-t kapunk. Hiba esetén a következő üzenetekkel találkozhatunk: INVALID\_REQUEST (helytelen formátumú kérés), MAX\_ELEMENTS\_EXCEEDED (a kérésenkénti maximális csomópontszám meghaladása), OVER\_DAILY\_LIMIT (hiányzó API kulcs, általunk beállított korlát, érvénytelen fizetési mód), OVER\_QUERY\_LIMIT (a megengedett időintervallumon belül túl sok lekérdezés), REQUEST\_DENIED (a szolgáltatás nem engedélyezi az alkalmazás számára a Distance Matrix használatát), UNKNOWN\_ERROR (szerver oldali hiba).
 	\item[kiindulási pontok címei] -- az eredeti lekérdezésből visszatérített objektumok.
 	\item[érkezési pontok címei] -- az eredeti lekérdezésből visszatérített objektumok.
 	\item[sorok] -- ez tartalmazza az adatokat. Egy adott struktúrájú elemekből álló tömbből áll, ahol az elemek tartalmazzák a státuszt, az időtartamot és a távolságot.

@@ -37,10 +37,6 @@ Egy gráf \(G = (V(G),E(G)\) vagy \(G = (V,E))\) két véges halmazból áll. \(
 	\item[Hamilton-út] -- egy \(G\) gráf azon útja, mely minden csúcsot magába foglal
 \end{description}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Gráfok leszámlálása}\label{sec:ALAP:adatelem}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Részgráf izomorfizmus probléma}\label{sec:ALAP:adatelem}
 
@@ -56,9 +52,9 @@ Egy gráf színezése azt jelenti, hogy a csúcsaihoz (vagy az éleihez) színek
 
 \subsection{Hamilton-kör probléma}
 
-A Hamilton-kör egy gráfban, egy olyan kör, mely áthalad a gráf összes csúcsán. Mivel egy kör, minden csúcson egyszer fog áthaladni, kivéve az elsőt, ami egyben az utolsó is. Egy gráfot Hamilton-gráfnak nevezünk, ha tartalmaz Hamilton-kört.
+A Hamilton-kör egy gráfban egy olyan kör, mely áthalad a gráf összes csúcsán. Mivel egy kör, minden csúcson egyszer fog áthaladni, kivéve az elsőt, ami egyben az utolsó is. Egy gráfot Hamilton-gráfnak nevezünk, ha tartalmaz Hamilton-kört.
 
-Egy egyszerű gráf \(G = (X,E)\), \(n \leq 3\) csúccsal Hamilton gráf, ha \(d(x) + d(y)  \geq n\), minden nem szomszédos \(x,y \in X\) csúcsra.
+Ore tétele apalján egy egyszerű gráf \(G = (X,E)\), \(n \leq 3\) csúccsal Hamilton gráf, ha \(d(x) + d(y)  \geq n\), minden nem szomszédos \(x,y \in X\) csúcsra.
 
 Ebből kifolyólag egy gráfban a Hamilton-kör létezése elméleti szemszögből nem egy egyszerú probléma, de gyakorlati szemszögből sem, mivel NP%
 \footnote{ %
@@ -68,23 +64,23 @@ Ebből kifolyólag egy gráfban a Hamilton-kör létezése elméleti szemszögb�
 
 \subsection{Minimális feszítőfa}
 
-Egy \(fa\) egy olyan gráf, amely összefüggő és nem tartalmaz köröket. Bármely összefüggő \(G\) gráfban a feszítőfa \(G\)-nek egy olyan részgráfja, amely fa, és tartalmazza \(G\) összes csúcsát. A minimális feszítőfát meghatározhatjuk Prim algoritmusa segítségével.
+Egy \(fa\) egy olyan gráf, amely összefüggő és nem tartalmaz köröket. Bármely összefüggő \(G\) gráfban a feszítőfa \(G\)-nek egy olyan részgráfja, amely fa, és tartalmazza \(G\) összes csúcsát. A minimális feszítőfát meghatározhatjuk Prim algoritmusa, vagy Kruskal algoritmusa segítségével.
 
-Prim algoritmusa: kezdjük bármelyik csúccsal, madj válasszuk ki a hozzá tartozó legkisebb súllyal rendelkező élet. Minden iterációban kiválasztjuk az eddig vizsgált csúcsokhoz tartozó élek közül a legkisebb súllzal rendelkező élet, majd hozzáadjuk az eddig kapott fához az eddig nem vizsgált csúcspontjával együtt. Ezt addig folyatjuk, míg az összes csúcsot megvizsgáltuk.
+Prim algoritmusa: kezdjük bármelyik csúccsal, majd válasszuk ki a hozzá tartozó legkisebb súllyal rendelkező élet. Minden iterációban kiválasztjuk az eddig vizsgált csúcsokhoz tartozó élek közül a legkisebb súllyal rendelkező élet, majd hozzáadjuk az eddig kapott fához az eddig nem vizsgált csúcspontjával együtt. Ezt addig folyatjuk, míg az összes csúcsot megvizsgáltuk.
 
-\subsection{Kínaipostás-probléma}
+\subsection{Kínai postás-probléma}
 
-Egy \(G\) gráfban, találjuk meg a legrövidebb zárt sétát, amely minden élen legalább egyszer halad át. Egy optimális megoldást találni úgy irányított, mint irányítatlan gráfban NP-teljes.
+Egy \(G\) gráfban találjuk meg a legrövidebb zárt sétát, amely minden élen legalább egyszer halad át. Egy optimális megoldást találni úgy irányított, mint irányítatlan gráfban, ez a probléma is NP-teljes.
 
 \subsection{Königsbergi hidak problémája}
 
-Königsberg városában volt hét híd, amely összekötött két szigetet a város két partjával és egymással. A lakosok megpróbáltak úgy sétálni, hogy minden hídon egyszer és csakis egyszer haladjanak át, és érjenek vissza a kezdőpontba. Ez soha senkinek nem sikerült Euler magyarázta meg egy 1736-ban írt cikkben, hogy ez miért nem lehetséges.
+Königsberg városában volt hét híd, amely összekötött két szigetet a város két partjával és egymással. A lakosok megpróbáltak úgy sétálni, hogy minden hídon egyszer és csakis egyszer haladjanak át, és érjenek vissza a kezdőpontba. Ez soha senkinek nem sikerült: Euler magyarázta meg egy 1736-ban írt cikkben, hogy ez miért nem lehetséges.
 
 Egy Euler-út egy gráfban egy olyan út, amely minden élet magába foglal, egyszer és csakis egyszer. Egy Euler-út zárt, ha ugyanabban a csúcsban végződik, mint ahonnan elindul, egyébként nyíltnak nevezzük.
 
-Egy gráf akkor és csakis akkor tartalmaz zárt Euler-utat, ha minden csúcshoz páros számú él tartozik, valamint minden él ugyanahoz a komponenshez tartozik. Egy gráf akkor és csakis akkor tartalmaz nyílt Euler-utat, ha pontosan két csúcshoz tartozik páratlan számú él, és minden él egyazon komponenshez tartozik.
+Egy gráf akkor és csakis akkor tartalmaz zárt Euler-utat, ha minden csúcshoz páros számú él tartozik, valamint minden él ugyanahhoz a komponenshez tartozik. Egy gráf akkor és csakis akkor tartalmaz nyílt Euler-utat, ha pontosan két csúcshoz tartozik páratlan számú él, és minden él egyazon komponenshez tartozik.
 
 \subsection{Legrövidebb út probléma}
 
-Dijkstra algoritmusa megoldja a legrövidebb út problémat és visszatéríti a legrövidebb utat a kiinduló csúcsból az összes többi csúcsba. Negatív súlyú élek esetén nem működik. Az algoritmus komplexitása \(O(n^2)\), ahol \(n\) a csúcsok száma.
+Legrövidebb út problémájára egy megoldás Dijkstra algoritmusa, mely visszatéríti a legrövidebb utat a kiinduló csúcsból az összes többi csúcsba. Negatív súlyú élek esetén nem működik. Az algoritmus komplexitása \(O(n^2)\), ahol \(n\) a csúcsok száma.
 
