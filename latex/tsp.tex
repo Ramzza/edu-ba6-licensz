@@ -27,7 +27,7 @@ Az utazó ügynök problémája magába foglalja a Hamilton kör problémáját 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Aszimmetrikus TSP}\label{sec:ALAP:adatelem}
 
-Amennyiben irányított gráfokkal dolgozunk, abban az esetben az aszimmetrikus TSP-ről beszélünk. Nem minden TSP algoritmus működik ATSP-re is, ezért előfordulhat, hogy át kell alakítanunk a gráfot, visszavezetve a TSP-re. A visszavezetés után, \(n\) csomópontból álló ATSP egy \(2n\) csomópontból álló TSP-t fog eredményezni.
+Amennyiben irányított gráfokkal dolgozunk, abban az esetben az aszimmetrikus TSP-ről beszélünk. Nem minden TSP algoritmus működik ATSP-re is, ezért előfordulhat, hogy át kell alakítanunk a gráfot, visszavezetve a TSP-re. A visszavezetés után, \(n\) csomópontból álló ATSP egy \(2n\) csomópontból álló TSP-t fog eredményezni\cite{atsp}.
 
 \section{Egzakt algoritmusok}\label{sec:ALAP:adatelem}
 
@@ -64,7 +64,7 @@ M = (D(\{2, \dots, N\}, n_N)+d_{n_N, 1})
 
 \subsection{Concorde}
 
-A \(Concorde\) TSP megoldó egzakt megoldást nyújt az útazó ügynök problémájára. ANSI C-ben íródott és a "cutting plane" módszer segítségével iteratívan oldja meg a TSP lineáris programozási relaxációit. A felhasználói grafikus felület lehetőséget ad arra, hogy különböző heurisztikus algoritmusokkal számoljuk ki a megoldást. 
+A \(Concorde\) TSP megoldó\cite{concorde} egzakt megoldást nyújt az útazó ügynök problémájára. ANSI C-ben íródott és a "cutting plane" módszer segítségével iteratívan oldja meg a TSP lineáris programozási relaxációit. A felhasználói grafikus felület lehetőséget ad arra, hogy különböző heurisztikus algoritmusokkal számoljuk ki a megoldást. 
 
 A \(Concorde\) segítségével megtalálták az optimális megoldást a TSPLIB%
 \footnote{ %
@@ -109,7 +109,7 @@ A 2-opt algoritmus egy lokális kereső algoritmus, mely egy meglévő utat jav�
 
 \subsection{Lin-Kernighan heurisztika}
 
-A 2-opt algoritmus általánosítása révén született meg az egyik leghatékonyabb approximációs algoritmus a szimmetrikus TSP megoldására, a Lin-Kernighan algoritmus. Egy körút k-optimális, ha nem lehetséges egy rövidebb körutat kapni \(k\) darab él, más \(k\) darab éllel való helyettesítés után. Minél nagyobb a \(k\) értéke, annál valószínűbb, hogy az algoritmus végrehajtása után az optimális megoldást kapjuk, ugyanakkor nagyobb adathalmazra gyorsan növekszik a \(k\) darab élcsere ellenőrzéséhez szükséges műveletek száma. Egy hátránya tehát a \(k-opt\) algoritmusoknak, hogy futás előtt meg kell adni a \(k\) értékét. Ezt a hátrányt igyekszik kiküszöbölni a Lin-Kernighan algoritmus, azáltal, hogy futása során változtatja \(k\)-nak az értékét.
+A 2-opt algoritmus általánosítása révén született meg az egyik leghatékonyabb approximációs algoritmus a szimmetrikus TSP megoldására, a Lin-Kernighan algoritmus\cite{lin_kern}. Egy körút k-optimális, ha nem lehetséges egy rövidebb körutat kapni \(k\) darab él, más \(k\) darab éllel való helyettesítés után. Minél nagyobb a \(k\) értéke, annál valószínűbb, hogy az algoritmus végrehajtása után az optimális megoldást kapjuk, ugyanakkor nagyobb adathalmazra gyorsan növekszik a \(k\) darab élcsere ellenőrzéséhez szükséges műveletek száma. Egy hátránya tehát a \(k-opt\) algoritmusoknak, hogy futás előtt meg kell adni a \(k\) értékét. Ezt a hátrányt igyekszik kiküszöbölni a Lin-Kernighan algoritmus, azáltal, hogy futása során változtatja \(k\)-nak az értékét.
 
 Legyen \(T\) az aktuális körút. Minden iterációban, az algoritmus igyekszik találni két \(X = \{x_1,\dots,x_k\}\) és \(Y = \{y_1,\dots,y_k\}\) élekből álló halmazokat, melyekre igaz az, hogy a \(T\) körútból az \(X\)-ben található éleket az \(Y\)-ból vett élekkel helyettesítve egy jobb körutat kapunk. Ezeknek az éleknek a felcserélését \(k-opt\) lépésnek nevezzük. Ahhoz, hogy kellően hatékony algoritmust kapjunk, az \(X\) és \(Y\) halmazokhoz tartozó éleknek meg kell felelniük bizonyos kritériumoknak:
 

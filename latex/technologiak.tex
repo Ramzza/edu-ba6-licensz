@@ -1,14 +1,11 @@
-%!TEX root = GRoutes.tex
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{Technológiák}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{osszefoglal}
 	Ebben a fejezetben, a projekt elkészítése során felhasznált technológiákat ismertetem.
 	
 \end{osszefoglal}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Android}
 
 \begin{figure}
@@ -19,7 +16,7 @@
 	\caption{Az Android platform komponensei\label{fig:ALAP:sm2}}
 \end{figure}
 
-Az Android egy nyílt forráskódú, Linux kernel alapú többfelhasználós operációs rendszer, ahol minden applikáció egy külön felhasználó. Hivatalos nyelvei a Java és a Kotlin. Alapértelmezetten, a rendszer minden applikációnak kioszt egy egyedi Linux felhasználói ID-t (az ID-t csak a rendszer használja, és ismeretlen az applikáció számára). Az operációs rendszer úgy osztja ki a hozzáfárési jogokat az applikáció állományai számára, hogy csak az a felhasználói ID férjen hozzájuk, amivel az adott applikáció rendelkezik. Minden folyamat (process) rendelkezik a saját virtuális gépével, tehát minden applikáció kódja egymástól teljesen izoláltan fut. Alapértelmezetten minden applikáció a saját Linux folyamatában fut. Az Android operációs rendszer elindítja a folyamatot, amikor az applikáció valamelyik komponensének szüksége van rá, majd leállítja azt, mikor többé már nincs rá szükség, vagy ha a rendszernek mermóriát kell lefoglalnia, más applikációk számára. Az Android operációs rendszer “a legkevesebb kiváltság elvét” (“the principle of least privilige”) alkalmazza, tehát alapértelmezetten, minden applikációnak csak azokhoz a komponensekhez van hozzáférése, amik szükségesek a feladatának elvégzéséhez, és semmi egyébhez.
+Az Android\cite{android} egy nyílt forráskódú, Linux kernel alapú többfelhasználós operációs rendszer, ahol minden applikáció egy külön felhasználó. Hivatalos nyelvei a Java és a Kotlin. Alapértelmezetten, a rendszer minden applikációnak kioszt egy egyedi Linux felhasználói ID-t (az ID-t csak a rendszer használja, és ismeretlen az applikáció számára). Az operációs rendszer úgy osztja ki a hozzáfárési jogokat az applikáció állományai számára, hogy csak az a felhasználói ID férjen hozzájuk, amivel az adott applikáció rendelkezik. Minden folyamat (process) rendelkezik a saját virtuális gépével, tehát minden applikáció kódja egymástól teljesen izoláltan fut. Alapértelmezetten minden applikáció a saját Linux folyamatában fut. Az Android operációs rendszer elindítja a folyamatot, amikor az applikáció valamelyik komponensének szüksége van rá, majd leállítja azt, mikor többé már nincs rá szükség, vagy ha a rendszernek mermóriát kell lefoglalnia, más applikációk számára. Az Android operációs rendszer “a legkevesebb kiváltság elvét” (“the principle of least privilige”) alkalmazza, tehát alapértelmezetten, minden applikációnak csak azokhoz a komponensekhez van hozzáférése, amik szükségesek a feladatának elvégzéséhez, és semmi egyébhez.
 
 Egy android applikációnak négy fajta komponense lehet: Activity, Service, Broadcast receiver, Content provider. Ezek közül az Activity szolgál a felhasználóval történő interakció eszközéül, ez ugyanis egy felhasználói felülettel rendelkező képernyő. Activity-k, Service-k és Broadcast receiver-ek egy aszinkron üzenet által aktiválódnak, amit Intent-nek (szándék) nevezünk.
 
@@ -61,10 +58,9 @@ Az Android operációs rendszer funkciói a Java nyelven íródott API-kon keres
 Van néhány alkalmazás, ami alapból benne van az Android-ban, ezek többek között az üzenetküldésért, naptárért, internetes böngészésért és a névjegyekért felelnek. A rendszer alkalmazásoknak nincs különleges státuszuk, bármely harmadik féltől származó applikáció átveheti alapértelmezettként az adott funkciók kezeléséért felelő szerepet. Kivételt képez a Beállítások (Settings) alkalmazás. A beépített alklamazások funkcionalitásait a fejlesztők a saját applikációikban is igénybe vehetik, példa erre a "megosztás SMS-ként", amikor a megosztani kívánt szöveget egy rendszeralkalmazás segítségével küldik el.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Gradle}\label{sec:ALAP:adatelem}
+\section{Gradle}
 
-A Gradle egy nyílt forráskódú projektépítő eszköz (build automation tool). A Groovy, vagy Kotlin nyelvű scriptekbe, megadhatjuk a projektünk külső függöségeit (például API-k, library-k), melyeket letölti, majd lekompillálja és lefordítja a forráskódot.
+A Gradle\cite{gradle} egy nyílt forráskódú projektépítő eszköz (build automation tool). A Groovy, vagy Kotlin nyelvű scriptekbe, megadhatjuk a projektünk külső függöségeit (például API-k, library-k), melyeket letölti, majd lekompillálja és lefordítja a forráskódot.
 
 \subsection{Teljesítmény}
 
@@ -95,12 +91,11 @@ Az Andoid Studio-hoz (az android hivatalos fejlesztői környezete) tartozó Gra
 	\item[Multidex támogatás] -- ez lehetővé teszi, hogy meghaladjuk a 65000-es metódusszám limitet, mely az Anroid DEX állományokra vonatkozik és az applikáció .apk-ba való csomagolásakor történik az ellenőrzése.
 \end{description}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Firebase}\label{sec:ALAP:szerkeszt}
+\section{Firebase}
 
 \subsection{Autentikáció}
 
-A Firebase Authentication egy backend (szerver oldali) szolgáltatást nyújt melynek segítségével a felhasználók autentikációját oldhatjuk meg. Az autentikáció módjaként támogatja a jelszó, telefonszám, valamint népszerű indentitás szolgáltatók, mint például a Google, Facebook vagy Twitter használatát. Az aktuális ipari standardokat használja, mint az OAuth 2.0 és az OpenID Connect. Feladatai közé tartozik a regisztráció, bejelentkezés, e-mail cím aktiválása és az elfelejtett jelszó visszaállítása.
+A Firebase Authentication\cite{auth} egy backend (szerver oldali) szolgáltatást nyújt melynek segítségével a felhasználók autentikációját oldhatjuk meg. Az autentikáció módjaként támogatja a jelszó, telefonszám, valamint népszerű indentitás szolgáltatók, mint például a Google, Facebook vagy Twitter használatát. Az aktuális ipari standardokat használja, mint az OAuth 2.0 és az OpenID Connect. Feladatai közé tartozik a regisztráció, bejelentkezés, e-mail cím aktiválása és az elfelejtett jelszó visszaállítása.
 
 \begin{description}
 	\setlength{\itemsep}{0.04mm}
@@ -112,7 +107,7 @@ A Firebase Authentication egy backend (szerver oldali) szolgáltatást nyújt me
 
 \subsection{Cloud Firestore}
 
-A felhasználók adatainak, beállításainak tárolására, kezelésére a Cloud Firestore nevű no-sql adatbázist használtam, mely a CRUD%
+A felhasználók adatainak, beállításainak tárolására, kezelésére a Cloud Firestore\cite{firestore} nevű no-sql adatbázist használtam, mely a CRUD%
 \footnote{ %
 	create, read, update, delete
 }  %
@@ -132,12 +127,11 @@ műveletekhez is biztosít metódusokat. Az adatbázisban található adatokhoz 
 \end{description}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Térkép}\label{sec:ALAP:szerkeszt}
+\section{Térkép}
 
 \subsection{Distance Matrix API}
 
-A Distance Matrix API egy olyan szolgáltatás, ami visszatéríti az utazási távolságot és időt egy kiindulási és érkezési helyekből álló mátrixhoz. A lekérdezés paraméterei:
+A Distance Matrix API\cite{distance} egy olyan szolgáltatás, ami visszatéríti az utazási távolságot és időt egy kiindulási és érkezési helyekből álló mátrixhoz. A lekérdezés paraméterei:
 
 \begin{description}
 	\setlength{\itemsep}{0.04mm}
@@ -160,7 +154,7 @@ Opcionális paraméterként az indulási, érkezési időpontokat szintén megad
 
 \subsection{Directions API}
 
-A Directions API meghatározza két helyszín között az leghatékonyabb útvonalat. Alapvetően utazási időre van optimalizálva. A lekérdezés módja a Distance Matrix API-hoz hasonló. A lekérdezésre egy elég bonyolult JSON vagy XML formátumú választ kapunk. Ez magába foglalja a pontokat, melyek segítségével a térképen kirajzolhatjuk az útvonalat, és a navigációhoz szükséges adatokat, információkat.
+A Directions API\cite{directions} meghatározza két helyszín között az leghatékonyabb útvonalat. Alapvetően utazási időre van optimalizálva. A lekérdezés módja a Distance Matrix API-hoz hasonló. A lekérdezésre egy elég bonyolult JSON vagy XML formátumú választ kapunk. Ez magába foglalja a pontokat, melyek segítségével a térképen kirajzolhatjuk az útvonalat, és a navigációhoz szükséges adatokat, információkat.
 
 A PolyUtil osztály segítségével dekódolhatjuk a válaszként érkezett pontokat, majd a Polyline osztály segítségével egy összefüggő vonalként kirajzolhatjuk a térképre.
 
