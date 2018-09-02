@@ -42,7 +42,7 @@ A legegyszerűbb megközelítés, az összes permutációt kipróbálni, és kiv
 
 Az algoritmus komplexitása a legrosszabb esetben \(O(n^2*2^n)\).
 
-Legyen \(S \subseteq {2, \dots, N}\) részhalmaza a városoknak és \(d_{ij}\) az \(i\) és \(j\) városok közötti távolság. Továbbá \(c \in S\) úgy, hogy \(D(S,c)\) a minimális távolság kezdve az első várostól, meglátogatva az összes várost \(S\)-ből, majd visszaérve \(c\) városba.
+Legyen \(S \subseteq {2, \dots, N}\) részhalmaza a városoknak és \(d_{ij}\) az \(i\) és \(j\) városok közötti távolság. Továbbá \(c \in S\) úgy, hogy \(D(S,c)\) a minimális távolság kezdve az első várostól, meglátogatva az összes várost \(S\)-ből, majd visszaérve \(c\) városba\cite{held}.
 
 Ha \(S = {c}\), akkor \(D(S,c) = d_{1,c}\), különben:
 
