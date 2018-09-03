@@ -15,7 +15,7 @@
 	\includegraphics[width=0.9\textwidth, scale=0.9]{images/android}
 	 \caption[]%
 	{Az Android platform komponensei\\
-		{\white .}\hfill\url{https://developer.android.com/guide/platform/}}
+		{\white .}\hfill{forrás: }\url{https://developer.android.com/guide/platform/}}
 \end{figure}
 
 Az Android\cite{android} egy nyílt forráskódú, Linux kernel alapú többfelhasználós operációs rendszer, ahol minden applikáció egy külön felhasználó. Hivatalos nyelvei a Java és a Kotlin. Alapértelmezetten, a rendszer minden applikációnak kioszt egy egyedi Linux felhasználói ID-t (az ID-t csak a rendszer használja, és ismeretlen az applikáció számára). Az operációs rendszer úgy osztja ki a hozzáfárési jogokat az applikáció állományai számára, hogy csak az a felhasználói ID férjen hozzájuk, amivel az adott applikáció rendelkezik. Minden folyamat (process) rendelkezik a saját virtuális gépével, tehát minden applikáció kódja egymástól teljesen izoláltan fut. Alapértelmezetten minden applikáció a saját Linux folyamatában fut. Az Android operációs rendszer elindítja a folyamatot, amikor az applikáció valamelyik komponensének szüksége van rá, majd leállítja azt, mikor többé már nincs rá szükség, vagy ha a rendszernek mermóriát kell lefoglalnia más applikációk számára. Az Android operációs rendszer “a legkevesebb kiváltság elvét” (“the principle of least privilige”) alkalmazza, tehát alapértelmezetten minden applikációnak csak azokhoz a komponensekhez van hozzáférése, amelyek szükségesek a feladatának elvégzéséhez, és semmi egyébhez.
@@ -56,7 +56,7 @@ Az Android operációs rendszer funkciói a Java nyelven íródott API-kon keres
 
 \begin{description}
 	\setlength{\itemsep}{0.04mm}
-	\item[View rendszer] -- felhasználói felületért felelő XML állományok, amik a különböző UI elemeket (gombok, szövegdobozok, konténerek) tartalmazzák.
+	\item[View rendszer] -- felhasználói felületért felelős XML állományok, amik a különböző UI elemeket (gombok, szövegdobozok, konténerek) tartalmazzák.
 	\item[Erőforráskezelő (Resource Manager)] -- ez szolgáltatja az alkalmazás által, a forráskódon kívül igénybe vett erőforrásokat, mint például a fordítható karakterláncok, grafikai elemek, alaprajz (layout) fájlok.
 	\item[Értesítéskezelő (Notification Manager)] -- engedélyezi az alkalmazások számára, hogy értesítéseket jelenítsenek meg az állapotsorban (status bar).
 	\item[Activity-kezelő] -- az applikációk életciklusáért felel, valamint a múltbeli navigációkat is elmenti. Az Activity osztályok a View-k mögötti logikát tartalmazzák.

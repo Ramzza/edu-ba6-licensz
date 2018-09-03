@@ -18,10 +18,10 @@
 	\setlength{\abovecaptionskip}{0pt}
 	\setlength{\belowcaptionskip}{0pt}
 	\includegraphics[width=0.4\textwidth]{images/login}
-	\caption{Bejelentkezési felület\label{fig:ALAP:sm2}}
+	\caption{Bejelentkezési felület\label{fig:login}}
 \end{wrapfigure}
 
-Az alkalmazás elindítása után egy bejelentkezési felület fogadja a felhasználót. Itt kell megadni az e-mail címet, valamint a jelszót amivel a felhasználó regisztrált. Amennyiben elfelejtette a jelszavát, az "elfelejtett jelszó" gomb megnyomásával lehetőség van egy jelszó-visszaállító e-mail kiküldésére. 
+Az alkalmazás elindítása után egy bejelentkezési felület (\ref{fig:login} ábra) fogadja a felhasználót. Itt kell megadni az e-mail címet, valamint a jelszót amivel a felhasználó regisztrált. Amennyiben elfelejtette a jelszavát, az "elfelejtett jelszó" gomb megnyomásával lehetőség van egy jelszó-visszaállító e-mail kiküldésére. 
 
 Ha egy új felhasználó szeretné igénybe venni az applikáció szolgáltatásait, akkor regisztrálnia kell. Ezt megteheti a regisztráció lapra való navigálás után, melyet a cím megérintésével, vagy a képernyőn az ujjának balra történő húzásával érheti el. Az e-mail cím és az új jelszó megadása után, a felhasználó egyből a főmenübe érkezik, mindeközben azonban egy aktivációs e-mailt is kap arra a címére, amivel regisztrált. A későbbiekben csak akkor fog tudni bejelentkezni, ha a kapott emailben az URL%
 \footnote{ %
@@ -56,7 +56,7 @@ A főmenüből négy különböző oldalra navigálhatunk tovább: a keresési f
 
 \subsection{Keresési felület}
 
-Ezen a felületen van lehetőségünk útvonalak, helyszínek keresésére. A "+" gomb megjelenít egy új mezőt, ahol további címeket adhatunk meg. A "nagyító" gomb a térkép felületre navigál, és kirajzolja a tervezett útvonalat. A keresés elindítása előtt, minden cím mellett van egy "térkép" gomb, ennek segítségével tudjuk megnézni, hogy valóban az az a hely, amire gondoltunk.
+Ezen a felületen (\ref{fig:search} ábra) van lehetőségünk útvonalak, helyszínek keresésére. A "+" gomb megjelenít egy új mezőt, ahol további címeket adhatunk meg. A "nagyító" gomb a térkép felületre navigál, és kirajzolja a tervezett útvonalat. A keresés elindítása előtt, minden cím mellett van egy "térkép" gomb, ennek segítségével tudjuk megnézni, hogy valóban az az a hely, amire gondoltunk.
 
 \subsection{Kedvencek}
  
@@ -67,7 +67,7 @@ Ezen a felületen van lehetőségünk útvonalak, helyszínek keresésére. A "+
  	\item[térkép] -- megjeleníti a térkép felületet, ahol ráközelít a helyszín koordinátáira, vagy kirajzolja az útvonalat.
  	\item[nagyító] -- a keresési felülethez navigál és kitölti a keresési mezőket, az útvonal csomópontjaíval, így a felhasználó könnyedén módosíthatja útvonaltervét.
  	\item[ceruza] -- módosítja a bejegyzés nevét.
- 	\item[szemetes veder] -- törli a bejegyzést, ezáltal az adatbázisból is törlődni fog.
+ 	\item[X] -- törli a bejegyzést, ezáltal az adatbázisból is törlődni fog.
  \end{description}
 
 \subsection{Múltbeli keresések}
@@ -80,7 +80,7 @@ Ezen a felületen van lehetőségünk útvonalak, helyszínek keresésére. A "+
 	\caption{Múltbeli keresések\label{fig:history}}
 \end{wrapfigure}
 
-A keresési felület eredményéül kapott útvonalak megjelennek a múltbeli keresések menüpont alatt, nevüket a keresési dátum és időpont alkotja. A bejegyzéseknél a "Kedvenceknél" tárgyalt gombok találhatóak, azonos funkcióval, azzal a kivétellel, hogy a "ceruza" gombot a "csillag" helyettesíti, melynek segítségével elmenthetünk egy útvonalat a kedvencek közé.
+A keresési felület eredményéül kapott útvonalak megjelennek a múltbeli keresések menüpont alatt (\ref{fig:history} ábra), nevüket a keresési dátum és időpont alkotja. A bejegyzéseknél a "Kedvenceknél" tárgyalt gombok találhatóak, azonos funkcióval, azzal a kivétellel, hogy a "ceruza" gombot a "csillag" helyettesíti, melynek segítségével elmenthetünk egy útvonalat a kedvencek közé.
 
 \subsection{Beállítások}
 
@@ -92,13 +92,13 @@ Itt ki tudjuk választani a limitet, hogy mennyi csomópont esetén, melyik algo
 
 Ugyanitt megadhatjuk az alapértelmezett utazási módot, ami lehet gyaloglás, valamint vezetés.
 
-Bár az egyszerűség kedvéért igyekeztem sok írás helyett szimbólumokat tenni a gombokra, de az applikációban található kevés szövegnek a nyelvét szintén itt lehet beállítani.
+Bár az egyszerűség kedvéért igyekeztem sok írás helyett szimbólumokat tenni a gombokra, az applikációban található kevés szövegnek a nyelvét szintén itt lehet beállítani.
 
 A térképpel, navigációval kapcsolatos paraméterek módosítására is van lehetőség, mint példaul az alapértelmezett nagyítás, a pozíció lekérésének gyakorisága, a térképre való automatikus ránagyítás és ennek centralizálásának a gyakorisága navigáció közben, valamint a megtett út kirajzolásának a mennyisége.
 
 \subsection{Térkép felület}
 
-Ez a felület akkor jelenik meg, amikor megérintjük a térkép gombot egy helyszín vagy egy útvonal mellett, valamint a keresési felület eredménye is itt rajzolódik ki.
+Ez a felület akkor jelenik meg, amikor megérintjük a térkép gombot egy helyszín vagy egy útvonal mellett, valamint a keresési felület eredménye is itt rajzolódik ki (\ref{fig:route} ábra).
 Amennyiben egy helyszíntől érkezünk, megjelenik egy \(marker\)%
 \footnote{ %
 	jelző
@@ -118,7 +118,7 @@ A "csillag" gomb segítségével hozzáadhatunk egy helyszínt vagy egy útvonal
 	\caption{A Firebase függőségei\label{fig:ALAP:sm2}}
 \end{wrapfigure}
 
-Adatbázisnak és az autentikáció menedzselésére Firebase-t használtam. Mielőtt bármilyen funkcióját is használhatnám ennek az applikációfejlesztési platformnak, be kellett jelentkezzek a Google felhasználómmal, készítenem kellett egy projektet, majd ezt a projektet össze kellett kapcsolnom magával az applikációval, amit fejleszteni szerettem volna. Van egy külön \(plugin\)%
+Adatbázisnak és az autentikáció menedzselésére Firebase-t használtam. Mielőtt bármilyen funkcióját is használhatnám ennek az applikációfejlesztési platformnak, be kellett jelentkezzek a Google azonosítómmal, készítenem kellett egy projektet, majd ezt a projektet össze kellett kapcsolnom magával az applikációval, amit fejleszteni szerettem volna. Van egy külön \(plugin\)%
 \footnote{ %
 	kiegészítés
 }  %
@@ -183,7 +183,7 @@ Minden felhasználónak csak a saját dokumentumához van hozzáférése. Ezt eg
 
 Egy út tartalmaz egy hely objektumokból álló tömböt a csomópontok számontartására, egy indexekből álló tömböt a csomópontok sorrendjének tárolására, valamint egy név mezőt.
 
-Egy hely objektum tartalmaz egy-egy karakterlánc típusú név és cím mezőt, valamint egy GeoPoint objektumot, ami a hely főldrajzi szélességi és hosszúsági fokait tárolja.
+Egy hely objektum tartalmaz egy-egy karakterlánc típusú név és cím mezőt, valamint egy GeoPoint objektumot, ami a hely földrajzi szélességi és hosszúsági fokait tárolja.
  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -244,7 +244,7 @@ A fontosabb általános műveletek végrehajtására létrehoztam néhány Singl
 	\setlength{\itemsep}{0.04mm}
 	\item[DatabaseAssist] -- ez felel mindennemű Firebase-el kapcsolatos kommunikációért. Feladatai közé tartozik a regisztráció, bejelentkezés, az ezekkel kapcsolatos e-mail küldések, valamint a CRUD operációk elvégzése.
 	\item[CacheManager] -- a központi adatmenedzselő osztály. Ő tölti be, aktualizálja, szolgálja ki a segédosztályokat az adatokkal, továbbítja kéréseiket a DatabaseAssist-nak. A LoginTabActivity kivételével csak ő áll kapcsolatban a DatabaseAssist segédosztállyal.
-	\item[RouteCalculator] -- az optimális útvonal meghatározásáért felel (az utazó ügynök problémájának megoldása)\cite{pyconc}
+	\item[RouteCalculator] -- az optimális útvonal meghatározásáért felel (az utazó ügynök problémájának megoldása)
 \end{description}
 
 \subsection{Entitás osztályok}\label{sec:ALAP:adatelem}
