@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Az utazó ügynök problémája magába foglalja a Hamilton-kör létezésnek a problémáját is \cite{gt_and_appl}. Adott valamennyi város, amelyeket az utazó ügynök úgy kell meglátogasson, hogy mindegyik városba egyszer és csakis egyszer menjen be, valamint érjen vissza a kiindulási pontba, és a megtett út a legrövidebb legyen.
+Az utazó ügynök problémája magába foglalja a Hamilton-kör létezésnek a problémáját is \cite{14}. Adott valamennyi város, amelyeket az utazó ügynök úgy kell meglátogasson, hogy mindegyik városba egyszer és csakis egyszer menjen be, valamint érjen vissza a kiindulási pontba, és a megtett út a legrövidebb legyen.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{A probléma komplexitása}\label{sec:ALAP:adatelem}
@@ -27,7 +27,7 @@ Az utazó ügynök problémája magába foglalja a Hamilton kör problémáját 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Aszimmetrikus TSP}\label{sec:ALAP:adatelem}
 
-Amennyiben irányított gráfokkal dolgozunk, abban az esetben az aszimmetrikus TSP-ről beszélünk. Nem minden TSP algoritmus működik ATSP-re is, ezért előfordulhat, hogy át kell alakítanunk a gráfot, visszavezetve a TSP-re. A visszavezetés után, \(n\) csomópontból álló ATSP egy \(2n\) csomópontból álló TSP-t fog eredményezni \cite{atsp}.
+Amennyiben irányított gráfokkal dolgozunk, abban az esetben az aszimmetrikus TSP-ről beszélünk. Nem minden TSP algoritmus működik ATSP-re is, ezért előfordulhat, hogy át kell alakítanunk a gráfot, visszavezetve a TSP-re. A visszavezetés után, \(n\) csomópontból álló ATSP egy \(2n\) csomópontból álló TSP-t fog eredményezni \cite{12}.
 
 \section{Egzakt algoritmusok}\label{sec:ALAP:adatelem}
 
@@ -42,7 +42,7 @@ A legegyszerűbb megközelítés, az összes permutációt kipróbálni, és kiv
 
 Az algoritmus komplexitása a legrosszabb esetben \(O(n^2*2^n)\).
 
-Legyen \(S \subseteq {2, \dots, N}\) részhalmaza a városoknak és \(d_{ij}\) az \(i\) és \(j\) városok közötti távolság. Továbbá \(c \in S\) úgy, hogy \(D(S,c)\) a minimális távolság kezdve az első várostól, meglátogatva az összes várost \(S\)-ből, majd visszaérve \(c\) városba \cite{held}.
+Legyen \(S \subseteq {2, \dots, N}\) részhalmaza a városoknak és \(d_{ij}\) az \(i\) és \(j\) városok közötti távolság. Továbbá \(c \in S\) úgy, hogy \(D(S,c)\) a minimális távolság kezdve az első várostól, meglátogatva az összes várost \(S\)-ből, majd visszaérve \(c\) városba \cite{9}.
 
 Ha \(S = {c}\), akkor \(D(S,c) = d_{1,c}\), különben:
 
@@ -64,13 +64,13 @@ M = (D(\{2, \dots, N\}, n_N)+d_{n_N, 1})
 
 \subsection{Concorde}
 
-A \(Concorde\) TSP megoldó \cite{concorde} egzakt megoldást nyújt az útazó ügynök problémájára. ANSI C-ben íródott és a "cutting plane" módszer segítségével iteratívan oldja meg a TSP lineáris programozási relaxációit. A felhasználói grafikus felület lehetőséget ad arra, hogy különböző heurisztikus algoritmusokkal számoljuk ki a megoldást. 
+A \(Concorde\) TSP megoldó \cite{3} egzakt megoldást nyújt az útazó ügynök problémájára. ANSI C-ben íródott és a "cutting plane" módszer segítségével iteratívan oldja meg a TSP lineáris programozási relaxációit. A felhasználói grafikus felület lehetőséget ad arra, hogy különböző heurisztikus algoritmusokkal számoljuk ki a megoldást. 
 
 A \(Concorde\) segítségével megtalálták az optimális megoldást a TSPLIB%
 \footnote{ %
 	a TSP-re példa adatokat tartalmazó könyvtár
 }  %
-mind a 110 példájára, ahol a legnagyobb 85900 várost tartalmaz.
+ \cite{8} mind a 110 példájára, ahol a legnagyobb 85900 várost tartalmaz.
 
 Az alábbi eredményeket egy 2.8 GHz-es Intel Xeon processzor egy magjának használatával számolták ki, az \textit{ILOG CPLEX} lineáris programozási feladatmegoldó segítségével. Mindegyik adathalmaz 100 csomópontból áll.
 
@@ -100,16 +100,16 @@ Mivel az egzakt algoritmusokat csak igazán kevés használati esetben lehet alk
 	\item[3. lépés] -- beállítjuk \(V\)-t aktuális csúcsnak
 	\item[4. lépés] -- megjelöljük, hogy már meglátogattuk \(V\)-t
 	\item[5. lépés] -- ha minden csomópontot meglátogattunk, akkor algoritmus vége
-	\item[6. lépés] -- menjünk a 2. lépéshez
+	\item[6. lépés] -- menjünk a 2. lépéshez \cite{11}
 \end{description}
 
 \subsection{2-opt algoritmus}
 
-A 2-opt algoritmus \cite{comp_tsp} egy lokális kereső algoritmus, mely egy meglévő utat javít fel. Ezt az algoritmust elsőként Croes javasolta 1958-ban, az alapműveletet azonban már Flood is javasolta 1956-ban. Ez abból áll, hogy egy meglévő körútból kitörlünk két élet, úgy hogy ezeknek nincs közös csúcsúk, majd a csomópontokat újra összekötjük. Erre egy lehetőség van úgy, hogy ne az előző utat kapjuk. Amennyiben az újonnan kapott körút rövidebb, megtartjuk. Ezeket a cseréket minden lehetséges kombinációra elvégezzük. Az így kapott körutat 2-optimálisnak nevezzük.
+A 2-opt algoritmus \cite{13} egy lokális kereső algoritmus, mely egy meglévő utat javít fel. Ezt az algoritmust elsőként Croes javasolta 1958-ban, az alapműveletet azonban már Flood is javasolta 1956-ban. Ez abból áll, hogy egy meglévő körútból kitörlünk két élet, úgy hogy ezeknek nincs közös csúcsúk, majd a csomópontokat újra összekötjük. Erre egy lehetőség van úgy, hogy ne az előző utat kapjuk. Amennyiben az újonnan kapott körút rövidebb, megtartjuk. Ezeket a cseréket minden lehetséges kombinációra elvégezzük. Az így kapott körutat 2-optimálisnak nevezzük.
 
 \subsection{Lin-Kernighan heurisztika}
 
-A 2-opt algoritmus általánosítása révén született meg az egyik leghatékonyabb approximációs algoritmus a szimmetrikus TSP megoldására, a Lin-Kernighan algoritmus \cite{lin_kern}. Egy körút k-optimális, ha nem lehetséges egy rövidebb körutat kapni \(k\) darab él, más \(k\) darab éllel való helyettesítése után. Minél nagyobb a \(k\) értéke, annál valószínűbb, hogy az algoritmus végrehajtása után az optimális megoldást kapjuk, ugyanakkor nagyobb adathalmazra gyorsan növekszik a \(k\) darab élcsere ellenőrzéséhez szükséges műveletek száma. Egy hátránya tehát a \(k-opt\) algoritmusoknak, hogy futás előtt meg kell adni a \(k\) értékét. Ezt a hátrányt igyekszik kiküszöbölni a Lin-Kernighan algoritmus, azáltal, hogy futása során változtatja \(k\)-nak az értékét.
+A 2-opt algoritmus általánosítása révén született meg az egyik leghatékonyabb approximációs algoritmus a szimmetrikus TSP megoldására, a Lin-Kernighan algoritmus \cite{10}. Egy körút k-optimális, ha nem lehetséges egy rövidebb körutat kapni \(k\) darab él, más \(k\) darab éllel való helyettesítése után. Minél nagyobb a \(k\) értéke, annál valószínűbb, hogy az algoritmus végrehajtása után az optimális megoldást kapjuk, ugyanakkor nagyobb adathalmazra gyorsan növekszik a \(k\) darab élcsere ellenőrzéséhez szükséges műveletek száma. Egy hátránya tehát a \(k-opt\) algoritmusoknak, hogy futás előtt meg kell adni a \(k\) értékét. Ezt a hátrányt igyekszik kiküszöbölni a Lin-Kernighan algoritmus, azáltal, hogy futása során változtatja \(k\)-nak az értékét.
 
 Legyen \(T\) az aktuális körút. Minden iterációban, az algoritmus igyekszik találni két \(X = \{x_1,\dots,x_k\}\) és \(Y = \{y_1,\dots,y_k\}\) élekből álló halmazt, melyekre igaz az, hogy a \(T\) körútból az \(X\)-ben található éleket az \(Y\)-ból vett élekkel helyettesítve egy jobb körutat kapunk. Ezeknek az éleknek a felcserélését \(k-opt\) lépésnek nevezzük. Ahhoz, hogy kellően hatékony algoritmust kapjunk, az \(X\) és \(Y\) halmazokhoz tartozó éleknek meg kell felelniük bizonyos kritériumoknak:
 
