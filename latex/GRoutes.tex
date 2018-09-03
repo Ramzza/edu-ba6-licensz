@@ -4,7 +4,12 @@
 \usepackage{wrapfig}
 \usepackage{color}
 
-
+\usepackage[all]{nowidow}
+\usepackage{caption}
+\usepackage{multirow}
+\newenvironment{Figure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
 % milyen nyelveken akarunk forráskódot megjeleníteni
 \lstloadlanguages{Java,C++}
 % más lehetőségek:
